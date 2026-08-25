@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Palette · Ask your data</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+  :root{
+    --bg:#f8f4ee; --surface:#ffffff; --border:#e4ddd1; --hair:#ece5da;
+    --text:#1a1612; --muted:#8a8078; --accent:#b84c2e; --accent-deep:#9a3c22;
+    --space:8px;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'DM Sans', -apple-system, system-ui, sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    font-family:var(--sans); color:var(--text); background:var(--bg);
+    background-image:radial-gradient(ellipse 70% 50% at 50% -8%, rgba(184,76,46,.05) 0%, transparent 70%);
+    -webkit-font-smoothing:antialiased; line-height:1.55;
+  }
+  .wrap{ max-width:880px; margin:0 auto; padding:56px 24px 120px; }
+
+  /* ---- Masthead ---- */
+  .eyebrow{
+    font-size:11px; letter-spacing:.34em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin:0 0 18px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .eyebrow::after{ content:""; flex:1; height:1px; background:var(--border); }
+  h1{
+    font-family:var(--serif); font-weight:600; letter-spacing:-.01em;
+    font-size:clamp(2.6rem,6vw,4.4rem); line-height:1.02; margin:0 0 16px;
+  }
+  h1 em{ font-style:italic; color:var(--accent); }
+  .lede{ font-size:16px; color:var(--muted); max-width:46ch; margin:0 0 30px; }
+
+  .tables{ font-size:12.5px; color:var(--muted); margin-bottom:30px; }
+  .tables .tag{
+    display:inline-flex; align-items:baseline; gap:8px; background:var(--surface);
+    border:1px solid var(--border); border-radius:999px; padding:6px 14px; margin:0 8px 8px 0;
+  }
+  .tables .tag b{ font-weight:600; color:var(--text); }
+  .tables .tag span{ font-size:11px; color:var(--muted); }
+
+  /* ---- Ask form ---- */
+  form{ display:flex; gap:10px; }
+  .field{ position:relative; flex:1; }
+  input[type=text]{
+    width:100%; padding:16px 18px; border:1px solid var(--border); border-radius:14px;
+    background:var(--surface); color:var(--text); font-size:15px; font-family:var(--sans);
+    transition:border-color .25s ease, box-shadow .25s ease;
+  }
+  input[type=text]::placeholder{ color:#b3aa9e; }
+  input[type=text]:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 4px rgba(184,76,46,.1); }
+  .ask{
+    padding:0 26px; border:0; border-radius:14px; background:var(--accent); color:#fff;
+    font-family:var(--sans); font-weight:600; font-size:14px; letter-spacing:.02em; cursor:pointer;
+    transition:transform .2s cubic-bezier(.2,.7,.3,1), background .2s ease;
+  }
+  .ask:hover{ background:var(--accent-deep); transform:translateY(-1px); }
+  .ask:disabled{ opacity:.55; cursor:default; transform:none; }
+
+  .examples{ margin-top:16px; font-size:12.5px; color:var(--muted); }
+  .examples span{
+    color:var(--text); cursor:pointer; margin-right:18px; letter-spacing:.01em;
+    border-bottom:1px solid var(--border); transition:letter-spacing .3s ease, color .2s ease;
+  }
+  .examples span:hover{ color:var(--accent); letter-spacing:.06em; }
+
+  /* ---- Report card ---- */
+  #out{ margin-top:8px; }
+  .report{
+    margin-top:34px; background:var(--surface); border:1px solid var(--border);
+    border-radius:18px; padding:30px 30px 24px; position:relative;
+    box-shadow:0 30px 60px -40px rgba(40,20,10,.4);
+    animation:rise .55s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes rise{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
+  .report__head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:8px; }
+  .report__label{ font-size:10.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); font-weight:600; padding-top:6px; }
+  .explain{ font-family:var(--serif); font-size:21px; line-height:1.4; color:var(--text); margin:0 0 22px; max-width:60ch; }
+  .chart-wrap{ position:relative; height:400px; width:100%; }
+
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  th,td{ text-align:left; padding:9px 12px; border-bottom:1px solid var(--hair); }
+  th{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  td{ color:var(--text); }
+
+  details{ margin-top:20px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--hair); padding-top:14px; }
+  summary{ cursor:pointer; letter-spacing:.02em; user-select:none; }
+  summary:hover{ color:var(--accent); }
+  pre{ overflow:auto; background:var(--bg); border:1px solid var(--hair); padding:12px; border-radius:10px; margin-top:12px; font-size:12px; }
+
+  .err{ color:var(--accent-deep); white-space:pre-wrap; font-size:13px; }
+
+  /* ---- Export dropdown ---- */
+  .exporter{ position:relative; flex:none; }
+  .export-btn{
+    display:inline-flex; align-items:center; gap:9px; background:var(--surface);
+    border:1px solid var(--border); border-radius:11px; padding:9px 15px; cursor:pointer;
+    font-family:var(--sans); font-weight:500; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--text);
+    transition:border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .export-btn:hover{ border-color:var(--accent); color:var(--accent); }
+  .export-btn svg{ transition:transform .25s ease; }
+  .export-btn[aria-expanded=true] svg{ transform:rotate(180deg); }
+  .export-menu{
+    position:absolute; right:0; top:calc(100% + 8px); min-width:188px; z-index:20;
+    background:var(--surface); border:1px solid var(--border); border-radius:13px; padding:6px;
+    box-shadow:0 24px 48px -24px rgba(40,20,10,.45);
+    opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity .18s ease, transform .18s ease;
+  }
+  .export-menu.open{ opacity:1; transform:none; pointer-events:auto; }
+  .export-menu button{
+    display:flex; width:100%; align-items:center; justify-content:space-between; gap:14px;
+    background:none; border:0; border-radius:9px; padding:10px 12px; cursor:pointer; text-align:left;
+    font-family:var(--sans); font-size:13.5px; color:var(--text); transition:background .15s ease;
+  }
+  .export-menu button:hover{ background:var(--bg); }
+  .export-menu button .ext{ font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  .export-menu button:hover .ext{ color:var(--accent); }
+  .export-menu button:disabled{ opacity:.4; cursor:default; }
+  .export-menu button:disabled:hover{ background:none; }
+
+  /* ---- Auth ---- */
+  .auth{ min-height:84vh; display:flex; align-items:center; justify-content:center; }
+  .auth__card{ display:block; width:100%; max-width:390px; background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:36px 32px; box-shadow:0 30px 60px -40px rgba(40,20,10,.4); animation:rise .55s cubic-bezier(.2,.7,.2,1) both; }
+  .auth__card h1{ font-size:2.3rem; margin:6px 0 4px; line-height:1; }
+  .auth__card .lede{ margin:0 0 18px; font-size:14px; }
+  .auth label{ display:block; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:16px 0 6px; font-weight:600; }
+  .auth input{ width:100%; padding:13px 15px; border:1px solid var(--border); border-radius:12px; background:var(--bg); color:var(--text); font-size:15px; font-family:var(--sans); transition:border-color .2s, box-shadow .2s; }
+  .auth input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 4px rgba(184,76,46,.1); }
+  .auth .ask{ width:100%; margin-top:24px; padding:15px; }
+  .auth__err{ color:var(--accent-deep); font-size:13px; margin-top:14px; min-height:1.1em; }
+  .auth__hint{ margin-top:22px; padding-top:18px; border-top:1px solid var(--hair); font-size:12px; color:var(--muted); line-height:1.9; }
+  .auth__hint code{ color:var(--text); background:var(--bg); padding:1px 6px; border-radius:5px; }
+
+  .topbar{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:11px 16px; margin-bottom:34px; background:var(--surface); border:1px solid var(--border); border-radius:14px; }
+  .who{ font-size:13px; color:var(--muted); }
+  .who b{ color:var(--text); font-weight:600; }
+  .who .role{ display:inline-block; margin-left:9px; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); border:1px solid var(--border); border-radius:999px; padding:2px 9px; }
+  .logout{ background:none; border:1px solid var(--border); border-radius:10px; padding:8px 14px; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--text); cursor:pointer; font-family:var(--sans); transition:border-color .2s, color .2s; }
+  .logout:hover{ border-color:var(--accent); color:var(--accent); }
+  .scope-banner{ font-size:12.5px; color:var(--text); margin:0 0 26px; padding:11px 15px; background:rgba(184,76,46,.06); border:1px solid var(--border); border-radius:11px; }
+  .scope-banner b{ color:var(--accent-deep); }
+
+  @media (max-width:560px){
+    form{ flex-direction:column; } .ask{ padding:14px; }
+    .report{ padding:22px 18px; } .explain{ font-size:18px; }
+    .report__head{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+<section class="wrap auth" id="login">
+  <form class="auth__card" id="loginForm" autocomplete="on">
+    <p class="eyebrow">CSV · Intelligence</p>
+    <h1>Sign in</h1>
+    <p class="lede">Access your data workspace.</p>
+    <label for="u">Username</label>
+    <input id="u" type="text" autocomplete="username" />
+    <label for="p">Password</label>
+    <input id="p" type="password" autocomplete="current-password" />
+    <button class="ask" type="submit" id="loginBtn">Sign in</button>
+    <div class="auth__err" id="loginErr"></div>
+    <div class="auth__hint">Demo accounts —<br>
+      <code>admin / admin123</code> · executive, all territories<br>
+      <code>uk / uk123</code> · UK territory only<br>
+      <code>useast / useast123</code> · US East only<br>
+      <code>aus / aus123</code> · Australia only</div>
+  </form>
+</section>
+
+<main class="wrap" id="app" hidden>
+  <div class="topbar">
+    <div class="who" id="who"></div>
+    <button class="logout" id="logout" type="button">Sign out</button>
+  </div>
+  <header>
+    <p class="eyebrow">CSV · Intelligence</p>
+    <h1>Ask your data,<br><em>see it in colour.</em></h1>
+    <p class="lede">Type a question in plain English. Palette reads your spreadsheets and answers with a chart you can take away.</p>
+    <div class="scope-banner" id="scopeBanner" hidden></div>
+    <div class="tables" id="tables">loading tables…</div>
+  </header>
+
+  <form id="f" autocomplete="off">
+    <div class="field"><input id="q" type="text" placeholder="e.g. Total revenue by region as a pie chart" /></div>
+    <button class="ask" id="go" type="submit">Ask</button>
+  </form>
+  <div class="examples" id="examples"></div>
+
+  <div id="out"></div>
+</main>
+
+<script>
+let chart;            // current Chart.js instance
+let lastReport = null;// last rendered payload (for exports)
+const out = document.getElementById('out');
+
+const CHART_PALETTE = ['#b84c2e','#4a7c4e','#3f6d8a','#c8a96e','#7d5a7c','#4a9c95','#a8576b','#6b8e3d'];
+const INK='#1a1612', MUTED='#8a8078';
+
+/* ---------- Auth ---------- */
+let session = null;   // { token, name, role, scope }
+try { session = JSON.parse(sessionStorage.getItem('palette_session') || 'null'); } catch(e){}
+
+const authHeaders = (extra={}) => session ? {...extra, 'Authorization':'Bearer '+session.token} : extra;
+
+function showLogin(){
+  document.getElementById('app').hidden = true;
+  document.getElementById('login').style.display = '';
+  document.getElementById('p').value = '';
+}
+function showApp(){
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('app').hidden = false;
+
+  const roleLabel = session.role === 'admin' ? 'Admin' : 'Member';
+  document.getElementById('who').innerHTML =
+    `Signed in as <b>${escapeHtml(session.name)}</b><span class="role">${roleLabel}</span>`;
+
+  const banner = document.getElementById('scopeBanner');
+  if(session.role === 'admin'){
+    banner.innerHTML = '<b>Full access.</b> You can ask anything across all territories and the whole network.';
+  } else {
+    banner.innerHTML = `<b>Restricted view.</b> You only see data for territory <b>${escapeHtml(session.scope)}</b> — every answer is scoped to your business automatically.`;
+  }
+  banner.hidden = false;
+  loadTables();
+}
+
+async function loadTables(){
+  const el = document.getElementById('tables');
+  try{
+    const res = await fetch('/api/tables', { headers: authHeaders() });
+    if(res.status === 401){ return doLogout(); }
+    const t = await res.json();
+    const names = Object.keys(t);
+    if(!names.length){ el.textContent = 'No CSVs found in the data/ folder.'; return; }
+    el.innerHTML = names.map(n=>`<span class="tag"><b>${escapeHtml(n)}</b><span>${escapeHtml(t[n].columns.join(' · '))} · ${t[n].rows} rows</span></span>`).join('');
+  }catch(e){ el.textContent = 'Could not load tables.'; }
+}
+
+document.getElementById('loginForm').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const btn = document.getElementById('loginBtn'); const err = document.getElementById('loginErr');
+  err.textContent = ''; btn.disabled = true; btn.textContent = 'Signing in…';
+  try{
+    const res = await fetch('/api/login', { method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ username: document.getElementById('u').value.trim(), password: document.getElementById('p').value }) });
+    if(!res.ok){ const d = await res.json().catch(()=>({})); throw new Error(d.detail || 'Login failed'); }
+    session = await res.json();
+    sessionStorage.setItem('palette_session', JSON.stringify(session));
+    showApp();
+  }catch(err2){ err.textContent = err2.message; }
+  btn.disabled = false; btn.textContent = 'Sign in';
+});
+
+function doLogout(){
+  if(session) fetch('/api/logout', { method:'POST', headers: authHeaders() }).catch(()=>{});
+  session = null; sessionStorage.removeItem('palette_session');
+  out.innerHTML = ''; showLogin();
+}
+document.getElementById('logout').addEventListener('click', doLogout);
+
+// Boot: restore an existing session or show the login screen.
+if(session){ showApp(); } else { showLogin(); }
+
+const ex = ['Total revenue by region','Revenue trend over time','Top 3 products by revenue','Share of units by product'];
+document.getElementById('examples').innerHTML =
+  'Try: ' + ex.map(e=>`<span data-q="${escapeHtml(e)}">${escapeHtml(e)}</span>`).join('');
+document.getElementById('examples').addEventListener('click', e=>{
+  const q = e.target.getAttribute('data-q'); if(q){ document.getElementById('q').value = q; document.getElementById('q').focus(); }
+});
+
+document.getElementById('f').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const q = document.getElementById('q').value.trim();
+  if(!q) return;
+  const btn = document.getElementById('go');
+  btn.disabled = true; btn.textContent='…';
+  out.innerHTML = '<div class="report"><p class="explain" style="color:var(--muted)">Reading your data…</p></div>';
+  try {
+    const res = await fetch('/api/ask', { method:'POST', headers: authHeaders({'Content-Type':'application/json'}), body: JSON.stringify({question:q}) });
+    if(res.status === 401){ btn.disabled=false; btn.textContent='Ask'; return doLogout(); }
+    render(await res.json());
+  } catch(err){ out.innerHTML = `<div class="report err">${escapeHtml(String(err))}</div>`; }
+  btn.disabled=false; btn.textContent='Ask';
+});
+
+// IMPORTANT: never reassign card.innerHTML once the live <canvas> is appended —
+// it re-parses the card and orphans the Chart.js-bound canvas. Assemble all
+// string-HTML first, append the canvas LAST, then instantiate the chart.
+function render(d){
+  if(d.error){ out.innerHTML = `<div class="report err">${escapeHtml(d.error)}\n\n${escapeHtml(d.trace||'')}</div>`; return; }
+  lastReport = d;
+
+  const card = document.createElement('article'); card.className='report';
+
+  // head: label + export menu
+  const head = document.createElement('div'); head.className='report__head';
+  head.innerHTML = `<span class="report__label">Report</span>` + exporterMarkup();
+  card.appendChild(head);
+
+  // explanation
+  const p = document.createElement('p'); p.className='explain'; p.textContent = d.explanation||''; card.appendChild(p);
+
+  const isChart = !(d.chart_type === 'table' || !d.x || !d.y);
+  if(!isChart){
+    const tbl = document.createElement('div'); tbl.innerHTML = buildTable(d); card.appendChild(tbl);
+  }
+
+  // details built as a detached node (safe to append next to a live canvas)
+  const det = document.createElement('details');
+  det.innerHTML = `<summary>Show data &amp; generated code</summary>${buildTable(d)}<pre>${escapeHtml(d.code||'')}</pre>`;
+
+  let cv = null;
+  if(isChart){
+    const w = document.createElement('div'); w.className='chart-wrap';
+    cv = document.createElement('canvas'); w.appendChild(cv); card.appendChild(w);
+  }
+  card.appendChild(det);
+
+  out.innerHTML=''; out.appendChild(card);
+  wireExporter(card.querySelector('.exporter'), !!isChart);
+  if(cv) drawChart(cv, d);   // draw LAST
+}
+
+function buildTable(d){
+  if(!d.rows||!d.rows.length) return '<i>No data.</i>';
+  const cols = d.columns;
+  return '<table><thead><tr>'+cols.map(c=>`<th>${escapeHtml(c)}</th>`).join('')+'</tr></thead><tbody>'+
+    d.rows.map(r=>'<tr>'+cols.map(c=>`<td>${escapeHtml(String(r[c]??''))}</td>`).join('')+'</tr>').join('')+
+    '</tbody></table>';
+}
+
+function drawChart(cv, d){
+  const labels = d.rows.map(r=>r[d.x]);
+  const data = d.rows.map(r=>Number(r[d.y]));
+  const prev = Chart.getChart(cv); if(prev) prev.destroy();
+  if(chart){ try{ chart.destroy(); }catch(e){} }
+  const isPie = d.chart_type==='pie';
+  chart = new Chart(cv, {
+    type: d.chart_type==='scatter'?'scatter':d.chart_type,
+    data:{ labels, datasets:[{
+      label:d.y, data,
+      backgroundColor: d.chart_type==='line'?'rgba(184,76,46,.12)':labels.map((_,i)=>CHART_PALETTE[i%CHART_PALETTE.length]),
+      borderColor: d.chart_type==='line'?'#b84c2e':'#ffffff',
+      borderWidth: isPie?2:(d.chart_type==='line'?2.5:0),
+      pointBackgroundColor:'#b84c2e', fill:d.chart_type==='line', tension:.34
+    }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        title:{ display:!!d.title, text:d.title, color:INK, font:{ family:"'Cormorant Garamond', serif", size:20, weight:'600' }, padding:{bottom:14} },
+        legend:{ labels:{ color:INK, font:{ family:"'DM Sans', sans-serif", size:12 }, usePointStyle:true, pointStyle:'circle', padding:16 } }
+      },
+      scales: isPie?{}:{
+        x:{ ticks:{ color:MUTED, font:{ family:"'DM Sans', sans-serif" } }, grid:{ color:'#f0e9de' } },
+        y:{ ticks:{ color:MUTED, font:{ family:"'DM Sans', sans-serif" } }, grid:{ color:'#f0e9de' } }
+      }
+    }
+  });
+}
+
+/* ---------- Export dropdown ---------- */
+function exporterMarkup(){
+  return `<div class="exporter">
+    <button class="export-btn" type="button" aria-expanded="false">Download
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+    </button>
+    <div class="export-menu" role="menu">
+      <button data-fmt="pdf" role="menuitem">PDF document <span class="ext">pdf</span></button>
+      <button data-fmt="html" role="menuitem">HTML page <span class="ext">html</span></button>
+      <button data-fmt="png" role="menuitem">Chart image <span class="ext">png</span></button>
+      <button data-fmt="csv" role="menuitem">Raw data <span class="ext">csv</span></button>
+    </div>
+  </div>`;
+}
+
+function wireExporter(root, hasChart){
+  if(!root) return;
+  const btn = root.querySelector('.export-btn');
+  const menu = root.querySelector('.export-menu');
+  if(!hasChart) root.querySelector('[data-fmt=png]').disabled = true;
+
+  const close = ()=>{ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); };
+  btn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+  menu.addEventListener('click', async (e)=>{
+    const b = e.target.closest('button[data-fmt]'); if(!b || b.disabled) return;
+    close();
+    try{ await exportReport(b.dataset.fmt); }
+    catch(err){ alert('Export failed: '+err); }
+  });
+  document.addEventListener('click', (e)=>{ if(!root.contains(e.target)) close(); });
+}
+
+function reportName(){
+  const t = (lastReport && (lastReport.title || lastReport.explanation)) || 'report';
+  return t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,48) || 'report';
+}
+function saveBlob(blob, filename){
+  const url = URL.createObjectURL(blob); const a=document.createElement('a');
+  a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 1500);
+}
+
+async function exportReport(fmt){
+  const d = lastReport; if(!d) return;
+  const name = reportName();
+  if(fmt==='csv') return exportCSV(d, name);
+  if(fmt==='png') return exportPNG(name);
+  if(fmt==='html') return exportHTML(d, name);
+  if(fmt==='pdf') return exportPDF(name);
+}
+
+function exportCSV(d, name){
+  const cols = d.columns;
+  const cell = v => { v = (v==null?'':String(v)); return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v; };
+  const lines = [cols.map(cell).join(',')].concat(d.rows.map(r=>cols.map(c=>cell(r[c])).join(',')));
+  saveBlob(new Blob([lines.join('\n')], {type:'text/csv;charset=utf-8'}), name+'.csv');
+}
+
+function exportPNG(name){
+  if(!chart) return;
+  const a=document.createElement('a'); a.href=chart.toBase64Image('image/png',1); a.download=name+'.png';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+function exportHTML(d, name){
+  const img = chart ? `<img src="${chart.toBase64Image('image/png',1)}" alt="${escapeHtml(d.title||'chart')}" style="max-width:100%;border:1px solid #e4ddd1;border-radius:12px"/>` : '';
+  const doc = `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(d.title||'Report')}</title>
+<style>body{font-family:'DM Sans',system-ui,sans-serif;background:#f8f4ee;color:#1a1612;max-width:820px;margin:40px auto;padding:0 24px}
+h1{font-family:Georgia,serif;font-weight:600}.lab{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#b84c2e}
+table{border-collapse:collapse;width:100%;font-size:14px;margin-top:18px}th,td{padding:8px 12px;border-bottom:1px solid #ece5da;text-align:left}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8078}pre{background:#fff;border:1px solid #ece5da;padding:12px;border-radius:10px;overflow:auto}</style></head>
+<body><p class="lab">Report</p><h1>${escapeHtml(d.title||'Report')}</h1><p>${escapeHtml(d.explanation||'')}</p>
+${img}${buildTable(d)}<details style="margin-top:18px"><summary>Generated query</summary><pre>${escapeHtml(d.code||'')}</pre></details>
+<p style="color:#8a8078;font-size:12px;margin-top:28px">Generated by Palette · ${new Date().toLocaleString()}</p></body></html>`;
+  saveBlob(new Blob([doc], {type:'text/html;charset=utf-8'}), name+'.html');
+}
+
+async function exportPDF(name){
+  const card = document.querySelector('.report'); if(!card) return;
+  const ctrl = card.querySelector('.exporter'); const det = card.querySelector('details');
+  const cs = ctrl.style.display, ds = det?det.open:false;
+  ctrl.style.display='none'; if(det) det.open=true;     // show data in the PDF, hide the menu button
+  const canvas = await html2canvas(card, { scale:2, backgroundColor:'#ffffff', useCORS:true });
+  ctrl.style.display=cs; if(det) det.open=ds;
+
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p','pt','a4');
+  const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight();
+  const m = 28, iw = pw - m*2; let ih = canvas.height * (iw/canvas.width);
+  const img = canvas.toDataURL('image/png');
+  if(ih <= ph - m*2){ pdf.addImage(img, 'PNG', m, m, iw, ih); }
+  else {                                                 // paginate tall reports
+    let y = 0; const pageH = (ph - m*2) * (canvas.width/iw);
+    while(y < canvas.height){
+      const slice = document.createElement('canvas');
+      slice.width = canvas.width; slice.height = Math.min(pageH, canvas.height - y);
+      slice.getContext('2d').drawImage(canvas, 0, y, canvas.width, slice.height, 0, 0, canvas.width, slice.height);
+      if(y>0) pdf.addPage();
+      pdf.addImage(slice.toDataURL('image/png'), 'PNG', m, m, iw, slice.height*(iw/canvas.width));
+      y += slice.height;
+    }
+  }
+  pdf.save(name+'.pdf');
+}
+
+function escapeHtml(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+// Dev-only self-test: /?selftest=1 renders a fixed pie payload (no API) and records a verdict.
+if (new URLSearchParams(location.search).get('selftest')) {
+  window.addEventListener('load', () => {
+    document.getElementById('login').style.display='none'; document.getElementById('app').hidden=false;
+    render({ chart_type:'pie', x:'region', y:'revenue', title:'Self test', explanation:'selftest',
+      columns:['region','revenue'], rows:[{region:'East',revenue:7450},{region:'North',revenue:9400},{region:'South',revenue:6900},{region:'West',revenue:11550}], code:'selftest' });
+    setTimeout(() => {
+      const cv = document.querySelector('.chart-wrap canvas');
+      const v = { canvasInDom:!!cv };
+      if(cv){ const r=cv.getBoundingClientRect(); v.cssHeight=Math.round(r.height); v.boundToChart=!!Chart.getChart(cv);
+        try{ const img=cv.getContext('2d').getImageData(0,0,cv.width,cv.height).data; let n=0; for(let i=3;i<img.length;i+=4){ if(img[i]!==0){n++; if(n>100)break;} } v.nonBlankPixels=n; }catch(e){ v.pixelError=String(e); } }
+      document.title='SELFTEST '+JSON.stringify(v); document.body.setAttribute('data-selftest', JSON.stringify(v));
+    }, 1500);
+  });
+}
+</script>
+</body>
+</html>

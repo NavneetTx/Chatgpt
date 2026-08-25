@@ -1,0 +1,23 @@
+GeoID,RegionID,RegionName,City,Country,Postcode,Latitude,Longitude
+GEO01,RG01,London North,London,England,E1 6RF,51.5155,-0.0723
+GEO02,RG01,London North,London,England,N1 9GU,51.5362,-0.1033
+GEO03,RG01,London North,London,England,NW3 5TL,51.5565,-0.1771
+GEO04,RG02,London South,London,England,SE1 7PB,51.5045,-0.0865
+GEO05,RG02,London South,London,England,SW10 9NH,51.4836,-0.1877
+GEO06,RG02,London South,London,England,CR0 1LH,51.3727,-0.1009
+GEO07,RG03,Manchester,Manchester,England,M1 1AE,53.4808,-2.2426
+GEO08,RG03,Manchester,Manchester,England,M20 2EQ,53.4178,-2.2282
+GEO09,RG03,Manchester,Salford,England,M5 4QT,53.4871,-2.2723
+GEO10,RG04,Birmingham,Birmingham,England,B1 1BB,52.4862,-1.8904
+GEO11,RG04,Birmingham,Birmingham,England,B13 8TE,52.4374,-1.8760
+GEO12,RG04,Birmingham,Solihull,England,B91 3QJ,52.4124,-1.7801
+GEO13,RG05,Edinburgh,Edinburgh,Scotland,EH1 1YZ,55.9533,-3.1883
+GEO14,RG05,Edinburgh,Edinburgh,Scotland,EH10 4BF,55.9228,-3.2105
+GEO15,RG06,Bristol,Bristol,England,BS1 4QT,51.4545,-2.5879
+GEO16,RG06,Bristol,Bristol,England,BS9 1PR,51.4888,-2.6271
+GEO17,RG07,Leeds,Leeds,England,LS1 4DY,53.7996,-1.5490
+GEO18,RG07,Leeds,Harrogate,England,HG1 1DY,53.9919,-1.5378
+GEO19,RG08,Newcastle,Newcastle,England,NE1 5DQ,54.9783,-1.6178
+GEO20,RG09,Cardiff,Cardiff,Wales,CF10 1EP,51.4816,-3.1791
+GEO21,RG10,Glasgow,Glasgow,Scotland,G1 1DH,55.8642,-4.2518
+GEO22,RG10,Glasgow,Glasgow,Scotland,G12 8QQ,55.8714,-4.2919

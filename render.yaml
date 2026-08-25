@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# Render blueprint for the House of Colour stylist portal demo.
+# https://render.com/docs/blueprint-spec
+#
+# One free web service built from ./Dockerfile. Two things about the free plan
+# this demo is designed around:
+#
+#   * The instance sleeps after ~15 minutes idle and takes ~1 minute to wake.
+#     The first visitor after a quiet spell waits.
+#   * The filesystem is ephemeral. Bookmarks and saved schedules written at
+#     runtime are lost on restart; the seeded DuckDB is rebuilt from the image,
+#     so the reporting data always comes back intact.
+#
+# No database service: the data is read-only demo data baked into the image.
+#
+# Deploy: push this repo to GitHub, then New > Blueprint on render.com and
+# point it at the branch. Set ANTHROPIC_API_KEY in the dashboard afterwards.
+# ---------------------------------------------------------------------------
+
+services:
+  - type: web
+    name: hoc-stylist-portal
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      # Set this by hand in the Render dashboard (Environment tab). sync:false
+      # keeps it out of git — never commit the key to this file.
+      - key: ANTHROPIC_API_KEY
+        sync: false
+
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-4-6
+
+      # Rate limits. The portal is public, so these are what stand between a
+      # stranger finding the URL and an unbounded Anthropic bill. Raise them
+      # only if you are watching spend. Research mode counts double.
+      - key: AI_RATE_PER_MIN
+        value: "3"
+      - key: AI_RATE_PER_HOUR
+        value: "20"
+      - key: AI_RATE_GLOBAL_DAY
+        value: "300"
+
+      # No SMTP server reachable from Render, so the monthly email scheduler
+      # has nothing to send through. Leaving it off avoids a thread that can
+      # only fail.
+      - key: DISABLE_SCHEDULER
+        value: "1"
+
+      # Optional: one Power BI embed URL for every page, overriding
+      # powerbi.json. Set it in the dashboard if you'd rather not commit the
+      # report link to git.
+      - key: POWERBI_EMBED_URL
+        sync: false

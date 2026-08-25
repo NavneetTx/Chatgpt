@@ -1,0 +1,7 @@
+territory_id,territory,country,iso_code,currency_code,region,target_stylists,benchmark_revenue_usd,retention_pct,referral_pct,virtual_pct
+T01,United Kingdom,United Kingdom,GB,GBP,EMEA,9,516739,56,16,30
+T02,United States – East,United States,US,USD,Americas,5,546316,61,25,20
+T03,United States – West,United States,US,USD,Americas,8,842417,57,8,20
+T04,Australia,Australia,AU,AUD,APAC,5,643962,87,27,16
+T05,United Arab Emirates,United Arab Emirates,AE,AED,EMEA,8,608496,81,15,43
+T06,India,India,IN,INR,APAC,8,691704,55,13,42

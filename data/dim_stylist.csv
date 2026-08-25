@@ -1,0 +1,75 @@
+StylistID,StylistName,Email,ConsultantID,ConsultantName,RegionID,RegionName,CertificationLevel,Specialism,JoinDate,MonthlyTarget_GBP,Commission_Pct,IsActive,ContractType
+STY001,Sophie Marlowe,s.marlowe1@houseofcolour.com,CON001,Sophie Marlowe,RG01,London North,Senior Stylist,Colour Analysis,2019-09-19,2000,40,Yes,Full-time
+STY002,Emma Patel,e.patel2@houseofcolour.com,CON001,Sophie Marlowe,RG01,London North,Level 3 — Full Stylist,Wardrobe Editing,2023-12-08,2500,25,Yes,Full-time
+STY003,Claire Hughes,c.hughes3@houseofcolour.com,CON002,Emma Patel,RG02,London South,Senior Stylist,Teen & Young Adult,2021-10-25,1500,35,Yes,Full-time
+STY004,Lisa Carter,l.carter4@houseofcolour.com,CON002,Emma Patel,RG02,London South,Master Stylist,Teen & Young Adult,2020-12-14,3500,30,Yes,Full-time
+STY005,Sarah Walsh,s.walsh5@houseofcolour.com,CON002,Emma Patel,RG02,London South,Level 3 — Full Stylist,Teen & Young Adult,2023-09-11,3500,30,Yes,Part-time
+STY006,Anna Singh,a.singh6@houseofcolour.com,CON002,Emma Patel,RG02,London South,Level 3 — Full Stylist,Corporate Image,2018-01-03,3500,35,Yes,Full-time
+STY007,Kate Okoye,k.okoye7@houseofcolour.com,CON003,Claire Hughes,RG03,Manchester,Senior Stylist,Makeup & Beauty,2020-09-07,1500,30,Yes,Part-time
+STY008,Helen Chen,h.chen8@houseofcolour.com,CON003,Claire Hughes,RG03,Manchester,Level 1 — Colour,Wardrobe Editing,2018-10-11,3500,30,Yes,Full-time
+STY009,Fiona Williams,f.williams9@houseofcolour.com,CON003,Claire Hughes,RG03,Manchester,Level 3 — Full Stylist,Makeup & Beauty,2023-12-02,3500,40,No,Part-time
+STY010,Rachel Johnson,r.johnson10@houseofcolour.com,CON004,Lisa Carter,RG04,Birmingham,Level 3 — Full Stylist,Teen & Young Adult,2021-06-30,3000,35,Yes,Full-time
+STY011,James Smith,j.smith11@houseofcolour.com,CON004,Lisa Carter,RG04,Birmingham,Level 1 — Colour,Style Analysis,2018-09-20,2500,25,Yes,Full-time
+STY012,David Brown,d.brown12@houseofcolour.com,CON004,Lisa Carter,RG04,Birmingham,Level 2 — Style,Colour Analysis,2018-08-30,2000,25,Yes,Part-time
+STY013,Mark Taylor,m.taylor13@houseofcolour.com,CON004,Lisa Carter,RG04,Birmingham,Level 1 — Colour,Style Analysis,2021-02-14,3000,30,Yes,Part-time
+STY014,Tom Davis,t.davis14@houseofcolour.com,CON005,Sarah Walsh,RG05,Edinburgh,Level 3 — Full Stylist,Style Analysis,2023-04-22,3000,30,Yes,Part-time
+STY015,Raj Miller,r.miller15@houseofcolour.com,CON005,Sarah Walsh,RG05,Edinburgh,Level 2 — Style,Wardrobe Editing,2023-03-28,1500,25,Yes,Part-time
+STY016,Liam Wilson,l.wilson16@houseofcolour.com,CON005,Sarah Walsh,RG05,Edinburgh,Senior Stylist,Colour Analysis,2020-10-15,2000,30,Yes,Full-time
+STY017,Oliver Moore,o.moore17@houseofcolour.com,CON005,Sarah Walsh,RG05,Edinburgh,Level 1 — Colour,Wardrobe Editing,2020-10-20,1500,40,Yes,Part-time
+STY018,Harry Anderson,h.anderson18@houseofcolour.com,CON006,Anna Singh,RG06,Bristol,Level 1 — Colour,Corporate Image,2018-03-02,1500,30,Yes,Full-time
+STY019,Sam Thomas,s.thomas19@houseofcolour.com,CON006,Anna Singh,RG06,Bristol,Level 2 — Style,Wardrobe Editing,2018-08-29,2000,40,Yes,Full-time
+STY020,Zoe Jackson,z.jackson20@houseofcolour.com,CON007,Kate Okoye,RG07,Leeds,Level 2 — Style,Teen & Young Adult,2024-03-26,3000,30,Yes,Full-time
+STY021,Amy White,a.white21@houseofcolour.com,CON007,Kate Okoye,RG07,Leeds,Level 1 — Colour,Teen & Young Adult,2024-01-30,1500,35,Yes,Part-time
+STY022,Lucy Harris,l.harris22@houseofcolour.com,CON007,Kate Okoye,RG07,Leeds,Level 3 — Full Stylist,Corporate Image,2019-10-07,1500,25,Yes,Full-time
+STY023,Natalie Martin,n.martin23@houseofcolour.com,CON008,Helen Chen,RG08,Newcastle,Level 3 — Full Stylist,Style Analysis,2022-07-12,1500,30,Yes,Full-time
+STY024,Charlotte Thompson,c.thompson24@houseofcolour.com,CON008,Helen Chen,RG08,Newcastle,Level 1 — Colour,Teen & Young Adult,2024-07-18,3500,35,No,Full-time
+STY025,Jessica Garcia,j.garcia25@houseofcolour.com,CON009,Fiona Williams,RG09,Cardiff,Level 2 — Style,Makeup & Beauty,2022-06-10,2000,35,Yes,Part-time
+STY026,Priya Robinson,p.robinson26@houseofcolour.com,CON009,Fiona Williams,RG09,Cardiff,Master Stylist,Colour Analysis,2023-02-21,3500,25,Yes,Full-time
+STY027,Aisha Clark,a.clark27@houseofcolour.com,CON009,Fiona Williams,RG09,Cardiff,Level 2 — Style,Makeup & Beauty,2018-10-09,2000,35,Yes,Full-time
+STY028,Hannah Lewis,h.lewis28@houseofcolour.com,CON009,Fiona Williams,RG09,Cardiff,Level 3 — Full Stylist,Makeup & Beauty,2023-12-07,1500,35,No,Full-time
+STY029,Laura Lee,l.lee29@houseofcolour.com,CON010,Rachel Johnson,RG10,Glasgow,Level 2 — Style,Colour Analysis,2024-03-16,2000,35,Yes,Full-time
+STY030,Beth Walker,b.walker30@houseofcolour.com,CON010,Rachel Johnson,RG10,Glasgow,Level 2 — Style,Teen & Young Adult,2020-12-17,3500,40,Yes,Part-time
+STY031,Michael Hall,m.hall31@houseofcolour.com,CON011,James Smith,RG01,London North,Level 1 — Colour,Wardrobe Editing,2021-02-07,1500,25,Yes,Full-time
+STY032,John Allen,j.allen32@houseofcolour.com,CON011,James Smith,RG01,London North,Master Stylist,Style Analysis,2022-12-15,3500,40,Yes,Full-time
+STY033,Peter Young,p.young33@houseofcolour.com,CON012,David Brown,RG02,London South,Master Stylist,Corporate Image,2018-05-28,2500,30,Yes,Full-time
+STY034,Andrew King,a.king34@houseofcolour.com,CON012,David Brown,RG02,London South,Level 2 — Style,Colour Analysis,2022-01-05,2000,30,Yes,Full-time
+STY035,Paul Wright,p.wright35@houseofcolour.com,CON012,David Brown,RG02,London South,Level 3 — Full Stylist,Wardrobe Editing,2019-09-26,2000,30,No,Part-time
+STY036,Chris Scott,c.scott36@houseofcolour.com,CON012,David Brown,RG02,London South,Senior Stylist,Colour Analysis,2020-01-05,2500,40,Yes,Part-time
+STY037,Daniel Green,d.green37@houseofcolour.com,CON013,Mark Taylor,RG03,Manchester,Level 2 — Style,Teen & Young Adult,2019-03-19,3000,25,Yes,Full-time
+STY038,Ryan Baker,r.baker38@houseofcolour.com,CON013,Mark Taylor,RG03,Manchester,Senior Stylist,Wardrobe Editing,2021-12-03,2500,30,Yes,Part-time
+STY039,Luke Adams,l.adams39@houseofcolour.com,CON014,Tom Davis,RG04,Birmingham,Level 2 — Style,Colour Analysis,2021-02-17,2500,40,Yes,Part-time
+STY040,Jack Nelson,j.nelson40@houseofcolour.com,CON014,Tom Davis,RG04,Birmingham,Level 2 — Style,Colour Analysis,2019-04-18,2500,30,Yes,Part-time
+STY041,Grace Hill,g.hill41@houseofcolour.com,CON014,Tom Davis,RG04,Birmingham,Level 1 — Colour,Corporate Image,2022-11-15,2500,35,Yes,Part-time
+STY042,Mia Ramirez,m.ramirez42@houseofcolour.com,CON015,Raj Miller,RG05,Edinburgh,Level 2 — Style,Corporate Image,2020-02-18,2500,25,Yes,Full-time
+STY043,Ella Campbell,e.campbell43@houseofcolour.com,CON015,Raj Miller,RG05,Edinburgh,Master Stylist,Corporate Image,2020-03-18,2500,40,Yes,Part-time
+STY044,Chloe Mitchell,c.mitchell44@houseofcolour.com,CON016,Liam Wilson,RG06,Bristol,Level 3 — Full Stylist,Teen & Young Adult,2019-05-26,2500,35,Yes,Full-time
+STY045,Isla Roberts,i.roberts45@houseofcolour.com,CON016,Liam Wilson,RG06,Bristol,Level 3 — Full Stylist,Corporate Image,2019-06-06,2000,40,Yes,Full-time
+STY046,Ruby Turner,r.turner46@houseofcolour.com,CON016,Liam Wilson,RG06,Bristol,Senior Stylist,Style Analysis,2024-05-20,2500,40,Yes,Full-time
+STY047,Poppy Phillips,p.phillips47@houseofcolour.com,CON017,Michael Moore,RG07,Leeds,Level 2 — Style,Corporate Image,2024-10-20,2500,40,Yes,Part-time
+STY048,Freya Parker,f.parker48@houseofcolour.com,CON017,Michael Moore,RG07,Leeds,Level 3 — Full Stylist,Teen & Young Adult,2019-11-27,1500,35,Yes,Part-time
+STY049,Daisy Evans,d.evans49@houseofcolour.com,CON017,Michael Moore,RG07,Leeds,Level 2 — Style,Style Analysis,2021-06-25,2000,30,Yes,Full-time
+STY050,Alice Edwards,a.edwards50@houseofcolour.com,CON018,Oliver Anderson,RG08,Newcastle,Level 3 — Full Stylist,Colour Analysis,2023-02-09,3000,30,Yes,Full-time
+STY051,George Collins,g.collins51@houseofcolour.com,CON018,Oliver Anderson,RG08,Newcastle,Level 2 — Style,Style Analysis,2018-01-23,1500,40,Yes,Part-time
+STY052,William Stewart,w.stewart52@houseofcolour.com,CON018,Oliver Anderson,RG08,Newcastle,Level 3 — Full Stylist,Wardrobe Editing,2018-07-25,3500,30,Yes,Full-time
+STY053,Henry Sanchez,h.sanchez53@houseofcolour.com,CON019,Peter Thomas,RG09,Cardiff,Senior Stylist,Teen & Young Adult,2023-12-16,3500,35,No,Part-time
+STY054,Edward Morris,e.morris54@houseofcolour.com,CON019,Peter Thomas,RG09,Cardiff,Level 3 — Full Stylist,Teen & Young Adult,2023-08-30,3000,40,Yes,Part-time
+STY055,Arthur Rogers,a.rogers55@houseofcolour.com,CON020,Andrew Jackson,RG10,Glasgow,Level 3 — Full Stylist,Style Analysis,2021-02-09,3500,40,Yes,Full-time
+STY056,Leo Reed,l.reed56@houseofcolour.com,CON020,Andrew Jackson,RG10,Glasgow,Level 1 — Colour,Makeup & Beauty,2020-08-18,2500,35,Yes,Full-time
+STY057,Freddie Cook,f.cook57@houseofcolour.com,CON020,Andrew Jackson,RG10,Glasgow,Level 1 — Colour,Style Analysis,2022-04-18,2000,30,Yes,Full-time
+STY058,Alfie Morgan,a.morgan58@houseofcolour.com,CON021,Jessica White,RG01,London North,Level 3 — Full Stylist,Colour Analysis,2020-04-27,3000,40,Yes,Part-time
+STY059,Charlie Bell,c.bell59@houseofcolour.com,CON021,Jessica White,RG01,London North,Level 3 — Full Stylist,Corporate Image,2022-04-08,3000,25,No,Full-time
+STY060,Oscar Murphy,o.murphy60@houseofcolour.com,CON021,Jessica White,RG01,London North,Level 2 — Style,Wardrobe Editing,2024-01-14,3500,30,Yes,Full-time
+STY061,Eleanor Bailey,e.bailey61@houseofcolour.com,CON021,Jessica White,RG01,London North,Level 3 — Full Stylist,Wardrobe Editing,2021-10-08,3000,30,Yes,Part-time
+STY062,Harriet Rivera,h.rivera62@houseofcolour.com,CON022,Lucy Harris,RG02,London South,Level 3 — Full Stylist,Wardrobe Editing,2024-08-21,3500,25,Yes,Full-time
+STY063,Imogen Cooper,i.cooper63@houseofcolour.com,CON022,Lucy Harris,RG02,London South,Senior Stylist,Style Analysis,2018-07-25,2500,40,Yes,Full-time
+STY064,Martha Richardson,m.richardson64@houseofcolour.com,CON022,Lucy Harris,RG02,London South,Level 2 — Style,Wardrobe Editing,2021-02-13,3000,35,Yes,Full-time
+STY065,Rosie Cox,r.cox65@houseofcolour.com,CON022,Lucy Harris,RG02,London South,Senior Stylist,Colour Analysis,2021-12-04,2000,25,Yes,Part-time
+STY066,Violet Howard,v.howard66@houseofcolour.com,CON023,Charlotte Martin,RG03,Manchester,Master Stylist,Style Analysis,2018-03-25,3500,30,Yes,Full-time
+STY067,Willow Ward,w.ward67@houseofcolour.com,CON023,Charlotte Martin,RG03,Manchester,Level 1 — Colour,Style Analysis,2023-03-20,2500,35,Yes,Part-time
+STY068,Amber Torres,a.torres68@houseofcolour.com,CON024,Amy Thompson,RG04,Birmingham,Senior Stylist,Style Analysis,2021-06-28,1500,25,No,Part-time
+STY069,Jade Peterson,j.peterson69@houseofcolour.com,CON024,Amy Thompson,RG04,Birmingham,Master Stylist,Wardrobe Editing,2022-06-13,2000,25,Yes,Part-time
+STY070,Leah Gray,l.gray70@houseofcolour.com,CON024,Amy Thompson,RG04,Birmingham,Level 2 — Style,Teen & Young Adult,2021-05-20,3500,25,Yes,Part-time
+STY071,Nathan Ramirez,n.ramirez71@houseofcolour.com,CON024,Amy Thompson,RG04,Birmingham,Level 1 — Colour,Corporate Image,2022-10-21,2500,25,Yes,Full-time
+STY072,Dylan James,d.james72@houseofcolour.com,CON025,Natalie Garcia,RG05,Edinburgh,Senior Stylist,Colour Analysis,2022-11-11,2500,40,Yes,Full-time
+STY073,Ethan Watson,e.watson73@houseofcolour.com,CON025,Natalie Garcia,RG05,Edinburgh,Senior Stylist,Teen & Young Adult,2021-01-11,3500,40,Yes,Part-time
+STY074,Mason Brooks,m.brooks74@houseofcolour.com,CON025,Natalie Garcia,RG05,Edinburgh,Level 3 — Full Stylist,Makeup & Beauty,2020-10-02,1500,35,Yes,Full-time

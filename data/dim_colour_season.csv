@@ -1,0 +1,13 @@
+SeasonID,MainSeason,SubSeason,Undertone,Clarity,Description
+CS01,Spring,True Spring,Warm,Clear,"Warm, clear, bright — golden undertones"
+CS02,Spring,Light Spring,Warm,Muted,"Warm, light, delicate — softest Springs"
+CS03,Spring,Bright Spring,Warm,Clear,"Warm, bright, vivid — most contrasted Spring"
+CS04,Summer,True Summer,Cool,Muted,"Cool, soft, muted — rose undertones"
+CS05,Summer,Light Summer,Cool,Muted,"Cool, light, delicate — softest of all"
+CS06,Summer,Soft Summer,Neutral-Cool,Muted,"Cool, muted, most neutral Summer"
+CS07,Autumn,True Autumn,Warm,Muted,"Warm, muted, rich — deep golden tones"
+CS08,Autumn,Soft Autumn,Neutral-Warm,Muted,"Warm, muted, lighter — gentle Autumn"
+CS09,Autumn,Deep Autumn,Warm,Muted,"Warm, dark, rich — darkest Autumns"
+CS10,Winter,True Winter,Cool,Clear,"Cool, clear, bright — high contrast"
+CS11,Winter,Deep Winter,Cool,Clear,"Cool, dark, clear — darkest Winters"
+CS12,Winter,Bright Winter,Cool,Clear,"Cool, bright, vivid — most electric Winter"

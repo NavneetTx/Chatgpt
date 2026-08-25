@@ -1,0 +1,817 @@
+TrainingID,StylistID,StylistName,ConsultantID,RegionID,CertificationLevel,Module,TrainingDate,PassDate,ExpiryDate,Score_Pct,CertStatus,DistinctionAchieved
+TRN000001,STY001,Sophie Marlowe,CON001,RG01,Level 1 — Colour,Colour Theory Fundamentals,2019-10-09,2019-10-30,2021-10-29,68.8,Expired,No
+TRN000002,STY001,Sophie Marlowe,CON001,RG01,Level 1 — Colour,Seasonal Analysis Basics,2019-10-09,2019-10-30,2021-10-29,68.8,Expired,No
+TRN000003,STY001,Sophie Marlowe,CON001,RG01,Level 1 — Colour,Draping Technique,2019-10-09,2019-10-30,2021-10-29,68.8,Expired,No
+TRN000004,STY001,Sophie Marlowe,CON001,RG01,Level 1 — Colour,Client Communication,2019-10-09,2019-10-30,2021-10-29,68.8,Expired,No
+TRN000005,STY001,Sophie Marlowe,CON001,RG01,Level 2 — Style,Body Shape Analysis,2020-03-25,2020-04-23,2022-04-23,74.9,Expired,No
+TRN000006,STY001,Sophie Marlowe,CON001,RG01,Level 2 — Style,Clothing Lines & Textures,2020-03-25,2020-04-23,2022-04-23,74.9,Expired,No
+TRN000007,STY001,Sophie Marlowe,CON001,RG01,Level 2 — Style,Style Archetypes,2020-03-25,2020-04-23,2022-04-23,74.9,Expired,No
+TRN000008,STY001,Sophie Marlowe,CON001,RG01,Level 2 — Style,Wardrobe Building,2020-03-25,2020-04-23,2022-04-23,74.9,Expired,No
+TRN000009,STY001,Sophie Marlowe,CON001,RG01,Level 3 — Full Stylist,Advanced Colour,2020-10-06,2020-10-26,2022-10-26,89.0,Expired,Yes
+TRN000010,STY001,Sophie Marlowe,CON001,RG01,Level 3 — Full Stylist,Advanced Style,2020-10-06,2020-10-26,2022-10-26,89.0,Expired,Yes
+TRN000011,STY001,Sophie Marlowe,CON001,RG01,Level 3 — Full Stylist,Makeup Integration,2020-10-06,2020-10-26,2022-10-26,89.0,Expired,Yes
+TRN000012,STY001,Sophie Marlowe,CON001,RG01,Level 3 — Full Stylist,Business Development,2020-10-06,2020-10-26,2022-10-26,89.0,Expired,Yes
+TRN000013,STY001,Sophie Marlowe,CON001,RG01,Senior Stylist,Mentoring Skills,2021-04-09,2021-05-27,2023-05-27,70.7,Expired,No
+TRN000014,STY001,Sophie Marlowe,CON001,RG01,Senior Stylist,Workshop Facilitation,2021-04-09,2021-05-27,2023-05-27,70.7,Expired,No
+TRN000015,STY001,Sophie Marlowe,CON001,RG01,Senior Stylist,Corporate Clients,2021-04-09,2021-05-27,2023-05-27,70.7,Expired,No
+TRN000016,STY001,Sophie Marlowe,CON001,RG01,Senior Stylist,Advanced Draping,2021-04-09,2021-05-27,2023-05-27,70.7,Expired,No
+TRN000017,STY002,Emma Patel,CON001,RG01,Level 1 — Colour,Colour Theory Fundamentals,2023-12-21,2024-01-06,2026-01-05,68.9,Expired,No
+TRN000018,STY002,Emma Patel,CON001,RG01,Level 1 — Colour,Seasonal Analysis Basics,2023-12-21,2024-01-06,2026-01-05,68.9,Expired,No
+TRN000019,STY002,Emma Patel,CON001,RG01,Level 1 — Colour,Draping Technique,2023-12-21,2024-01-06,2026-01-05,68.9,Expired,No
+TRN000020,STY002,Emma Patel,CON001,RG01,Level 1 — Colour,Client Communication,2023-12-21,2024-01-06,2026-01-05,68.9,Expired,No
+TRN000021,STY002,Emma Patel,CON001,RG01,Level 2 — Style,Body Shape Analysis,2024-06-11,2024-07-09,2026-07-09,83.7,Active,No
+TRN000022,STY002,Emma Patel,CON001,RG01,Level 2 — Style,Clothing Lines & Textures,2024-06-11,2024-07-09,2026-07-09,83.7,Active,No
+TRN000023,STY002,Emma Patel,CON001,RG01,Level 2 — Style,Style Archetypes,2024-06-11,2024-07-09,2026-07-09,83.7,Active,No
+TRN000024,STY002,Emma Patel,CON001,RG01,Level 2 — Style,Wardrobe Building,2024-06-11,2024-07-09,2026-07-09,83.7,Active,No
+TRN000025,STY002,Emma Patel,CON001,RG01,Level 3 — Full Stylist,Advanced Colour,2024-12-02,2025-01-20,2027-01-20,74.2,Active,No
+TRN000026,STY002,Emma Patel,CON001,RG01,Level 3 — Full Stylist,Advanced Style,2024-12-02,2025-01-20,2027-01-20,74.2,Active,No
+TRN000027,STY002,Emma Patel,CON001,RG01,Level 3 — Full Stylist,Makeup Integration,2024-12-02,2025-01-20,2027-01-20,74.2,Active,No
+TRN000028,STY002,Emma Patel,CON001,RG01,Level 3 — Full Stylist,Business Development,2024-12-02,2025-01-20,2027-01-20,74.2,Active,No
+TRN000029,STY003,Claire Hughes,CON002,RG02,Level 1 — Colour,Colour Theory Fundamentals,2021-11-14,2022-01-11,2024-01-11,84.9,Expired,No
+TRN000030,STY003,Claire Hughes,CON002,RG02,Level 1 — Colour,Seasonal Analysis Basics,2021-11-14,2022-01-11,2024-01-11,84.9,Expired,No
+TRN000031,STY003,Claire Hughes,CON002,RG02,Level 1 — Colour,Draping Technique,2021-11-14,2022-01-11,2024-01-11,84.9,Expired,No
+TRN000032,STY003,Claire Hughes,CON002,RG02,Level 1 — Colour,Client Communication,2021-11-14,2022-01-11,2024-01-11,84.9,Expired,No
+TRN000033,STY003,Claire Hughes,CON002,RG02,Level 2 — Style,Body Shape Analysis,2022-04-30,2022-06-11,2024-06-10,86.3,Expired,Yes
+TRN000034,STY003,Claire Hughes,CON002,RG02,Level 2 — Style,Clothing Lines & Textures,2022-04-30,2022-06-11,2024-06-10,86.3,Expired,Yes
+TRN000035,STY003,Claire Hughes,CON002,RG02,Level 2 — Style,Style Archetypes,2022-04-30,2022-06-11,2024-06-10,86.3,Expired,Yes
+TRN000036,STY003,Claire Hughes,CON002,RG02,Level 2 — Style,Wardrobe Building,2022-04-30,2022-06-11,2024-06-10,86.3,Expired,Yes
+TRN000037,STY003,Claire Hughes,CON002,RG02,Level 3 — Full Stylist,Advanced Colour,2022-11-14,2022-11-28,2024-11-27,91.5,Expired,Yes
+TRN000038,STY003,Claire Hughes,CON002,RG02,Level 3 — Full Stylist,Advanced Style,2022-11-14,2022-11-28,2024-11-27,91.5,Expired,Yes
+TRN000039,STY003,Claire Hughes,CON002,RG02,Level 3 — Full Stylist,Makeup Integration,2022-11-14,2022-11-28,2024-11-27,91.5,Expired,Yes
+TRN000040,STY003,Claire Hughes,CON002,RG02,Level 3 — Full Stylist,Business Development,2022-11-14,2022-11-28,2024-11-27,91.5,Expired,Yes
+TRN000041,STY003,Claire Hughes,CON002,RG02,Senior Stylist,Mentoring Skills,2023-04-23,2023-06-20,2025-06-19,81.1,Expired,No
+TRN000042,STY003,Claire Hughes,CON002,RG02,Senior Stylist,Workshop Facilitation,2023-04-23,2023-06-20,2025-06-19,81.1,Expired,No
+TRN000043,STY003,Claire Hughes,CON002,RG02,Senior Stylist,Corporate Clients,2023-04-23,2023-06-20,2025-06-19,81.1,Expired,No
+TRN000044,STY003,Claire Hughes,CON002,RG02,Senior Stylist,Advanced Draping,2023-04-23,2023-06-20,2025-06-19,81.1,Expired,No
+TRN000045,STY004,Lisa Carter,CON002,RG02,Level 1 — Colour,Colour Theory Fundamentals,2020-12-22,2021-01-14,2023-01-14,74.7,Expired,No
+TRN000046,STY004,Lisa Carter,CON002,RG02,Level 1 — Colour,Seasonal Analysis Basics,2020-12-22,2021-01-14,2023-01-14,74.7,Expired,No
+TRN000047,STY004,Lisa Carter,CON002,RG02,Level 1 — Colour,Draping Technique,2020-12-22,2021-01-14,2023-01-14,74.7,Expired,No
+TRN000048,STY004,Lisa Carter,CON002,RG02,Level 1 — Colour,Client Communication,2020-12-22,2021-01-14,2023-01-14,74.7,Expired,No
+TRN000049,STY004,Lisa Carter,CON002,RG02,Level 2 — Style,Body Shape Analysis,2021-07-06,2021-08-10,2023-08-10,71.2,Expired,No
+TRN000050,STY004,Lisa Carter,CON002,RG02,Level 2 — Style,Clothing Lines & Textures,2021-07-06,2021-08-10,2023-08-10,71.2,Expired,No
+TRN000051,STY004,Lisa Carter,CON002,RG02,Level 2 — Style,Style Archetypes,2021-07-06,2021-08-10,2023-08-10,71.2,Expired,No
+TRN000052,STY004,Lisa Carter,CON002,RG02,Level 2 — Style,Wardrobe Building,2021-07-06,2021-08-10,2023-08-10,71.2,Expired,No
+TRN000053,STY004,Lisa Carter,CON002,RG02,Level 3 — Full Stylist,Advanced Colour,2021-12-21,2022-01-10,2024-01-10,79.1,Expired,No
+TRN000054,STY004,Lisa Carter,CON002,RG02,Level 3 — Full Stylist,Advanced Style,2021-12-21,2022-01-10,2024-01-10,79.1,Expired,No
+TRN000055,STY004,Lisa Carter,CON002,RG02,Level 3 — Full Stylist,Makeup Integration,2021-12-21,2022-01-10,2024-01-10,79.1,Expired,No
+TRN000056,STY004,Lisa Carter,CON002,RG02,Level 3 — Full Stylist,Business Development,2021-12-21,2022-01-10,2024-01-10,79.1,Expired,No
+TRN000057,STY004,Lisa Carter,CON002,RG02,Senior Stylist,Mentoring Skills,2022-06-18,2022-08-09,2024-08-08,76.2,Expired,No
+TRN000058,STY004,Lisa Carter,CON002,RG02,Senior Stylist,Workshop Facilitation,2022-06-18,2022-08-09,2024-08-08,76.2,Expired,No
+TRN000059,STY004,Lisa Carter,CON002,RG02,Senior Stylist,Corporate Clients,2022-06-18,2022-08-09,2024-08-08,76.2,Expired,No
+TRN000060,STY004,Lisa Carter,CON002,RG02,Senior Stylist,Advanced Draping,2022-06-18,2022-08-09,2024-08-08,76.2,Expired,No
+TRN000061,STY004,Lisa Carter,CON002,RG02,Master Stylist,Master Practitioner,2022-12-05,2023-02-03,2025-02-02,82.2,Expired,No
+TRN000062,STY004,Lisa Carter,CON002,RG02,Master Stylist,Training Others,2022-12-05,2023-02-03,2025-02-02,82.2,Expired,No
+TRN000063,STY004,Lisa Carter,CON002,RG02,Master Stylist,Quality Assessment,2022-12-05,2023-02-03,2025-02-02,82.2,Expired,No
+TRN000064,STY004,Lisa Carter,CON002,RG02,Master Stylist,Brand Ambassador,2022-12-05,2023-02-03,2025-02-02,82.2,Expired,No
+TRN000065,STY005,Sarah Walsh,CON002,RG02,Level 1 — Colour,Colour Theory Fundamentals,2023-09-14,2023-10-22,2025-10-21,70.4,Expired,No
+TRN000066,STY005,Sarah Walsh,CON002,RG02,Level 1 — Colour,Seasonal Analysis Basics,2023-09-14,2023-10-22,2025-10-21,70.4,Expired,No
+TRN000067,STY005,Sarah Walsh,CON002,RG02,Level 1 — Colour,Draping Technique,2023-09-14,2023-10-22,2025-10-21,70.4,Expired,No
+TRN000068,STY005,Sarah Walsh,CON002,RG02,Level 1 — Colour,Client Communication,2023-09-14,2023-10-22,2025-10-21,70.4,Expired,No
+TRN000069,STY005,Sarah Walsh,CON002,RG02,Level 2 — Style,Body Shape Analysis,2024-03-18,2024-05-11,2026-05-11,87.2,Active,Yes
+TRN000070,STY005,Sarah Walsh,CON002,RG02,Level 2 — Style,Clothing Lines & Textures,2024-03-18,2024-05-11,2026-05-11,87.2,Active,Yes
+TRN000071,STY005,Sarah Walsh,CON002,RG02,Level 2 — Style,Style Archetypes,2024-03-18,2024-05-11,2026-05-11,87.2,Active,Yes
+TRN000072,STY005,Sarah Walsh,CON002,RG02,Level 2 — Style,Wardrobe Building,2024-03-18,2024-05-11,2026-05-11,87.2,Active,Yes
+TRN000073,STY005,Sarah Walsh,CON002,RG02,Level 3 — Full Stylist,Advanced Colour,2024-10-02,2024-11-08,2026-11-08,85.9,Active,Yes
+TRN000074,STY005,Sarah Walsh,CON002,RG02,Level 3 — Full Stylist,Advanced Style,2024-10-02,2024-11-08,2026-11-08,85.9,Active,Yes
+TRN000075,STY005,Sarah Walsh,CON002,RG02,Level 3 — Full Stylist,Makeup Integration,2024-10-02,2024-11-08,2026-11-08,85.9,Active,Yes
+TRN000076,STY005,Sarah Walsh,CON002,RG02,Level 3 — Full Stylist,Business Development,2024-10-02,2024-11-08,2026-11-08,85.9,Active,Yes
+TRN000077,STY006,Anna Singh,CON002,RG02,Level 1 — Colour,Colour Theory Fundamentals,2018-01-25,2018-02-12,2020-02-12,69.4,Expired,No
+TRN000078,STY006,Anna Singh,CON002,RG02,Level 1 — Colour,Seasonal Analysis Basics,2018-01-25,2018-02-12,2020-02-12,69.4,Expired,No
+TRN000079,STY006,Anna Singh,CON002,RG02,Level 1 — Colour,Draping Technique,2018-01-25,2018-02-12,2020-02-12,69.4,Expired,No
+TRN000080,STY006,Anna Singh,CON002,RG02,Level 1 — Colour,Client Communication,2018-01-25,2018-02-12,2020-02-12,69.4,Expired,No
+TRN000081,STY006,Anna Singh,CON002,RG02,Level 2 — Style,Body Shape Analysis,2018-07-09,2018-08-10,2020-08-09,98.5,Expired,Yes
+TRN000082,STY006,Anna Singh,CON002,RG02,Level 2 — Style,Clothing Lines & Textures,2018-07-09,2018-08-10,2020-08-09,98.5,Expired,Yes
+TRN000083,STY006,Anna Singh,CON002,RG02,Level 2 — Style,Style Archetypes,2018-07-09,2018-08-10,2020-08-09,98.5,Expired,Yes
+TRN000084,STY006,Anna Singh,CON002,RG02,Level 2 — Style,Wardrobe Building,2018-07-09,2018-08-10,2020-08-09,98.5,Expired,Yes
+TRN000085,STY006,Anna Singh,CON002,RG02,Level 3 — Full Stylist,Advanced Colour,2019-01-25,2019-02-22,2021-02-21,94.9,Expired,Yes
+TRN000086,STY006,Anna Singh,CON002,RG02,Level 3 — Full Stylist,Advanced Style,2019-01-25,2019-02-22,2021-02-21,94.9,Expired,Yes
+TRN000087,STY006,Anna Singh,CON002,RG02,Level 3 — Full Stylist,Makeup Integration,2019-01-25,2019-02-22,2021-02-21,94.9,Expired,Yes
+TRN000088,STY006,Anna Singh,CON002,RG02,Level 3 — Full Stylist,Business Development,2019-01-25,2019-02-22,2021-02-21,94.9,Expired,Yes
+TRN000089,STY007,Kate Okoye,CON003,RG03,Level 1 — Colour,Colour Theory Fundamentals,2020-09-19,2020-10-20,2022-10-20,82.1,Expired,No
+TRN000090,STY007,Kate Okoye,CON003,RG03,Level 1 — Colour,Seasonal Analysis Basics,2020-09-19,2020-10-20,2022-10-20,82.1,Expired,No
+TRN000091,STY007,Kate Okoye,CON003,RG03,Level 1 — Colour,Draping Technique,2020-09-19,2020-10-20,2022-10-20,82.1,Expired,No
+TRN000092,STY007,Kate Okoye,CON003,RG03,Level 1 — Colour,Client Communication,2020-09-19,2020-10-20,2022-10-20,82.1,Expired,No
+TRN000093,STY007,Kate Okoye,CON003,RG03,Level 2 — Style,Body Shape Analysis,2021-04-01,2021-05-08,2023-05-08,73.0,Expired,No
+TRN000094,STY007,Kate Okoye,CON003,RG03,Level 2 — Style,Clothing Lines & Textures,2021-04-01,2021-05-08,2023-05-08,73.0,Expired,No
+TRN000095,STY007,Kate Okoye,CON003,RG03,Level 2 — Style,Style Archetypes,2021-04-01,2021-05-08,2023-05-08,73.0,Expired,No
+TRN000096,STY007,Kate Okoye,CON003,RG03,Level 2 — Style,Wardrobe Building,2021-04-01,2021-05-08,2023-05-08,73.0,Expired,No
+TRN000097,STY007,Kate Okoye,CON003,RG03,Level 3 — Full Stylist,Advanced Colour,2021-09-13,2021-10-10,2023-10-10,88.8,Expired,Yes
+TRN000098,STY007,Kate Okoye,CON003,RG03,Level 3 — Full Stylist,Advanced Style,2021-09-13,2021-10-10,2023-10-10,88.8,Expired,Yes
+TRN000099,STY007,Kate Okoye,CON003,RG03,Level 3 — Full Stylist,Makeup Integration,2021-09-13,2021-10-10,2023-10-10,88.8,Expired,Yes
+TRN000100,STY007,Kate Okoye,CON003,RG03,Level 3 — Full Stylist,Business Development,2021-09-13,2021-10-10,2023-10-10,88.8,Expired,Yes
+TRN000101,STY007,Kate Okoye,CON003,RG03,Senior Stylist,Mentoring Skills,2022-03-23,2022-05-19,2024-05-18,88.1,Expired,Yes
+TRN000102,STY007,Kate Okoye,CON003,RG03,Senior Stylist,Workshop Facilitation,2022-03-23,2022-05-19,2024-05-18,88.1,Expired,Yes
+TRN000103,STY007,Kate Okoye,CON003,RG03,Senior Stylist,Corporate Clients,2022-03-23,2022-05-19,2024-05-18,88.1,Expired,Yes
+TRN000104,STY007,Kate Okoye,CON003,RG03,Senior Stylist,Advanced Draping,2022-03-23,2022-05-19,2024-05-18,88.1,Expired,Yes
+TRN000105,STY008,Helen Chen,CON003,RG03,Level 1 — Colour,Colour Theory Fundamentals,2018-10-30,2018-12-23,2020-12-22,73.3,Expired,No
+TRN000106,STY008,Helen Chen,CON003,RG03,Level 1 — Colour,Seasonal Analysis Basics,2018-10-30,2018-12-23,2020-12-22,73.3,Expired,No
+TRN000107,STY008,Helen Chen,CON003,RG03,Level 1 — Colour,Draping Technique,2018-10-30,2018-12-23,2020-12-22,73.3,Expired,No
+TRN000108,STY008,Helen Chen,CON003,RG03,Level 1 — Colour,Client Communication,2018-10-30,2018-12-23,2020-12-22,73.3,Expired,No
+TRN000109,STY009,Fiona Williams,CON003,RG03,Level 1 — Colour,Colour Theory Fundamentals,2023-12-25,2024-01-23,2026-01-22,73.1,Expired,No
+TRN000110,STY009,Fiona Williams,CON003,RG03,Level 1 — Colour,Seasonal Analysis Basics,2023-12-25,2024-01-23,2026-01-22,73.1,Expired,No
+TRN000111,STY009,Fiona Williams,CON003,RG03,Level 1 — Colour,Draping Technique,2023-12-25,2024-01-23,2026-01-22,73.1,Expired,No
+TRN000112,STY009,Fiona Williams,CON003,RG03,Level 1 — Colour,Client Communication,2023-12-25,2024-01-23,2026-01-22,73.1,Expired,No
+TRN000113,STY009,Fiona Williams,CON003,RG03,Level 2 — Style,Body Shape Analysis,2024-06-11,2024-07-12,2026-07-12,98.7,Active,Yes
+TRN000114,STY009,Fiona Williams,CON003,RG03,Level 2 — Style,Clothing Lines & Textures,2024-06-11,2024-07-12,2026-07-12,98.7,Active,Yes
+TRN000115,STY009,Fiona Williams,CON003,RG03,Level 2 — Style,Style Archetypes,2024-06-11,2024-07-12,2026-07-12,98.7,Active,Yes
+TRN000116,STY009,Fiona Williams,CON003,RG03,Level 2 — Style,Wardrobe Building,2024-06-11,2024-07-12,2026-07-12,98.7,Active,Yes
+TRN000117,STY009,Fiona Williams,CON003,RG03,Level 3 — Full Stylist,Advanced Colour,2024-12-16,2025-02-12,2027-02-12,85.3,Active,Yes
+TRN000118,STY009,Fiona Williams,CON003,RG03,Level 3 — Full Stylist,Advanced Style,2024-12-16,2025-02-12,2027-02-12,85.3,Active,Yes
+TRN000119,STY009,Fiona Williams,CON003,RG03,Level 3 — Full Stylist,Makeup Integration,2024-12-16,2025-02-12,2027-02-12,85.3,Active,Yes
+TRN000120,STY009,Fiona Williams,CON003,RG03,Level 3 — Full Stylist,Business Development,2024-12-16,2025-02-12,2027-02-12,85.3,Active,Yes
+TRN000121,STY010,Rachel Johnson,CON004,RG04,Level 1 — Colour,Colour Theory Fundamentals,2021-07-21,2021-08-24,2023-08-24,94.1,Expired,Yes
+TRN000122,STY010,Rachel Johnson,CON004,RG04,Level 1 — Colour,Seasonal Analysis Basics,2021-07-21,2021-08-24,2023-08-24,94.1,Expired,Yes
+TRN000123,STY010,Rachel Johnson,CON004,RG04,Level 1 — Colour,Draping Technique,2021-07-21,2021-08-24,2023-08-24,94.1,Expired,Yes
+TRN000124,STY010,Rachel Johnson,CON004,RG04,Level 1 — Colour,Client Communication,2021-07-21,2021-08-24,2023-08-24,94.1,Expired,Yes
+TRN000125,STY010,Rachel Johnson,CON004,RG04,Level 2 — Style,Body Shape Analysis,2022-01-20,2022-02-06,2024-02-06,75.1,Expired,No
+TRN000126,STY010,Rachel Johnson,CON004,RG04,Level 2 — Style,Clothing Lines & Textures,2022-01-20,2022-02-06,2024-02-06,75.1,Expired,No
+TRN000127,STY010,Rachel Johnson,CON004,RG04,Level 2 — Style,Style Archetypes,2022-01-20,2022-02-06,2024-02-06,75.1,Expired,No
+TRN000128,STY010,Rachel Johnson,CON004,RG04,Level 2 — Style,Wardrobe Building,2022-01-20,2022-02-06,2024-02-06,75.1,Expired,No
+TRN000129,STY010,Rachel Johnson,CON004,RG04,Level 3 — Full Stylist,Advanced Colour,2022-06-26,2022-07-30,2024-07-29,80.4,Expired,No
+TRN000130,STY010,Rachel Johnson,CON004,RG04,Level 3 — Full Stylist,Advanced Style,2022-06-26,2022-07-30,2024-07-29,80.4,Expired,No
+TRN000131,STY010,Rachel Johnson,CON004,RG04,Level 3 — Full Stylist,Makeup Integration,2022-06-26,2022-07-30,2024-07-29,80.4,Expired,No
+TRN000132,STY010,Rachel Johnson,CON004,RG04,Level 3 — Full Stylist,Business Development,2022-06-26,2022-07-30,2024-07-29,80.4,Expired,No
+TRN000133,STY011,James Smith,CON004,RG04,Level 1 — Colour,Colour Theory Fundamentals,2018-09-22,2018-10-19,2020-10-18,96.3,Expired,Yes
+TRN000134,STY011,James Smith,CON004,RG04,Level 1 — Colour,Seasonal Analysis Basics,2018-09-22,2018-10-19,2020-10-18,96.3,Expired,Yes
+TRN000135,STY011,James Smith,CON004,RG04,Level 1 — Colour,Draping Technique,2018-09-22,2018-10-19,2020-10-18,96.3,Expired,Yes
+TRN000136,STY011,James Smith,CON004,RG04,Level 1 — Colour,Client Communication,2018-09-22,2018-10-19,2020-10-18,96.3,Expired,Yes
+TRN000137,STY012,David Brown,CON004,RG04,Level 1 — Colour,Colour Theory Fundamentals,2018-09-17,2018-11-15,2020-11-14,77.8,Expired,No
+TRN000138,STY012,David Brown,CON004,RG04,Level 1 — Colour,Seasonal Analysis Basics,2018-09-17,2018-11-15,2020-11-14,77.8,Expired,No
+TRN000139,STY012,David Brown,CON004,RG04,Level 1 — Colour,Draping Technique,2018-09-17,2018-11-15,2020-11-14,77.8,Expired,No
+TRN000140,STY012,David Brown,CON004,RG04,Level 1 — Colour,Client Communication,2018-09-17,2018-11-15,2020-11-14,77.8,Expired,No
+TRN000141,STY012,David Brown,CON004,RG04,Level 2 — Style,Body Shape Analysis,2019-03-18,2019-05-02,2021-05-01,80.3,Expired,No
+TRN000142,STY012,David Brown,CON004,RG04,Level 2 — Style,Clothing Lines & Textures,2019-03-18,2019-05-02,2021-05-01,80.3,Expired,No
+TRN000143,STY012,David Brown,CON004,RG04,Level 2 — Style,Style Archetypes,2019-03-18,2019-05-02,2021-05-01,80.3,Expired,No
+TRN000144,STY012,David Brown,CON004,RG04,Level 2 — Style,Wardrobe Building,2019-03-18,2019-05-02,2021-05-01,80.3,Expired,No
+TRN000145,STY013,Mark Taylor,CON004,RG04,Level 1 — Colour,Colour Theory Fundamentals,2021-03-15,2021-05-09,2023-05-09,82.2,Expired,No
+TRN000146,STY013,Mark Taylor,CON004,RG04,Level 1 — Colour,Seasonal Analysis Basics,2021-03-15,2021-05-09,2023-05-09,82.2,Expired,No
+TRN000147,STY013,Mark Taylor,CON004,RG04,Level 1 — Colour,Draping Technique,2021-03-15,2021-05-09,2023-05-09,82.2,Expired,No
+TRN000148,STY013,Mark Taylor,CON004,RG04,Level 1 — Colour,Client Communication,2021-03-15,2021-05-09,2023-05-09,82.2,Expired,No
+TRN000149,STY014,Tom Davis,CON005,RG05,Level 1 — Colour,Colour Theory Fundamentals,2023-04-30,2023-05-22,2025-05-21,75.6,Expired,No
+TRN000150,STY014,Tom Davis,CON005,RG05,Level 1 — Colour,Seasonal Analysis Basics,2023-04-30,2023-05-22,2025-05-21,75.6,Expired,No
+TRN000151,STY014,Tom Davis,CON005,RG05,Level 1 — Colour,Draping Technique,2023-04-30,2023-05-22,2025-05-21,75.6,Expired,No
+TRN000152,STY014,Tom Davis,CON005,RG05,Level 1 — Colour,Client Communication,2023-04-30,2023-05-22,2025-05-21,75.6,Expired,No
+TRN000153,STY014,Tom Davis,CON005,RG05,Level 2 — Style,Body Shape Analysis,2023-11-05,2023-12-23,2025-12-22,76.1,Expired,No
+TRN000154,STY014,Tom Davis,CON005,RG05,Level 2 — Style,Clothing Lines & Textures,2023-11-05,2023-12-23,2025-12-22,76.1,Expired,No
+TRN000155,STY014,Tom Davis,CON005,RG05,Level 2 — Style,Style Archetypes,2023-11-05,2023-12-23,2025-12-22,76.1,Expired,No
+TRN000156,STY014,Tom Davis,CON005,RG05,Level 2 — Style,Wardrobe Building,2023-11-05,2023-12-23,2025-12-22,76.1,Expired,No
+TRN000157,STY014,Tom Davis,CON005,RG05,Level 3 — Full Stylist,Advanced Colour,2024-05-04,2024-06-14,2026-06-14,95.8,Active,Yes
+TRN000158,STY014,Tom Davis,CON005,RG05,Level 3 — Full Stylist,Advanced Style,2024-05-04,2024-06-14,2026-06-14,95.8,Active,Yes
+TRN000159,STY014,Tom Davis,CON005,RG05,Level 3 — Full Stylist,Makeup Integration,2024-05-04,2024-06-14,2026-06-14,95.8,Active,Yes
+TRN000160,STY014,Tom Davis,CON005,RG05,Level 3 — Full Stylist,Business Development,2024-05-04,2024-06-14,2026-06-14,95.8,Active,Yes
+TRN000161,STY015,Raj Miller,CON005,RG05,Level 1 — Colour,Colour Theory Fundamentals,2023-04-09,2023-05-16,2025-05-15,74.8,Expired,No
+TRN000162,STY015,Raj Miller,CON005,RG05,Level 1 — Colour,Seasonal Analysis Basics,2023-04-09,2023-05-16,2025-05-15,74.8,Expired,No
+TRN000163,STY015,Raj Miller,CON005,RG05,Level 1 — Colour,Draping Technique,2023-04-09,2023-05-16,2025-05-15,74.8,Expired,No
+TRN000164,STY015,Raj Miller,CON005,RG05,Level 1 — Colour,Client Communication,2023-04-09,2023-05-16,2025-05-15,74.8,Expired,No
+TRN000165,STY015,Raj Miller,CON005,RG05,Level 2 — Style,Body Shape Analysis,2023-09-28,2023-11-13,2025-11-12,83.3,Expired,No
+TRN000166,STY015,Raj Miller,CON005,RG05,Level 2 — Style,Clothing Lines & Textures,2023-09-28,2023-11-13,2025-11-12,83.3,Expired,No
+TRN000167,STY015,Raj Miller,CON005,RG05,Level 2 — Style,Style Archetypes,2023-09-28,2023-11-13,2025-11-12,83.3,Expired,No
+TRN000168,STY015,Raj Miller,CON005,RG05,Level 2 — Style,Wardrobe Building,2023-09-28,2023-11-13,2025-11-12,83.3,Expired,No
+TRN000169,STY016,Liam Wilson,CON005,RG05,Level 1 — Colour,Colour Theory Fundamentals,2020-11-08,2020-11-25,2022-11-25,94.7,Expired,Yes
+TRN000170,STY016,Liam Wilson,CON005,RG05,Level 1 — Colour,Seasonal Analysis Basics,2020-11-08,2020-11-25,2022-11-25,94.7,Expired,Yes
+TRN000171,STY016,Liam Wilson,CON005,RG05,Level 1 — Colour,Draping Technique,2020-11-08,2020-11-25,2022-11-25,94.7,Expired,Yes
+TRN000172,STY016,Liam Wilson,CON005,RG05,Level 1 — Colour,Client Communication,2020-11-08,2020-11-25,2022-11-25,94.7,Expired,Yes
+TRN000173,STY016,Liam Wilson,CON005,RG05,Level 2 — Style,Body Shape Analysis,2021-04-17,2021-06-10,2023-06-10,73.0,Expired,No
+TRN000174,STY016,Liam Wilson,CON005,RG05,Level 2 — Style,Clothing Lines & Textures,2021-04-17,2021-06-10,2023-06-10,73.0,Expired,No
+TRN000175,STY016,Liam Wilson,CON005,RG05,Level 2 — Style,Style Archetypes,2021-04-17,2021-06-10,2023-06-10,73.0,Expired,No
+TRN000176,STY016,Liam Wilson,CON005,RG05,Level 2 — Style,Wardrobe Building,2021-04-17,2021-06-10,2023-06-10,73.0,Expired,No
+TRN000177,STY016,Liam Wilson,CON005,RG05,Level 3 — Full Stylist,Advanced Colour,2021-10-31,2021-12-11,2023-12-11,86.5,Expired,Yes
+TRN000178,STY016,Liam Wilson,CON005,RG05,Level 3 — Full Stylist,Advanced Style,2021-10-31,2021-12-11,2023-12-11,86.5,Expired,Yes
+TRN000179,STY016,Liam Wilson,CON005,RG05,Level 3 — Full Stylist,Makeup Integration,2021-10-31,2021-12-11,2023-12-11,86.5,Expired,Yes
+TRN000180,STY016,Liam Wilson,CON005,RG05,Level 3 — Full Stylist,Business Development,2021-10-31,2021-12-11,2023-12-11,86.5,Expired,Yes
+TRN000181,STY016,Liam Wilson,CON005,RG05,Senior Stylist,Mentoring Skills,2022-04-20,2022-05-28,2024-05-27,86.5,Expired,Yes
+TRN000182,STY016,Liam Wilson,CON005,RG05,Senior Stylist,Workshop Facilitation,2022-04-20,2022-05-28,2024-05-27,86.5,Expired,Yes
+TRN000183,STY016,Liam Wilson,CON005,RG05,Senior Stylist,Corporate Clients,2022-04-20,2022-05-28,2024-05-27,86.5,Expired,Yes
+TRN000184,STY016,Liam Wilson,CON005,RG05,Senior Stylist,Advanced Draping,2022-04-20,2022-05-28,2024-05-27,86.5,Expired,Yes
+TRN000185,STY017,Oliver Moore,CON005,RG05,Level 1 — Colour,Colour Theory Fundamentals,2020-11-03,2020-12-20,2022-12-20,75.8,Expired,No
+TRN000186,STY017,Oliver Moore,CON005,RG05,Level 1 — Colour,Seasonal Analysis Basics,2020-11-03,2020-12-20,2022-12-20,75.8,Expired,No
+TRN000187,STY017,Oliver Moore,CON005,RG05,Level 1 — Colour,Draping Technique,2020-11-03,2020-12-20,2022-12-20,75.8,Expired,No
+TRN000188,STY017,Oliver Moore,CON005,RG05,Level 1 — Colour,Client Communication,2020-11-03,2020-12-20,2022-12-20,75.8,Expired,No
+TRN000189,STY018,Harry Anderson,CON006,RG06,Level 1 — Colour,Colour Theory Fundamentals,2018-03-19,2018-04-02,2020-04-01,89.1,Expired,Yes
+TRN000190,STY018,Harry Anderson,CON006,RG06,Level 1 — Colour,Seasonal Analysis Basics,2018-03-19,2018-04-02,2020-04-01,89.1,Expired,Yes
+TRN000191,STY018,Harry Anderson,CON006,RG06,Level 1 — Colour,Draping Technique,2018-03-19,2018-04-02,2020-04-01,89.1,Expired,Yes
+TRN000192,STY018,Harry Anderson,CON006,RG06,Level 1 — Colour,Client Communication,2018-03-19,2018-04-02,2020-04-01,89.1,Expired,Yes
+TRN000193,STY019,Sam Thomas,CON006,RG06,Level 1 — Colour,Colour Theory Fundamentals,2018-09-01,2018-10-28,2020-10-27,95.4,Expired,Yes
+TRN000194,STY019,Sam Thomas,CON006,RG06,Level 1 — Colour,Seasonal Analysis Basics,2018-09-01,2018-10-28,2020-10-27,95.4,Expired,Yes
+TRN000195,STY019,Sam Thomas,CON006,RG06,Level 1 — Colour,Draping Technique,2018-09-01,2018-10-28,2020-10-27,95.4,Expired,Yes
+TRN000196,STY019,Sam Thomas,CON006,RG06,Level 1 — Colour,Client Communication,2018-09-01,2018-10-28,2020-10-27,95.4,Expired,Yes
+TRN000197,STY019,Sam Thomas,CON006,RG06,Level 2 — Style,Body Shape Analysis,2019-03-21,2019-04-21,2021-04-20,91.8,Expired,Yes
+TRN000198,STY019,Sam Thomas,CON006,RG06,Level 2 — Style,Clothing Lines & Textures,2019-03-21,2019-04-21,2021-04-20,91.8,Expired,Yes
+TRN000199,STY019,Sam Thomas,CON006,RG06,Level 2 — Style,Style Archetypes,2019-03-21,2019-04-21,2021-04-20,91.8,Expired,Yes
+TRN000200,STY019,Sam Thomas,CON006,RG06,Level 2 — Style,Wardrobe Building,2019-03-21,2019-04-21,2021-04-20,91.8,Expired,Yes
+TRN000201,STY020,Zoe Jackson,CON007,RG07,Level 1 — Colour,Colour Theory Fundamentals,2024-04-05,2024-04-26,2026-04-26,77.1,Active,No
+TRN000202,STY020,Zoe Jackson,CON007,RG07,Level 1 — Colour,Seasonal Analysis Basics,2024-04-05,2024-04-26,2026-04-26,77.1,Active,No
+TRN000203,STY020,Zoe Jackson,CON007,RG07,Level 1 — Colour,Draping Technique,2024-04-05,2024-04-26,2026-04-26,77.1,Active,No
+TRN000204,STY020,Zoe Jackson,CON007,RG07,Level 1 — Colour,Client Communication,2024-04-05,2024-04-26,2026-04-26,77.1,Active,No
+TRN000205,STY020,Zoe Jackson,CON007,RG07,Level 2 — Style,Body Shape Analysis,2024-09-27,2024-11-09,2026-11-09,68.1,Active,No
+TRN000206,STY020,Zoe Jackson,CON007,RG07,Level 2 — Style,Clothing Lines & Textures,2024-09-27,2024-11-09,2026-11-09,68.1,Active,No
+TRN000207,STY020,Zoe Jackson,CON007,RG07,Level 2 — Style,Style Archetypes,2024-09-27,2024-11-09,2026-11-09,68.1,Active,No
+TRN000208,STY020,Zoe Jackson,CON007,RG07,Level 2 — Style,Wardrobe Building,2024-09-27,2024-11-09,2026-11-09,68.1,Active,No
+TRN000209,STY021,Amy White,CON007,RG07,Level 1 — Colour,Colour Theory Fundamentals,2024-02-22,2024-04-22,2026-04-22,76.2,Active,No
+TRN000210,STY021,Amy White,CON007,RG07,Level 1 — Colour,Seasonal Analysis Basics,2024-02-22,2024-04-22,2026-04-22,76.2,Active,No
+TRN000211,STY021,Amy White,CON007,RG07,Level 1 — Colour,Draping Technique,2024-02-22,2024-04-22,2026-04-22,76.2,Active,No
+TRN000212,STY021,Amy White,CON007,RG07,Level 1 — Colour,Client Communication,2024-02-22,2024-04-22,2026-04-22,76.2,Active,No
+TRN000213,STY022,Lucy Harris,CON007,RG07,Level 1 — Colour,Colour Theory Fundamentals,2019-10-23,2019-11-17,2021-11-16,83.7,Expired,No
+TRN000214,STY022,Lucy Harris,CON007,RG07,Level 1 — Colour,Seasonal Analysis Basics,2019-10-23,2019-11-17,2021-11-16,83.7,Expired,No
+TRN000215,STY022,Lucy Harris,CON007,RG07,Level 1 — Colour,Draping Technique,2019-10-23,2019-11-17,2021-11-16,83.7,Expired,No
+TRN000216,STY022,Lucy Harris,CON007,RG07,Level 1 — Colour,Client Communication,2019-10-23,2019-11-17,2021-11-16,83.7,Expired,No
+TRN000217,STY022,Lucy Harris,CON007,RG07,Level 2 — Style,Body Shape Analysis,2020-04-07,2020-05-31,2022-05-31,77.3,Expired,No
+TRN000218,STY022,Lucy Harris,CON007,RG07,Level 2 — Style,Clothing Lines & Textures,2020-04-07,2020-05-31,2022-05-31,77.3,Expired,No
+TRN000219,STY022,Lucy Harris,CON007,RG07,Level 2 — Style,Style Archetypes,2020-04-07,2020-05-31,2022-05-31,77.3,Expired,No
+TRN000220,STY022,Lucy Harris,CON007,RG07,Level 2 — Style,Wardrobe Building,2020-04-07,2020-05-31,2022-05-31,77.3,Expired,No
+TRN000221,STY022,Lucy Harris,CON007,RG07,Level 3 — Full Stylist,Advanced Colour,2020-10-21,2020-12-06,2022-12-06,86.9,Expired,Yes
+TRN000222,STY022,Lucy Harris,CON007,RG07,Level 3 — Full Stylist,Advanced Style,2020-10-21,2020-12-06,2022-12-06,86.9,Expired,Yes
+TRN000223,STY022,Lucy Harris,CON007,RG07,Level 3 — Full Stylist,Makeup Integration,2020-10-21,2020-12-06,2022-12-06,86.9,Expired,Yes
+TRN000224,STY022,Lucy Harris,CON007,RG07,Level 3 — Full Stylist,Business Development,2020-10-21,2020-12-06,2022-12-06,86.9,Expired,Yes
+TRN000225,STY023,Natalie Martin,CON008,RG08,Level 1 — Colour,Colour Theory Fundamentals,2022-07-16,2022-08-22,2024-08-21,91.6,Expired,Yes
+TRN000226,STY023,Natalie Martin,CON008,RG08,Level 1 — Colour,Seasonal Analysis Basics,2022-07-16,2022-08-22,2024-08-21,91.6,Expired,Yes
+TRN000227,STY023,Natalie Martin,CON008,RG08,Level 1 — Colour,Draping Technique,2022-07-16,2022-08-22,2024-08-21,91.6,Expired,Yes
+TRN000228,STY023,Natalie Martin,CON008,RG08,Level 1 — Colour,Client Communication,2022-07-16,2022-08-22,2024-08-21,91.6,Expired,Yes
+TRN000229,STY023,Natalie Martin,CON008,RG08,Level 2 — Style,Body Shape Analysis,2023-01-25,2023-03-13,2025-03-12,96.5,Expired,Yes
+TRN000230,STY023,Natalie Martin,CON008,RG08,Level 2 — Style,Clothing Lines & Textures,2023-01-25,2023-03-13,2025-03-12,96.5,Expired,Yes
+TRN000231,STY023,Natalie Martin,CON008,RG08,Level 2 — Style,Style Archetypes,2023-01-25,2023-03-13,2025-03-12,96.5,Expired,Yes
+TRN000232,STY023,Natalie Martin,CON008,RG08,Level 2 — Style,Wardrobe Building,2023-01-25,2023-03-13,2025-03-12,96.5,Expired,Yes
+TRN000233,STY023,Natalie Martin,CON008,RG08,Level 3 — Full Stylist,Advanced Colour,2023-07-26,2023-08-29,2025-08-28,83.1,Expired,No
+TRN000234,STY023,Natalie Martin,CON008,RG08,Level 3 — Full Stylist,Advanced Style,2023-07-26,2023-08-29,2025-08-28,83.1,Expired,No
+TRN000235,STY023,Natalie Martin,CON008,RG08,Level 3 — Full Stylist,Makeup Integration,2023-07-26,2023-08-29,2025-08-28,83.1,Expired,No
+TRN000236,STY023,Natalie Martin,CON008,RG08,Level 3 — Full Stylist,Business Development,2023-07-26,2023-08-29,2025-08-28,83.1,Expired,No
+TRN000237,STY024,Charlotte Thompson,CON008,RG08,Level 1 — Colour,Colour Theory Fundamentals,2024-07-21,2024-08-27,2026-08-27,95.2,Active,Yes
+TRN000238,STY024,Charlotte Thompson,CON008,RG08,Level 1 — Colour,Seasonal Analysis Basics,2024-07-21,2024-08-27,2026-08-27,95.2,Active,Yes
+TRN000239,STY024,Charlotte Thompson,CON008,RG08,Level 1 — Colour,Draping Technique,2024-07-21,2024-08-27,2026-08-27,95.2,Active,Yes
+TRN000240,STY024,Charlotte Thompson,CON008,RG08,Level 1 — Colour,Client Communication,2024-07-21,2024-08-27,2026-08-27,95.2,Active,Yes
+TRN000241,STY025,Jessica Garcia,CON009,RG09,Level 1 — Colour,Colour Theory Fundamentals,2022-07-06,2022-08-08,2024-08-07,75.4,Expired,No
+TRN000242,STY025,Jessica Garcia,CON009,RG09,Level 1 — Colour,Seasonal Analysis Basics,2022-07-06,2022-08-08,2024-08-07,75.4,Expired,No
+TRN000243,STY025,Jessica Garcia,CON009,RG09,Level 1 — Colour,Draping Technique,2022-07-06,2022-08-08,2024-08-07,75.4,Expired,No
+TRN000244,STY025,Jessica Garcia,CON009,RG09,Level 1 — Colour,Client Communication,2022-07-06,2022-08-08,2024-08-07,75.4,Expired,No
+TRN000245,STY025,Jessica Garcia,CON009,RG09,Level 2 — Style,Body Shape Analysis,2022-12-14,2023-02-02,2025-02-01,97.4,Expired,Yes
+TRN000246,STY025,Jessica Garcia,CON009,RG09,Level 2 — Style,Clothing Lines & Textures,2022-12-14,2023-02-02,2025-02-01,97.4,Expired,Yes
+TRN000247,STY025,Jessica Garcia,CON009,RG09,Level 2 — Style,Style Archetypes,2022-12-14,2023-02-02,2025-02-01,97.4,Expired,Yes
+TRN000248,STY025,Jessica Garcia,CON009,RG09,Level 2 — Style,Wardrobe Building,2022-12-14,2023-02-02,2025-02-01,97.4,Expired,Yes
+TRN000249,STY026,Priya Robinson,CON009,RG09,Level 1 — Colour,Colour Theory Fundamentals,2023-02-23,2023-04-24,2025-04-23,83.1,Expired,No
+TRN000250,STY026,Priya Robinson,CON009,RG09,Level 1 — Colour,Seasonal Analysis Basics,2023-02-23,2023-04-24,2025-04-23,83.1,Expired,No
+TRN000251,STY026,Priya Robinson,CON009,RG09,Level 1 — Colour,Draping Technique,2023-02-23,2023-04-24,2025-04-23,83.1,Expired,No
+TRN000252,STY026,Priya Robinson,CON009,RG09,Level 1 — Colour,Client Communication,2023-02-23,2023-04-24,2025-04-23,83.1,Expired,No
+TRN000253,STY026,Priya Robinson,CON009,RG09,Level 2 — Style,Body Shape Analysis,2023-08-22,2023-10-09,2025-10-08,91.7,Expired,Yes
+TRN000254,STY026,Priya Robinson,CON009,RG09,Level 2 — Style,Clothing Lines & Textures,2023-08-22,2023-10-09,2025-10-08,91.7,Expired,Yes
+TRN000255,STY026,Priya Robinson,CON009,RG09,Level 2 — Style,Style Archetypes,2023-08-22,2023-10-09,2025-10-08,91.7,Expired,Yes
+TRN000256,STY026,Priya Robinson,CON009,RG09,Level 2 — Style,Wardrobe Building,2023-08-22,2023-10-09,2025-10-08,91.7,Expired,Yes
+TRN000257,STY026,Priya Robinson,CON009,RG09,Level 3 — Full Stylist,Advanced Colour,2024-02-20,2024-04-16,2026-04-16,82.7,Active,No
+TRN000258,STY026,Priya Robinson,CON009,RG09,Level 3 — Full Stylist,Advanced Style,2024-02-20,2024-04-16,2026-04-16,82.7,Active,No
+TRN000259,STY026,Priya Robinson,CON009,RG09,Level 3 — Full Stylist,Makeup Integration,2024-02-20,2024-04-16,2026-04-16,82.7,Active,No
+TRN000260,STY026,Priya Robinson,CON009,RG09,Level 3 — Full Stylist,Business Development,2024-02-20,2024-04-16,2026-04-16,82.7,Active,No
+TRN000261,STY026,Priya Robinson,CON009,RG09,Senior Stylist,Mentoring Skills,2024-08-31,2024-09-24,2026-09-24,76.2,Active,No
+TRN000262,STY026,Priya Robinson,CON009,RG09,Senior Stylist,Workshop Facilitation,2024-08-31,2024-09-24,2026-09-24,76.2,Active,No
+TRN000263,STY026,Priya Robinson,CON009,RG09,Senior Stylist,Corporate Clients,2024-08-31,2024-09-24,2026-09-24,76.2,Active,No
+TRN000264,STY026,Priya Robinson,CON009,RG09,Senior Stylist,Advanced Draping,2024-08-31,2024-09-24,2026-09-24,76.2,Active,No
+TRN000265,STY026,Priya Robinson,CON009,RG09,Master Stylist,Master Practitioner,2025-03-09,2025-04-30,2027-04-30,81.1,Active,No
+TRN000266,STY026,Priya Robinson,CON009,RG09,Master Stylist,Training Others,2025-03-09,2025-04-30,2027-04-30,81.1,Active,No
+TRN000267,STY026,Priya Robinson,CON009,RG09,Master Stylist,Quality Assessment,2025-03-09,2025-04-30,2027-04-30,81.1,Active,No
+TRN000268,STY026,Priya Robinson,CON009,RG09,Master Stylist,Brand Ambassador,2025-03-09,2025-04-30,2027-04-30,81.1,Active,No
+TRN000269,STY027,Aisha Clark,CON009,RG09,Level 1 — Colour,Colour Theory Fundamentals,2018-10-15,2018-12-02,2020-12-01,91.4,Expired,Yes
+TRN000270,STY027,Aisha Clark,CON009,RG09,Level 1 — Colour,Seasonal Analysis Basics,2018-10-15,2018-12-02,2020-12-01,91.4,Expired,Yes
+TRN000271,STY027,Aisha Clark,CON009,RG09,Level 1 — Colour,Draping Technique,2018-10-15,2018-12-02,2020-12-01,91.4,Expired,Yes
+TRN000272,STY027,Aisha Clark,CON009,RG09,Level 1 — Colour,Client Communication,2018-10-15,2018-12-02,2020-12-01,91.4,Expired,Yes
+TRN000273,STY027,Aisha Clark,CON009,RG09,Level 2 — Style,Body Shape Analysis,2019-04-29,2019-05-25,2021-05-24,90.1,Expired,Yes
+TRN000274,STY027,Aisha Clark,CON009,RG09,Level 2 — Style,Clothing Lines & Textures,2019-04-29,2019-05-25,2021-05-24,90.1,Expired,Yes
+TRN000275,STY027,Aisha Clark,CON009,RG09,Level 2 — Style,Style Archetypes,2019-04-29,2019-05-25,2021-05-24,90.1,Expired,Yes
+TRN000276,STY027,Aisha Clark,CON009,RG09,Level 2 — Style,Wardrobe Building,2019-04-29,2019-05-25,2021-05-24,90.1,Expired,Yes
+TRN000277,STY028,Hannah Lewis,CON009,RG09,Level 1 — Colour,Colour Theory Fundamentals,2023-12-19,2024-02-13,2026-02-12,88.1,Active,Yes
+TRN000278,STY028,Hannah Lewis,CON009,RG09,Level 1 — Colour,Seasonal Analysis Basics,2023-12-19,2024-02-13,2026-02-12,88.1,Active,Yes
+TRN000279,STY028,Hannah Lewis,CON009,RG09,Level 1 — Colour,Draping Technique,2023-12-19,2024-02-13,2026-02-12,88.1,Active,Yes
+TRN000280,STY028,Hannah Lewis,CON009,RG09,Level 1 — Colour,Client Communication,2023-12-19,2024-02-13,2026-02-12,88.1,Active,Yes
+TRN000281,STY028,Hannah Lewis,CON009,RG09,Level 2 — Style,Body Shape Analysis,2024-06-18,2024-08-04,2026-08-04,82.0,Active,No
+TRN000282,STY028,Hannah Lewis,CON009,RG09,Level 2 — Style,Clothing Lines & Textures,2024-06-18,2024-08-04,2026-08-04,82.0,Active,No
+TRN000283,STY028,Hannah Lewis,CON009,RG09,Level 2 — Style,Style Archetypes,2024-06-18,2024-08-04,2026-08-04,82.0,Active,No
+TRN000284,STY028,Hannah Lewis,CON009,RG09,Level 2 — Style,Wardrobe Building,2024-06-18,2024-08-04,2026-08-04,82.0,Active,No
+TRN000285,STY028,Hannah Lewis,CON009,RG09,Level 3 — Full Stylist,Advanced Colour,2024-12-08,2025-01-05,2027-01-05,70.0,Active,No
+TRN000286,STY028,Hannah Lewis,CON009,RG09,Level 3 — Full Stylist,Advanced Style,2024-12-08,2025-01-05,2027-01-05,70.0,Active,No
+TRN000287,STY028,Hannah Lewis,CON009,RG09,Level 3 — Full Stylist,Makeup Integration,2024-12-08,2025-01-05,2027-01-05,70.0,Active,No
+TRN000288,STY028,Hannah Lewis,CON009,RG09,Level 3 — Full Stylist,Business Development,2024-12-08,2025-01-05,2027-01-05,70.0,Active,No
+TRN000289,STY029,Laura Lee,CON010,RG10,Level 1 — Colour,Colour Theory Fundamentals,2024-03-16,2024-05-06,2026-05-06,85.2,Active,Yes
+TRN000290,STY029,Laura Lee,CON010,RG10,Level 1 — Colour,Seasonal Analysis Basics,2024-03-16,2024-05-06,2026-05-06,85.2,Active,Yes
+TRN000291,STY029,Laura Lee,CON010,RG10,Level 1 — Colour,Draping Technique,2024-03-16,2024-05-06,2026-05-06,85.2,Active,Yes
+TRN000292,STY029,Laura Lee,CON010,RG10,Level 1 — Colour,Client Communication,2024-03-16,2024-05-06,2026-05-06,85.2,Active,Yes
+TRN000293,STY029,Laura Lee,CON010,RG10,Level 2 — Style,Body Shape Analysis,2024-09-30,2024-10-28,2026-10-28,68.2,Active,No
+TRN000294,STY029,Laura Lee,CON010,RG10,Level 2 — Style,Clothing Lines & Textures,2024-09-30,2024-10-28,2026-10-28,68.2,Active,No
+TRN000295,STY029,Laura Lee,CON010,RG10,Level 2 — Style,Style Archetypes,2024-09-30,2024-10-28,2026-10-28,68.2,Active,No
+TRN000296,STY029,Laura Lee,CON010,RG10,Level 2 — Style,Wardrobe Building,2024-09-30,2024-10-28,2026-10-28,68.2,Active,No
+TRN000297,STY030,Beth Walker,CON010,RG10,Level 1 — Colour,Colour Theory Fundamentals,2021-01-08,2021-03-03,2023-03-03,69.8,Expired,No
+TRN000298,STY030,Beth Walker,CON010,RG10,Level 1 — Colour,Seasonal Analysis Basics,2021-01-08,2021-03-03,2023-03-03,69.8,Expired,No
+TRN000299,STY030,Beth Walker,CON010,RG10,Level 1 — Colour,Draping Technique,2021-01-08,2021-03-03,2023-03-03,69.8,Expired,No
+TRN000300,STY030,Beth Walker,CON010,RG10,Level 1 — Colour,Client Communication,2021-01-08,2021-03-03,2023-03-03,69.8,Expired,No
+TRN000301,STY030,Beth Walker,CON010,RG10,Level 2 — Style,Body Shape Analysis,2021-06-17,2021-07-03,2023-07-03,94.6,Expired,Yes
+TRN000302,STY030,Beth Walker,CON010,RG10,Level 2 — Style,Clothing Lines & Textures,2021-06-17,2021-07-03,2023-07-03,94.6,Expired,Yes
+TRN000303,STY030,Beth Walker,CON010,RG10,Level 2 — Style,Style Archetypes,2021-06-17,2021-07-03,2023-07-03,94.6,Expired,Yes
+TRN000304,STY030,Beth Walker,CON010,RG10,Level 2 — Style,Wardrobe Building,2021-06-17,2021-07-03,2023-07-03,94.6,Expired,Yes
+TRN000305,STY031,Michael Hall,CON011,RG01,Level 1 — Colour,Colour Theory Fundamentals,2021-02-09,2021-03-27,2023-03-27,75.4,Expired,No
+TRN000306,STY031,Michael Hall,CON011,RG01,Level 1 — Colour,Seasonal Analysis Basics,2021-02-09,2021-03-27,2023-03-27,75.4,Expired,No
+TRN000307,STY031,Michael Hall,CON011,RG01,Level 1 — Colour,Draping Technique,2021-02-09,2021-03-27,2023-03-27,75.4,Expired,No
+TRN000308,STY031,Michael Hall,CON011,RG01,Level 1 — Colour,Client Communication,2021-02-09,2021-03-27,2023-03-27,75.4,Expired,No
+TRN000309,STY032,John Allen,CON011,RG01,Level 1 — Colour,Colour Theory Fundamentals,2023-01-05,2023-02-19,2025-02-18,74.6,Expired,No
+TRN000310,STY032,John Allen,CON011,RG01,Level 1 — Colour,Seasonal Analysis Basics,2023-01-05,2023-02-19,2025-02-18,74.6,Expired,No
+TRN000311,STY032,John Allen,CON011,RG01,Level 1 — Colour,Draping Technique,2023-01-05,2023-02-19,2025-02-18,74.6,Expired,No
+TRN000312,STY032,John Allen,CON011,RG01,Level 1 — Colour,Client Communication,2023-01-05,2023-02-19,2025-02-18,74.6,Expired,No
+TRN000313,STY032,John Allen,CON011,RG01,Level 2 — Style,Body Shape Analysis,2023-06-17,2023-08-16,2025-08-15,97.0,Expired,Yes
+TRN000314,STY032,John Allen,CON011,RG01,Level 2 — Style,Clothing Lines & Textures,2023-06-17,2023-08-16,2025-08-15,97.0,Expired,Yes
+TRN000315,STY032,John Allen,CON011,RG01,Level 2 — Style,Style Archetypes,2023-06-17,2023-08-16,2025-08-15,97.0,Expired,Yes
+TRN000316,STY032,John Allen,CON011,RG01,Level 2 — Style,Wardrobe Building,2023-06-17,2023-08-16,2025-08-15,97.0,Expired,Yes
+TRN000317,STY032,John Allen,CON011,RG01,Level 3 — Full Stylist,Advanced Colour,2023-12-28,2024-02-16,2026-02-15,82.7,Active,No
+TRN000318,STY032,John Allen,CON011,RG01,Level 3 — Full Stylist,Advanced Style,2023-12-28,2024-02-16,2026-02-15,82.7,Active,No
+TRN000319,STY032,John Allen,CON011,RG01,Level 3 — Full Stylist,Makeup Integration,2023-12-28,2024-02-16,2026-02-15,82.7,Active,No
+TRN000320,STY032,John Allen,CON011,RG01,Level 3 — Full Stylist,Business Development,2023-12-28,2024-02-16,2026-02-15,82.7,Active,No
+TRN000321,STY032,John Allen,CON011,RG01,Senior Stylist,Mentoring Skills,2024-07-02,2024-08-15,2026-08-15,93.0,Active,Yes
+TRN000322,STY032,John Allen,CON011,RG01,Senior Stylist,Workshop Facilitation,2024-07-02,2024-08-15,2026-08-15,93.0,Active,Yes
+TRN000323,STY032,John Allen,CON011,RG01,Senior Stylist,Corporate Clients,2024-07-02,2024-08-15,2026-08-15,93.0,Active,Yes
+TRN000324,STY032,John Allen,CON011,RG01,Senior Stylist,Advanced Draping,2024-07-02,2024-08-15,2026-08-15,93.0,Active,Yes
+TRN000325,STY032,John Allen,CON011,RG01,Master Stylist,Master Practitioner,2024-12-10,2024-12-30,2026-12-30,71.0,Active,No
+TRN000326,STY032,John Allen,CON011,RG01,Master Stylist,Training Others,2024-12-10,2024-12-30,2026-12-30,71.0,Active,No
+TRN000327,STY032,John Allen,CON011,RG01,Master Stylist,Quality Assessment,2024-12-10,2024-12-30,2026-12-30,71.0,Active,No
+TRN000328,STY032,John Allen,CON011,RG01,Master Stylist,Brand Ambassador,2024-12-10,2024-12-30,2026-12-30,71.0,Active,No
+TRN000329,STY033,Peter Young,CON012,RG02,Level 1 — Colour,Colour Theory Fundamentals,2018-06-10,2018-07-16,2020-07-15,81.1,Expired,No
+TRN000330,STY033,Peter Young,CON012,RG02,Level 1 — Colour,Seasonal Analysis Basics,2018-06-10,2018-07-16,2020-07-15,81.1,Expired,No
+TRN000331,STY033,Peter Young,CON012,RG02,Level 1 — Colour,Draping Technique,2018-06-10,2018-07-16,2020-07-15,81.1,Expired,No
+TRN000332,STY033,Peter Young,CON012,RG02,Level 1 — Colour,Client Communication,2018-06-10,2018-07-16,2020-07-15,81.1,Expired,No
+TRN000333,STY033,Peter Young,CON012,RG02,Level 2 — Style,Body Shape Analysis,2018-12-08,2019-02-06,2021-02-05,69.7,Expired,No
+TRN000334,STY033,Peter Young,CON012,RG02,Level 2 — Style,Clothing Lines & Textures,2018-12-08,2019-02-06,2021-02-05,69.7,Expired,No
+TRN000335,STY033,Peter Young,CON012,RG02,Level 2 — Style,Style Archetypes,2018-12-08,2019-02-06,2021-02-05,69.7,Expired,No
+TRN000336,STY033,Peter Young,CON012,RG02,Level 2 — Style,Wardrobe Building,2018-12-08,2019-02-06,2021-02-05,69.7,Expired,No
+TRN000337,STY033,Peter Young,CON012,RG02,Level 3 — Full Stylist,Advanced Colour,2019-06-12,2019-08-06,2021-08-05,71.1,Expired,No
+TRN000338,STY033,Peter Young,CON012,RG02,Level 3 — Full Stylist,Advanced Style,2019-06-12,2019-08-06,2021-08-05,71.1,Expired,No
+TRN000339,STY033,Peter Young,CON012,RG02,Level 3 — Full Stylist,Makeup Integration,2019-06-12,2019-08-06,2021-08-05,71.1,Expired,No
+TRN000340,STY033,Peter Young,CON012,RG02,Level 3 — Full Stylist,Business Development,2019-06-12,2019-08-06,2021-08-05,71.1,Expired,No
+TRN000341,STY033,Peter Young,CON012,RG02,Senior Stylist,Mentoring Skills,2019-12-01,2020-01-30,2022-01-29,78.5,Expired,No
+TRN000342,STY033,Peter Young,CON012,RG02,Senior Stylist,Workshop Facilitation,2019-12-01,2020-01-30,2022-01-29,78.5,Expired,No
+TRN000343,STY033,Peter Young,CON012,RG02,Senior Stylist,Corporate Clients,2019-12-01,2020-01-30,2022-01-29,78.5,Expired,No
+TRN000344,STY033,Peter Young,CON012,RG02,Senior Stylist,Advanced Draping,2019-12-01,2020-01-30,2022-01-29,78.5,Expired,No
+TRN000345,STY033,Peter Young,CON012,RG02,Master Stylist,Master Practitioner,2020-06-13,2020-07-03,2022-07-03,75.7,Expired,No
+TRN000346,STY033,Peter Young,CON012,RG02,Master Stylist,Training Others,2020-06-13,2020-07-03,2022-07-03,75.7,Expired,No
+TRN000347,STY033,Peter Young,CON012,RG02,Master Stylist,Quality Assessment,2020-06-13,2020-07-03,2022-07-03,75.7,Expired,No
+TRN000348,STY033,Peter Young,CON012,RG02,Master Stylist,Brand Ambassador,2020-06-13,2020-07-03,2022-07-03,75.7,Expired,No
+TRN000349,STY034,Andrew King,CON012,RG02,Level 1 — Colour,Colour Theory Fundamentals,2022-01-11,2022-02-28,2024-02-28,81.9,Expired,No
+TRN000350,STY034,Andrew King,CON012,RG02,Level 1 — Colour,Seasonal Analysis Basics,2022-01-11,2022-02-28,2024-02-28,81.9,Expired,No
+TRN000351,STY034,Andrew King,CON012,RG02,Level 1 — Colour,Draping Technique,2022-01-11,2022-02-28,2024-02-28,81.9,Expired,No
+TRN000352,STY034,Andrew King,CON012,RG02,Level 1 — Colour,Client Communication,2022-01-11,2022-02-28,2024-02-28,81.9,Expired,No
+TRN000353,STY034,Andrew King,CON012,RG02,Level 2 — Style,Body Shape Analysis,2022-07-17,2022-08-11,2024-08-10,76.6,Expired,No
+TRN000354,STY034,Andrew King,CON012,RG02,Level 2 — Style,Clothing Lines & Textures,2022-07-17,2022-08-11,2024-08-10,76.6,Expired,No
+TRN000355,STY034,Andrew King,CON012,RG02,Level 2 — Style,Style Archetypes,2022-07-17,2022-08-11,2024-08-10,76.6,Expired,No
+TRN000356,STY034,Andrew King,CON012,RG02,Level 2 — Style,Wardrobe Building,2022-07-17,2022-08-11,2024-08-10,76.6,Expired,No
+TRN000357,STY035,Paul Wright,CON012,RG02,Level 1 — Colour,Colour Theory Fundamentals,2019-10-03,2019-10-21,2021-10-20,81.7,Expired,No
+TRN000358,STY035,Paul Wright,CON012,RG02,Level 1 — Colour,Seasonal Analysis Basics,2019-10-03,2019-10-21,2021-10-20,81.7,Expired,No
+TRN000359,STY035,Paul Wright,CON012,RG02,Level 1 — Colour,Draping Technique,2019-10-03,2019-10-21,2021-10-20,81.7,Expired,No
+TRN000360,STY035,Paul Wright,CON012,RG02,Level 1 — Colour,Client Communication,2019-10-03,2019-10-21,2021-10-20,81.7,Expired,No
+TRN000361,STY035,Paul Wright,CON012,RG02,Level 2 — Style,Body Shape Analysis,2020-04-20,2020-06-08,2022-06-08,71.0,Expired,No
+TRN000362,STY035,Paul Wright,CON012,RG02,Level 2 — Style,Clothing Lines & Textures,2020-04-20,2020-06-08,2022-06-08,71.0,Expired,No
+TRN000363,STY035,Paul Wright,CON012,RG02,Level 2 — Style,Style Archetypes,2020-04-20,2020-06-08,2022-06-08,71.0,Expired,No
+TRN000364,STY035,Paul Wright,CON012,RG02,Level 2 — Style,Wardrobe Building,2020-04-20,2020-06-08,2022-06-08,71.0,Expired,No
+TRN000365,STY035,Paul Wright,CON012,RG02,Level 3 — Full Stylist,Advanced Colour,2020-10-10,2020-11-27,2022-11-27,93.9,Expired,Yes
+TRN000366,STY035,Paul Wright,CON012,RG02,Level 3 — Full Stylist,Advanced Style,2020-10-10,2020-11-27,2022-11-27,93.9,Expired,Yes
+TRN000367,STY035,Paul Wright,CON012,RG02,Level 3 — Full Stylist,Makeup Integration,2020-10-10,2020-11-27,2022-11-27,93.9,Expired,Yes
+TRN000368,STY035,Paul Wright,CON012,RG02,Level 3 — Full Stylist,Business Development,2020-10-10,2020-11-27,2022-11-27,93.9,Expired,Yes
+TRN000369,STY036,Chris Scott,CON012,RG02,Level 1 — Colour,Colour Theory Fundamentals,2020-01-07,2020-02-05,2022-02-04,73.2,Expired,No
+TRN000370,STY036,Chris Scott,CON012,RG02,Level 1 — Colour,Seasonal Analysis Basics,2020-01-07,2020-02-05,2022-02-04,73.2,Expired,No
+TRN000371,STY036,Chris Scott,CON012,RG02,Level 1 — Colour,Draping Technique,2020-01-07,2020-02-05,2022-02-04,73.2,Expired,No
+TRN000372,STY036,Chris Scott,CON012,RG02,Level 1 — Colour,Client Communication,2020-01-07,2020-02-05,2022-02-04,73.2,Expired,No
+TRN000373,STY036,Chris Scott,CON012,RG02,Level 2 — Style,Body Shape Analysis,2020-07-18,2020-08-31,2022-08-31,74.6,Expired,No
+TRN000374,STY036,Chris Scott,CON012,RG02,Level 2 — Style,Clothing Lines & Textures,2020-07-18,2020-08-31,2022-08-31,74.6,Expired,No
+TRN000375,STY036,Chris Scott,CON012,RG02,Level 2 — Style,Style Archetypes,2020-07-18,2020-08-31,2022-08-31,74.6,Expired,No
+TRN000376,STY036,Chris Scott,CON012,RG02,Level 2 — Style,Wardrobe Building,2020-07-18,2020-08-31,2022-08-31,74.6,Expired,No
+TRN000377,STY036,Chris Scott,CON012,RG02,Level 3 — Full Stylist,Advanced Colour,2021-01-11,2021-01-28,2023-01-28,73.1,Expired,No
+TRN000378,STY036,Chris Scott,CON012,RG02,Level 3 — Full Stylist,Advanced Style,2021-01-11,2021-01-28,2023-01-28,73.1,Expired,No
+TRN000379,STY036,Chris Scott,CON012,RG02,Level 3 — Full Stylist,Makeup Integration,2021-01-11,2021-01-28,2023-01-28,73.1,Expired,No
+TRN000380,STY036,Chris Scott,CON012,RG02,Level 3 — Full Stylist,Business Development,2021-01-11,2021-01-28,2023-01-28,73.1,Expired,No
+TRN000381,STY036,Chris Scott,CON012,RG02,Senior Stylist,Mentoring Skills,2021-06-28,2021-08-05,2023-08-05,76.2,Expired,No
+TRN000382,STY036,Chris Scott,CON012,RG02,Senior Stylist,Workshop Facilitation,2021-06-28,2021-08-05,2023-08-05,76.2,Expired,No
+TRN000383,STY036,Chris Scott,CON012,RG02,Senior Stylist,Corporate Clients,2021-06-28,2021-08-05,2023-08-05,76.2,Expired,No
+TRN000384,STY036,Chris Scott,CON012,RG02,Senior Stylist,Advanced Draping,2021-06-28,2021-08-05,2023-08-05,76.2,Expired,No
+TRN000385,STY037,Daniel Green,CON013,RG03,Level 1 — Colour,Colour Theory Fundamentals,2019-04-13,2019-05-26,2021-05-25,76.8,Expired,No
+TRN000386,STY037,Daniel Green,CON013,RG03,Level 1 — Colour,Seasonal Analysis Basics,2019-04-13,2019-05-26,2021-05-25,76.8,Expired,No
+TRN000387,STY037,Daniel Green,CON013,RG03,Level 1 — Colour,Draping Technique,2019-04-13,2019-05-26,2021-05-25,76.8,Expired,No
+TRN000388,STY037,Daniel Green,CON013,RG03,Level 1 — Colour,Client Communication,2019-04-13,2019-05-26,2021-05-25,76.8,Expired,No
+TRN000389,STY037,Daniel Green,CON013,RG03,Level 2 — Style,Body Shape Analysis,2019-10-07,2019-12-06,2021-12-05,98.9,Expired,Yes
+TRN000390,STY037,Daniel Green,CON013,RG03,Level 2 — Style,Clothing Lines & Textures,2019-10-07,2019-12-06,2021-12-05,98.9,Expired,Yes
+TRN000391,STY037,Daniel Green,CON013,RG03,Level 2 — Style,Style Archetypes,2019-10-07,2019-12-06,2021-12-05,98.9,Expired,Yes
+TRN000392,STY037,Daniel Green,CON013,RG03,Level 2 — Style,Wardrobe Building,2019-10-07,2019-12-06,2021-12-05,98.9,Expired,Yes
+TRN000393,STY038,Ryan Baker,CON013,RG03,Level 1 — Colour,Colour Theory Fundamentals,2021-12-20,2022-02-14,2024-02-14,90.3,Expired,Yes
+TRN000394,STY038,Ryan Baker,CON013,RG03,Level 1 — Colour,Seasonal Analysis Basics,2021-12-20,2022-02-14,2024-02-14,90.3,Expired,Yes
+TRN000395,STY038,Ryan Baker,CON013,RG03,Level 1 — Colour,Draping Technique,2021-12-20,2022-02-14,2024-02-14,90.3,Expired,Yes
+TRN000396,STY038,Ryan Baker,CON013,RG03,Level 1 — Colour,Client Communication,2021-12-20,2022-02-14,2024-02-14,90.3,Expired,Yes
+TRN000397,STY038,Ryan Baker,CON013,RG03,Level 2 — Style,Body Shape Analysis,2022-06-05,2022-07-01,2024-06-30,77.2,Expired,No
+TRN000398,STY038,Ryan Baker,CON013,RG03,Level 2 — Style,Clothing Lines & Textures,2022-06-05,2022-07-01,2024-06-30,77.2,Expired,No
+TRN000399,STY038,Ryan Baker,CON013,RG03,Level 2 — Style,Style Archetypes,2022-06-05,2022-07-01,2024-06-30,77.2,Expired,No
+TRN000400,STY038,Ryan Baker,CON013,RG03,Level 2 — Style,Wardrobe Building,2022-06-05,2022-07-01,2024-06-30,77.2,Expired,No
+TRN000401,STY038,Ryan Baker,CON013,RG03,Level 3 — Full Stylist,Advanced Colour,2022-12-28,2023-01-14,2025-01-13,86.0,Expired,Yes
+TRN000402,STY038,Ryan Baker,CON013,RG03,Level 3 — Full Stylist,Advanced Style,2022-12-28,2023-01-14,2025-01-13,86.0,Expired,Yes
+TRN000403,STY038,Ryan Baker,CON013,RG03,Level 3 — Full Stylist,Makeup Integration,2022-12-28,2023-01-14,2025-01-13,86.0,Expired,Yes
+TRN000404,STY038,Ryan Baker,CON013,RG03,Level 3 — Full Stylist,Business Development,2022-12-28,2023-01-14,2025-01-13,86.0,Expired,Yes
+TRN000405,STY038,Ryan Baker,CON013,RG03,Senior Stylist,Mentoring Skills,2023-06-13,2023-06-30,2025-06-29,91.2,Expired,Yes
+TRN000406,STY038,Ryan Baker,CON013,RG03,Senior Stylist,Workshop Facilitation,2023-06-13,2023-06-30,2025-06-29,91.2,Expired,Yes
+TRN000407,STY038,Ryan Baker,CON013,RG03,Senior Stylist,Corporate Clients,2023-06-13,2023-06-30,2025-06-29,91.2,Expired,Yes
+TRN000408,STY038,Ryan Baker,CON013,RG03,Senior Stylist,Advanced Draping,2023-06-13,2023-06-30,2025-06-29,91.2,Expired,Yes
+TRN000409,STY039,Luke Adams,CON014,RG04,Level 1 — Colour,Colour Theory Fundamentals,2021-02-18,2021-03-07,2023-03-07,86.1,Expired,Yes
+TRN000410,STY039,Luke Adams,CON014,RG04,Level 1 — Colour,Seasonal Analysis Basics,2021-02-18,2021-03-07,2023-03-07,86.1,Expired,Yes
+TRN000411,STY039,Luke Adams,CON014,RG04,Level 1 — Colour,Draping Technique,2021-02-18,2021-03-07,2023-03-07,86.1,Expired,Yes
+TRN000412,STY039,Luke Adams,CON014,RG04,Level 1 — Colour,Client Communication,2021-02-18,2021-03-07,2023-03-07,86.1,Expired,Yes
+TRN000413,STY039,Luke Adams,CON014,RG04,Level 2 — Style,Body Shape Analysis,2021-09-01,2021-10-18,2023-10-18,72.9,Expired,No
+TRN000414,STY039,Luke Adams,CON014,RG04,Level 2 — Style,Clothing Lines & Textures,2021-09-01,2021-10-18,2023-10-18,72.9,Expired,No
+TRN000415,STY039,Luke Adams,CON014,RG04,Level 2 — Style,Style Archetypes,2021-09-01,2021-10-18,2023-10-18,72.9,Expired,No
+TRN000416,STY039,Luke Adams,CON014,RG04,Level 2 — Style,Wardrobe Building,2021-09-01,2021-10-18,2023-10-18,72.9,Expired,No
+TRN000417,STY040,Jack Nelson,CON014,RG04,Level 1 — Colour,Colour Theory Fundamentals,2019-05-18,2019-07-03,2021-07-02,70.5,Expired,No
+TRN000418,STY040,Jack Nelson,CON014,RG04,Level 1 — Colour,Seasonal Analysis Basics,2019-05-18,2019-07-03,2021-07-02,70.5,Expired,No
+TRN000419,STY040,Jack Nelson,CON014,RG04,Level 1 — Colour,Draping Technique,2019-05-18,2019-07-03,2021-07-02,70.5,Expired,No
+TRN000420,STY040,Jack Nelson,CON014,RG04,Level 1 — Colour,Client Communication,2019-05-18,2019-07-03,2021-07-02,70.5,Expired,No
+TRN000421,STY040,Jack Nelson,CON014,RG04,Level 2 — Style,Body Shape Analysis,2019-10-20,2019-11-07,2021-11-06,86.4,Expired,Yes
+TRN000422,STY040,Jack Nelson,CON014,RG04,Level 2 — Style,Clothing Lines & Textures,2019-10-20,2019-11-07,2021-11-06,86.4,Expired,Yes
+TRN000423,STY040,Jack Nelson,CON014,RG04,Level 2 — Style,Style Archetypes,2019-10-20,2019-11-07,2021-11-06,86.4,Expired,Yes
+TRN000424,STY040,Jack Nelson,CON014,RG04,Level 2 — Style,Wardrobe Building,2019-10-20,2019-11-07,2021-11-06,86.4,Expired,Yes
+TRN000425,STY041,Grace Hill,CON014,RG04,Level 1 — Colour,Colour Theory Fundamentals,2022-12-06,2023-01-04,2025-01-03,80.5,Expired,No
+TRN000426,STY041,Grace Hill,CON014,RG04,Level 1 — Colour,Seasonal Analysis Basics,2022-12-06,2023-01-04,2025-01-03,80.5,Expired,No
+TRN000427,STY041,Grace Hill,CON014,RG04,Level 1 — Colour,Draping Technique,2022-12-06,2023-01-04,2025-01-03,80.5,Expired,No
+TRN000428,STY041,Grace Hill,CON014,RG04,Level 1 — Colour,Client Communication,2022-12-06,2023-01-04,2025-01-03,80.5,Expired,No
+TRN000429,STY042,Mia Ramirez,CON015,RG05,Level 1 — Colour,Colour Theory Fundamentals,2020-03-19,2020-05-08,2022-05-08,75.6,Expired,No
+TRN000430,STY042,Mia Ramirez,CON015,RG05,Level 1 — Colour,Seasonal Analysis Basics,2020-03-19,2020-05-08,2022-05-08,75.6,Expired,No
+TRN000431,STY042,Mia Ramirez,CON015,RG05,Level 1 — Colour,Draping Technique,2020-03-19,2020-05-08,2022-05-08,75.6,Expired,No
+TRN000432,STY042,Mia Ramirez,CON015,RG05,Level 1 — Colour,Client Communication,2020-03-19,2020-05-08,2022-05-08,75.6,Expired,No
+TRN000433,STY042,Mia Ramirez,CON015,RG05,Level 2 — Style,Body Shape Analysis,2020-09-04,2020-09-20,2022-09-20,87.2,Expired,Yes
+TRN000434,STY042,Mia Ramirez,CON015,RG05,Level 2 — Style,Clothing Lines & Textures,2020-09-04,2020-09-20,2022-09-20,87.2,Expired,Yes
+TRN000435,STY042,Mia Ramirez,CON015,RG05,Level 2 — Style,Style Archetypes,2020-09-04,2020-09-20,2022-09-20,87.2,Expired,Yes
+TRN000436,STY042,Mia Ramirez,CON015,RG05,Level 2 — Style,Wardrobe Building,2020-09-04,2020-09-20,2022-09-20,87.2,Expired,Yes
+TRN000437,STY043,Ella Campbell,CON015,RG05,Level 1 — Colour,Colour Theory Fundamentals,2020-03-31,2020-05-26,2022-05-26,86.1,Expired,Yes
+TRN000438,STY043,Ella Campbell,CON015,RG05,Level 1 — Colour,Seasonal Analysis Basics,2020-03-31,2020-05-26,2022-05-26,86.1,Expired,Yes
+TRN000439,STY043,Ella Campbell,CON015,RG05,Level 1 — Colour,Draping Technique,2020-03-31,2020-05-26,2022-05-26,86.1,Expired,Yes
+TRN000440,STY043,Ella Campbell,CON015,RG05,Level 1 — Colour,Client Communication,2020-03-31,2020-05-26,2022-05-26,86.1,Expired,Yes
+TRN000441,STY043,Ella Campbell,CON015,RG05,Level 2 — Style,Body Shape Analysis,2020-09-30,2020-11-03,2022-11-03,97.0,Expired,Yes
+TRN000442,STY043,Ella Campbell,CON015,RG05,Level 2 — Style,Clothing Lines & Textures,2020-09-30,2020-11-03,2022-11-03,97.0,Expired,Yes
+TRN000443,STY043,Ella Campbell,CON015,RG05,Level 2 — Style,Style Archetypes,2020-09-30,2020-11-03,2022-11-03,97.0,Expired,Yes
+TRN000444,STY043,Ella Campbell,CON015,RG05,Level 2 — Style,Wardrobe Building,2020-09-30,2020-11-03,2022-11-03,97.0,Expired,Yes
+TRN000445,STY043,Ella Campbell,CON015,RG05,Level 3 — Full Stylist,Advanced Colour,2021-03-19,2021-05-14,2023-05-14,90.2,Expired,Yes
+TRN000446,STY043,Ella Campbell,CON015,RG05,Level 3 — Full Stylist,Advanced Style,2021-03-19,2021-05-14,2023-05-14,90.2,Expired,Yes
+TRN000447,STY043,Ella Campbell,CON015,RG05,Level 3 — Full Stylist,Makeup Integration,2021-03-19,2021-05-14,2023-05-14,90.2,Expired,Yes
+TRN000448,STY043,Ella Campbell,CON015,RG05,Level 3 — Full Stylist,Business Development,2021-03-19,2021-05-14,2023-05-14,90.2,Expired,Yes
+TRN000449,STY043,Ella Campbell,CON015,RG05,Senior Stylist,Mentoring Skills,2021-09-16,2021-10-16,2023-10-16,80.3,Expired,No
+TRN000450,STY043,Ella Campbell,CON015,RG05,Senior Stylist,Workshop Facilitation,2021-09-16,2021-10-16,2023-10-16,80.3,Expired,No
+TRN000451,STY043,Ella Campbell,CON015,RG05,Senior Stylist,Corporate Clients,2021-09-16,2021-10-16,2023-10-16,80.3,Expired,No
+TRN000452,STY043,Ella Campbell,CON015,RG05,Senior Stylist,Advanced Draping,2021-09-16,2021-10-16,2023-10-16,80.3,Expired,No
+TRN000453,STY043,Ella Campbell,CON015,RG05,Master Stylist,Master Practitioner,2022-03-29,2022-05-23,2024-05-22,77.3,Expired,No
+TRN000454,STY043,Ella Campbell,CON015,RG05,Master Stylist,Training Others,2022-03-29,2022-05-23,2024-05-22,77.3,Expired,No
+TRN000455,STY043,Ella Campbell,CON015,RG05,Master Stylist,Quality Assessment,2022-03-29,2022-05-23,2024-05-22,77.3,Expired,No
+TRN000456,STY043,Ella Campbell,CON015,RG05,Master Stylist,Brand Ambassador,2022-03-29,2022-05-23,2024-05-22,77.3,Expired,No
+TRN000457,STY044,Chloe Mitchell,CON016,RG06,Level 1 — Colour,Colour Theory Fundamentals,2019-06-05,2019-06-23,2021-06-22,68.3,Expired,No
+TRN000458,STY044,Chloe Mitchell,CON016,RG06,Level 1 — Colour,Seasonal Analysis Basics,2019-06-05,2019-06-23,2021-06-22,68.3,Expired,No
+TRN000459,STY044,Chloe Mitchell,CON016,RG06,Level 1 — Colour,Draping Technique,2019-06-05,2019-06-23,2021-06-22,68.3,Expired,No
+TRN000460,STY044,Chloe Mitchell,CON016,RG06,Level 1 — Colour,Client Communication,2019-06-05,2019-06-23,2021-06-22,68.3,Expired,No
+TRN000461,STY044,Chloe Mitchell,CON016,RG06,Level 2 — Style,Body Shape Analysis,2019-12-11,2020-01-30,2022-01-29,98.9,Expired,Yes
+TRN000462,STY044,Chloe Mitchell,CON016,RG06,Level 2 — Style,Clothing Lines & Textures,2019-12-11,2020-01-30,2022-01-29,98.9,Expired,Yes
+TRN000463,STY044,Chloe Mitchell,CON016,RG06,Level 2 — Style,Style Archetypes,2019-12-11,2020-01-30,2022-01-29,98.9,Expired,Yes
+TRN000464,STY044,Chloe Mitchell,CON016,RG06,Level 2 — Style,Wardrobe Building,2019-12-11,2020-01-30,2022-01-29,98.9,Expired,Yes
+TRN000465,STY044,Chloe Mitchell,CON016,RG06,Level 3 — Full Stylist,Advanced Colour,2020-05-22,2020-07-09,2022-07-09,74.6,Expired,No
+TRN000466,STY044,Chloe Mitchell,CON016,RG06,Level 3 — Full Stylist,Advanced Style,2020-05-22,2020-07-09,2022-07-09,74.6,Expired,No
+TRN000467,STY044,Chloe Mitchell,CON016,RG06,Level 3 — Full Stylist,Makeup Integration,2020-05-22,2020-07-09,2022-07-09,74.6,Expired,No
+TRN000468,STY044,Chloe Mitchell,CON016,RG06,Level 3 — Full Stylist,Business Development,2020-05-22,2020-07-09,2022-07-09,74.6,Expired,No
+TRN000469,STY045,Isla Roberts,CON016,RG06,Level 1 — Colour,Colour Theory Fundamentals,2019-06-14,2019-07-06,2021-07-05,96.9,Expired,Yes
+TRN000470,STY045,Isla Roberts,CON016,RG06,Level 1 — Colour,Seasonal Analysis Basics,2019-06-14,2019-07-06,2021-07-05,96.9,Expired,Yes
+TRN000471,STY045,Isla Roberts,CON016,RG06,Level 1 — Colour,Draping Technique,2019-06-14,2019-07-06,2021-07-05,96.9,Expired,Yes
+TRN000472,STY045,Isla Roberts,CON016,RG06,Level 1 — Colour,Client Communication,2019-06-14,2019-07-06,2021-07-05,96.9,Expired,Yes
+TRN000473,STY045,Isla Roberts,CON016,RG06,Level 2 — Style,Body Shape Analysis,2019-12-31,2020-01-18,2022-01-17,95.3,Expired,Yes
+TRN000474,STY045,Isla Roberts,CON016,RG06,Level 2 — Style,Clothing Lines & Textures,2019-12-31,2020-01-18,2022-01-17,95.3,Expired,Yes
+TRN000475,STY045,Isla Roberts,CON016,RG06,Level 2 — Style,Style Archetypes,2019-12-31,2020-01-18,2022-01-17,95.3,Expired,Yes
+TRN000476,STY045,Isla Roberts,CON016,RG06,Level 2 — Style,Wardrobe Building,2019-12-31,2020-01-18,2022-01-17,95.3,Expired,Yes
+TRN000477,STY045,Isla Roberts,CON016,RG06,Level 3 — Full Stylist,Advanced Colour,2020-06-11,2020-07-13,2022-07-13,72.9,Expired,No
+TRN000478,STY045,Isla Roberts,CON016,RG06,Level 3 — Full Stylist,Advanced Style,2020-06-11,2020-07-13,2022-07-13,72.9,Expired,No
+TRN000479,STY045,Isla Roberts,CON016,RG06,Level 3 — Full Stylist,Makeup Integration,2020-06-11,2020-07-13,2022-07-13,72.9,Expired,No
+TRN000480,STY045,Isla Roberts,CON016,RG06,Level 3 — Full Stylist,Business Development,2020-06-11,2020-07-13,2022-07-13,72.9,Expired,No
+TRN000481,STY046,Ruby Turner,CON016,RG06,Level 1 — Colour,Colour Theory Fundamentals,2024-06-15,2024-08-02,2026-08-02,89.8,Active,Yes
+TRN000482,STY046,Ruby Turner,CON016,RG06,Level 1 — Colour,Seasonal Analysis Basics,2024-06-15,2024-08-02,2026-08-02,89.8,Active,Yes
+TRN000483,STY046,Ruby Turner,CON016,RG06,Level 1 — Colour,Draping Technique,2024-06-15,2024-08-02,2026-08-02,89.8,Active,Yes
+TRN000484,STY046,Ruby Turner,CON016,RG06,Level 1 — Colour,Client Communication,2024-06-15,2024-08-02,2026-08-02,89.8,Active,Yes
+TRN000485,STY046,Ruby Turner,CON016,RG06,Level 2 — Style,Body Shape Analysis,2024-12-05,2025-01-29,2027-01-29,84.4,Active,No
+TRN000486,STY046,Ruby Turner,CON016,RG06,Level 2 — Style,Clothing Lines & Textures,2024-12-05,2025-01-29,2027-01-29,84.4,Active,No
+TRN000487,STY046,Ruby Turner,CON016,RG06,Level 2 — Style,Style Archetypes,2024-12-05,2025-01-29,2027-01-29,84.4,Active,No
+TRN000488,STY046,Ruby Turner,CON016,RG06,Level 2 — Style,Wardrobe Building,2024-12-05,2025-01-29,2027-01-29,84.4,Active,No
+TRN000489,STY046,Ruby Turner,CON016,RG06,Level 3 — Full Stylist,Advanced Colour,2025-06-05,2025-07-24,2027-07-24,77.3,Active,No
+TRN000490,STY046,Ruby Turner,CON016,RG06,Level 3 — Full Stylist,Advanced Style,2025-06-05,2025-07-24,2027-07-24,77.3,Active,No
+TRN000491,STY046,Ruby Turner,CON016,RG06,Level 3 — Full Stylist,Makeup Integration,2025-06-05,2025-07-24,2027-07-24,77.3,Active,No
+TRN000492,STY046,Ruby Turner,CON016,RG06,Level 3 — Full Stylist,Business Development,2025-06-05,2025-07-24,2027-07-24,77.3,Active,No
+TRN000493,STY046,Ruby Turner,CON016,RG06,Senior Stylist,Mentoring Skills,2025-12-02,2025-12-22,2027-12-22,97.1,Active,Yes
+TRN000494,STY046,Ruby Turner,CON016,RG06,Senior Stylist,Workshop Facilitation,2025-12-02,2025-12-22,2027-12-22,97.1,Active,Yes
+TRN000495,STY046,Ruby Turner,CON016,RG06,Senior Stylist,Corporate Clients,2025-12-02,2025-12-22,2027-12-22,97.1,Active,Yes
+TRN000496,STY046,Ruby Turner,CON016,RG06,Senior Stylist,Advanced Draping,2025-12-02,2025-12-22,2027-12-22,97.1,Active,Yes
+TRN000497,STY047,Poppy Phillips,CON017,RG07,Level 1 — Colour,Colour Theory Fundamentals,2024-10-24,2024-11-23,2026-11-23,71.6,Active,No
+TRN000498,STY047,Poppy Phillips,CON017,RG07,Level 1 — Colour,Seasonal Analysis Basics,2024-10-24,2024-11-23,2026-11-23,71.6,Active,No
+TRN000499,STY047,Poppy Phillips,CON017,RG07,Level 1 — Colour,Draping Technique,2024-10-24,2024-11-23,2026-11-23,71.6,Active,No
+TRN000500,STY047,Poppy Phillips,CON017,RG07,Level 1 — Colour,Client Communication,2024-10-24,2024-11-23,2026-11-23,71.6,Active,No
+TRN000501,STY047,Poppy Phillips,CON017,RG07,Level 2 — Style,Body Shape Analysis,2025-04-21,2025-06-09,2027-06-09,72.8,Active,No
+TRN000502,STY047,Poppy Phillips,CON017,RG07,Level 2 — Style,Clothing Lines & Textures,2025-04-21,2025-06-09,2027-06-09,72.8,Active,No
+TRN000503,STY047,Poppy Phillips,CON017,RG07,Level 2 — Style,Style Archetypes,2025-04-21,2025-06-09,2027-06-09,72.8,Active,No
+TRN000504,STY047,Poppy Phillips,CON017,RG07,Level 2 — Style,Wardrobe Building,2025-04-21,2025-06-09,2027-06-09,72.8,Active,No
+TRN000505,STY048,Freya Parker,CON017,RG07,Level 1 — Colour,Colour Theory Fundamentals,2019-12-06,2020-01-27,2022-01-26,74.5,Expired,No
+TRN000506,STY048,Freya Parker,CON017,RG07,Level 1 — Colour,Seasonal Analysis Basics,2019-12-06,2020-01-27,2022-01-26,74.5,Expired,No
+TRN000507,STY048,Freya Parker,CON017,RG07,Level 1 — Colour,Draping Technique,2019-12-06,2020-01-27,2022-01-26,74.5,Expired,No
+TRN000508,STY048,Freya Parker,CON017,RG07,Level 1 — Colour,Client Communication,2019-12-06,2020-01-27,2022-01-26,74.5,Expired,No
+TRN000509,STY048,Freya Parker,CON017,RG07,Level 2 — Style,Body Shape Analysis,2020-06-04,2020-07-01,2022-07-01,89.3,Expired,Yes
+TRN000510,STY048,Freya Parker,CON017,RG07,Level 2 — Style,Clothing Lines & Textures,2020-06-04,2020-07-01,2022-07-01,89.3,Expired,Yes
+TRN000511,STY048,Freya Parker,CON017,RG07,Level 2 — Style,Style Archetypes,2020-06-04,2020-07-01,2022-07-01,89.3,Expired,Yes
+TRN000512,STY048,Freya Parker,CON017,RG07,Level 2 — Style,Wardrobe Building,2020-06-04,2020-07-01,2022-07-01,89.3,Expired,Yes
+TRN000513,STY048,Freya Parker,CON017,RG07,Level 3 — Full Stylist,Advanced Colour,2020-12-18,2021-01-17,2023-01-17,83.7,Expired,No
+TRN000514,STY048,Freya Parker,CON017,RG07,Level 3 — Full Stylist,Advanced Style,2020-12-18,2021-01-17,2023-01-17,83.7,Expired,No
+TRN000515,STY048,Freya Parker,CON017,RG07,Level 3 — Full Stylist,Makeup Integration,2020-12-18,2021-01-17,2023-01-17,83.7,Expired,No
+TRN000516,STY048,Freya Parker,CON017,RG07,Level 3 — Full Stylist,Business Development,2020-12-18,2021-01-17,2023-01-17,83.7,Expired,No
+TRN000517,STY049,Daisy Evans,CON017,RG07,Level 1 — Colour,Colour Theory Fundamentals,2021-07-03,2021-07-20,2023-07-20,70.9,Expired,No
+TRN000518,STY049,Daisy Evans,CON017,RG07,Level 1 — Colour,Seasonal Analysis Basics,2021-07-03,2021-07-20,2023-07-20,70.9,Expired,No
+TRN000519,STY049,Daisy Evans,CON017,RG07,Level 1 — Colour,Draping Technique,2021-07-03,2021-07-20,2023-07-20,70.9,Expired,No
+TRN000520,STY049,Daisy Evans,CON017,RG07,Level 1 — Colour,Client Communication,2021-07-03,2021-07-20,2023-07-20,70.9,Expired,No
+TRN000521,STY049,Daisy Evans,CON017,RG07,Level 2 — Style,Body Shape Analysis,2022-01-04,2022-02-04,2024-02-04,69.4,Expired,No
+TRN000522,STY049,Daisy Evans,CON017,RG07,Level 2 — Style,Clothing Lines & Textures,2022-01-04,2022-02-04,2024-02-04,69.4,Expired,No
+TRN000523,STY049,Daisy Evans,CON017,RG07,Level 2 — Style,Style Archetypes,2022-01-04,2022-02-04,2024-02-04,69.4,Expired,No
+TRN000524,STY049,Daisy Evans,CON017,RG07,Level 2 — Style,Wardrobe Building,2022-01-04,2022-02-04,2024-02-04,69.4,Expired,No
+TRN000525,STY050,Alice Edwards,CON018,RG08,Level 1 — Colour,Colour Theory Fundamentals,2023-02-19,2023-03-13,2025-03-12,87.8,Expired,Yes
+TRN000526,STY050,Alice Edwards,CON018,RG08,Level 1 — Colour,Seasonal Analysis Basics,2023-02-19,2023-03-13,2025-03-12,87.8,Expired,Yes
+TRN000527,STY050,Alice Edwards,CON018,RG08,Level 1 — Colour,Draping Technique,2023-02-19,2023-03-13,2025-03-12,87.8,Expired,Yes
+TRN000528,STY050,Alice Edwards,CON018,RG08,Level 1 — Colour,Client Communication,2023-02-19,2023-03-13,2025-03-12,87.8,Expired,Yes
+TRN000529,STY050,Alice Edwards,CON018,RG08,Level 2 — Style,Body Shape Analysis,2023-08-16,2023-09-09,2025-09-08,91.0,Expired,Yes
+TRN000530,STY050,Alice Edwards,CON018,RG08,Level 2 — Style,Clothing Lines & Textures,2023-08-16,2023-09-09,2025-09-08,91.0,Expired,Yes
+TRN000531,STY050,Alice Edwards,CON018,RG08,Level 2 — Style,Style Archetypes,2023-08-16,2023-09-09,2025-09-08,91.0,Expired,Yes
+TRN000532,STY050,Alice Edwards,CON018,RG08,Level 2 — Style,Wardrobe Building,2023-08-16,2023-09-09,2025-09-08,91.0,Expired,Yes
+TRN000533,STY050,Alice Edwards,CON018,RG08,Level 3 — Full Stylist,Advanced Colour,2024-02-21,2024-04-20,2026-04-20,81.3,Active,No
+TRN000534,STY050,Alice Edwards,CON018,RG08,Level 3 — Full Stylist,Advanced Style,2024-02-21,2024-04-20,2026-04-20,81.3,Active,No
+TRN000535,STY050,Alice Edwards,CON018,RG08,Level 3 — Full Stylist,Makeup Integration,2024-02-21,2024-04-20,2026-04-20,81.3,Active,No
+TRN000536,STY050,Alice Edwards,CON018,RG08,Level 3 — Full Stylist,Business Development,2024-02-21,2024-04-20,2026-04-20,81.3,Active,No
+TRN000537,STY051,George Collins,CON018,RG08,Level 1 — Colour,Colour Theory Fundamentals,2018-01-23,2018-02-13,2020-02-13,70.3,Expired,No
+TRN000538,STY051,George Collins,CON018,RG08,Level 1 — Colour,Seasonal Analysis Basics,2018-01-23,2018-02-13,2020-02-13,70.3,Expired,No
+TRN000539,STY051,George Collins,CON018,RG08,Level 1 — Colour,Draping Technique,2018-01-23,2018-02-13,2020-02-13,70.3,Expired,No
+TRN000540,STY051,George Collins,CON018,RG08,Level 1 — Colour,Client Communication,2018-01-23,2018-02-13,2020-02-13,70.3,Expired,No
+TRN000541,STY051,George Collins,CON018,RG08,Level 2 — Style,Body Shape Analysis,2018-08-19,2018-10-16,2020-10-15,96.0,Expired,Yes
+TRN000542,STY051,George Collins,CON018,RG08,Level 2 — Style,Clothing Lines & Textures,2018-08-19,2018-10-16,2020-10-15,96.0,Expired,Yes
+TRN000543,STY051,George Collins,CON018,RG08,Level 2 — Style,Style Archetypes,2018-08-19,2018-10-16,2020-10-15,96.0,Expired,Yes
+TRN000544,STY051,George Collins,CON018,RG08,Level 2 — Style,Wardrobe Building,2018-08-19,2018-10-16,2020-10-15,96.0,Expired,Yes
+TRN000545,STY052,William Stewart,CON018,RG08,Level 1 — Colour,Colour Theory Fundamentals,2018-08-11,2018-08-27,2020-08-26,93.9,Expired,Yes
+TRN000546,STY052,William Stewart,CON018,RG08,Level 1 — Colour,Seasonal Analysis Basics,2018-08-11,2018-08-27,2020-08-26,93.9,Expired,Yes
+TRN000547,STY052,William Stewart,CON018,RG08,Level 1 — Colour,Draping Technique,2018-08-11,2018-08-27,2020-08-26,93.9,Expired,Yes
+TRN000548,STY052,William Stewart,CON018,RG08,Level 1 — Colour,Client Communication,2018-08-11,2018-08-27,2020-08-26,93.9,Expired,Yes
+TRN000549,STY052,William Stewart,CON018,RG08,Level 2 — Style,Body Shape Analysis,2019-02-08,2019-03-29,2021-03-28,72.6,Expired,No
+TRN000550,STY052,William Stewart,CON018,RG08,Level 2 — Style,Clothing Lines & Textures,2019-02-08,2019-03-29,2021-03-28,72.6,Expired,No
+TRN000551,STY052,William Stewart,CON018,RG08,Level 2 — Style,Style Archetypes,2019-02-08,2019-03-29,2021-03-28,72.6,Expired,No
+TRN000552,STY052,William Stewart,CON018,RG08,Level 2 — Style,Wardrobe Building,2019-02-08,2019-03-29,2021-03-28,72.6,Expired,No
+TRN000553,STY052,William Stewart,CON018,RG08,Level 3 — Full Stylist,Advanced Colour,2019-07-24,2019-08-09,2021-08-08,77.6,Expired,No
+TRN000554,STY052,William Stewart,CON018,RG08,Level 3 — Full Stylist,Advanced Style,2019-07-24,2019-08-09,2021-08-08,77.6,Expired,No
+TRN000555,STY052,William Stewart,CON018,RG08,Level 3 — Full Stylist,Makeup Integration,2019-07-24,2019-08-09,2021-08-08,77.6,Expired,No
+TRN000556,STY052,William Stewart,CON018,RG08,Level 3 — Full Stylist,Business Development,2019-07-24,2019-08-09,2021-08-08,77.6,Expired,No
+TRN000557,STY053,Henry Sanchez,CON019,RG09,Level 1 — Colour,Colour Theory Fundamentals,2024-01-13,2024-01-29,2026-01-28,95.9,Expired,Yes
+TRN000558,STY053,Henry Sanchez,CON019,RG09,Level 1 — Colour,Seasonal Analysis Basics,2024-01-13,2024-01-29,2026-01-28,95.9,Expired,Yes
+TRN000559,STY053,Henry Sanchez,CON019,RG09,Level 1 — Colour,Draping Technique,2024-01-13,2024-01-29,2026-01-28,95.9,Expired,Yes
+TRN000560,STY053,Henry Sanchez,CON019,RG09,Level 1 — Colour,Client Communication,2024-01-13,2024-01-29,2026-01-28,95.9,Expired,Yes
+TRN000561,STY053,Henry Sanchez,CON019,RG09,Level 2 — Style,Body Shape Analysis,2024-06-19,2024-08-15,2026-08-15,75.7,Active,No
+TRN000562,STY053,Henry Sanchez,CON019,RG09,Level 2 — Style,Clothing Lines & Textures,2024-06-19,2024-08-15,2026-08-15,75.7,Active,No
+TRN000563,STY053,Henry Sanchez,CON019,RG09,Level 2 — Style,Style Archetypes,2024-06-19,2024-08-15,2026-08-15,75.7,Active,No
+TRN000564,STY053,Henry Sanchez,CON019,RG09,Level 2 — Style,Wardrobe Building,2024-06-19,2024-08-15,2026-08-15,75.7,Active,No
+TRN000565,STY053,Henry Sanchez,CON019,RG09,Level 3 — Full Stylist,Advanced Colour,2024-12-13,2025-01-18,2027-01-18,92.2,Active,Yes
+TRN000566,STY053,Henry Sanchez,CON019,RG09,Level 3 — Full Stylist,Advanced Style,2024-12-13,2025-01-18,2027-01-18,92.2,Active,Yes
+TRN000567,STY053,Henry Sanchez,CON019,RG09,Level 3 — Full Stylist,Makeup Integration,2024-12-13,2025-01-18,2027-01-18,92.2,Active,Yes
+TRN000568,STY053,Henry Sanchez,CON019,RG09,Level 3 — Full Stylist,Business Development,2024-12-13,2025-01-18,2027-01-18,92.2,Active,Yes
+TRN000569,STY053,Henry Sanchez,CON019,RG09,Senior Stylist,Mentoring Skills,2025-07-06,2025-08-15,2027-08-15,98.2,Active,Yes
+TRN000570,STY053,Henry Sanchez,CON019,RG09,Senior Stylist,Workshop Facilitation,2025-07-06,2025-08-15,2027-08-15,98.2,Active,Yes
+TRN000571,STY053,Henry Sanchez,CON019,RG09,Senior Stylist,Corporate Clients,2025-07-06,2025-08-15,2027-08-15,98.2,Active,Yes
+TRN000572,STY053,Henry Sanchez,CON019,RG09,Senior Stylist,Advanced Draping,2025-07-06,2025-08-15,2027-08-15,98.2,Active,Yes
+TRN000573,STY054,Edward Morris,CON019,RG09,Level 1 — Colour,Colour Theory Fundamentals,2023-09-22,2023-10-15,2025-10-14,96.7,Expired,Yes
+TRN000574,STY054,Edward Morris,CON019,RG09,Level 1 — Colour,Seasonal Analysis Basics,2023-09-22,2023-10-15,2025-10-14,96.7,Expired,Yes
+TRN000575,STY054,Edward Morris,CON019,RG09,Level 1 — Colour,Draping Technique,2023-09-22,2023-10-15,2025-10-14,96.7,Expired,Yes
+TRN000576,STY054,Edward Morris,CON019,RG09,Level 1 — Colour,Client Communication,2023-09-22,2023-10-15,2025-10-14,96.7,Expired,Yes
+TRN000577,STY054,Edward Morris,CON019,RG09,Level 2 — Style,Body Shape Analysis,2024-03-04,2024-03-28,2026-03-28,98.3,Active,Yes
+TRN000578,STY054,Edward Morris,CON019,RG09,Level 2 — Style,Clothing Lines & Textures,2024-03-04,2024-03-28,2026-03-28,98.3,Active,Yes
+TRN000579,STY054,Edward Morris,CON019,RG09,Level 2 — Style,Style Archetypes,2024-03-04,2024-03-28,2026-03-28,98.3,Active,Yes
+TRN000580,STY054,Edward Morris,CON019,RG09,Level 2 — Style,Wardrobe Building,2024-03-04,2024-03-28,2026-03-28,98.3,Active,Yes
+TRN000581,STY054,Edward Morris,CON019,RG09,Level 3 — Full Stylist,Advanced Colour,2024-09-18,2024-10-13,2026-10-13,95.3,Active,Yes
+TRN000582,STY054,Edward Morris,CON019,RG09,Level 3 — Full Stylist,Advanced Style,2024-09-18,2024-10-13,2026-10-13,95.3,Active,Yes
+TRN000583,STY054,Edward Morris,CON019,RG09,Level 3 — Full Stylist,Makeup Integration,2024-09-18,2024-10-13,2026-10-13,95.3,Active,Yes
+TRN000584,STY054,Edward Morris,CON019,RG09,Level 3 — Full Stylist,Business Development,2024-09-18,2024-10-13,2026-10-13,95.3,Active,Yes
+TRN000585,STY055,Arthur Rogers,CON020,RG10,Level 1 — Colour,Colour Theory Fundamentals,2021-02-09,2021-03-06,2023-03-06,90.8,Expired,Yes
+TRN000586,STY055,Arthur Rogers,CON020,RG10,Level 1 — Colour,Seasonal Analysis Basics,2021-02-09,2021-03-06,2023-03-06,90.8,Expired,Yes
+TRN000587,STY055,Arthur Rogers,CON020,RG10,Level 1 — Colour,Draping Technique,2021-02-09,2021-03-06,2023-03-06,90.8,Expired,Yes
+TRN000588,STY055,Arthur Rogers,CON020,RG10,Level 1 — Colour,Client Communication,2021-02-09,2021-03-06,2023-03-06,90.8,Expired,Yes
+TRN000589,STY055,Arthur Rogers,CON020,RG10,Level 2 — Style,Body Shape Analysis,2021-08-18,2021-09-27,2023-09-27,92.9,Expired,Yes
+TRN000590,STY055,Arthur Rogers,CON020,RG10,Level 2 — Style,Clothing Lines & Textures,2021-08-18,2021-09-27,2023-09-27,92.9,Expired,Yes
+TRN000591,STY055,Arthur Rogers,CON020,RG10,Level 2 — Style,Style Archetypes,2021-08-18,2021-09-27,2023-09-27,92.9,Expired,Yes
+TRN000592,STY055,Arthur Rogers,CON020,RG10,Level 2 — Style,Wardrobe Building,2021-08-18,2021-09-27,2023-09-27,92.9,Expired,Yes
+TRN000593,STY055,Arthur Rogers,CON020,RG10,Level 3 — Full Stylist,Advanced Colour,2022-03-03,2022-04-01,2024-03-31,76.3,Expired,No
+TRN000594,STY055,Arthur Rogers,CON020,RG10,Level 3 — Full Stylist,Advanced Style,2022-03-03,2022-04-01,2024-03-31,76.3,Expired,No
+TRN000595,STY055,Arthur Rogers,CON020,RG10,Level 3 — Full Stylist,Makeup Integration,2022-03-03,2022-04-01,2024-03-31,76.3,Expired,No
+TRN000596,STY055,Arthur Rogers,CON020,RG10,Level 3 — Full Stylist,Business Development,2022-03-03,2022-04-01,2024-03-31,76.3,Expired,No
+TRN000597,STY056,Leo Reed,CON020,RG10,Level 1 — Colour,Colour Theory Fundamentals,2020-09-12,2020-11-09,2022-11-09,71.4,Expired,No
+TRN000598,STY056,Leo Reed,CON020,RG10,Level 1 — Colour,Seasonal Analysis Basics,2020-09-12,2020-11-09,2022-11-09,71.4,Expired,No
+TRN000599,STY056,Leo Reed,CON020,RG10,Level 1 — Colour,Draping Technique,2020-09-12,2020-11-09,2022-11-09,71.4,Expired,No
+TRN000600,STY056,Leo Reed,CON020,RG10,Level 1 — Colour,Client Communication,2020-09-12,2020-11-09,2022-11-09,71.4,Expired,No
+TRN000601,STY057,Freddie Cook,CON020,RG10,Level 1 — Colour,Colour Theory Fundamentals,2022-05-15,2022-05-31,2024-05-30,94.6,Expired,Yes
+TRN000602,STY057,Freddie Cook,CON020,RG10,Level 1 — Colour,Seasonal Analysis Basics,2022-05-15,2022-05-31,2024-05-30,94.6,Expired,Yes
+TRN000603,STY057,Freddie Cook,CON020,RG10,Level 1 — Colour,Draping Technique,2022-05-15,2022-05-31,2024-05-30,94.6,Expired,Yes
+TRN000604,STY057,Freddie Cook,CON020,RG10,Level 1 — Colour,Client Communication,2022-05-15,2022-05-31,2024-05-30,94.6,Expired,Yes
+TRN000605,STY058,Alfie Morgan,CON021,RG01,Level 1 — Colour,Colour Theory Fundamentals,2020-05-04,2020-05-30,2022-05-30,93.3,Expired,Yes
+TRN000606,STY058,Alfie Morgan,CON021,RG01,Level 1 — Colour,Seasonal Analysis Basics,2020-05-04,2020-05-30,2022-05-30,93.3,Expired,Yes
+TRN000607,STY058,Alfie Morgan,CON021,RG01,Level 1 — Colour,Draping Technique,2020-05-04,2020-05-30,2022-05-30,93.3,Expired,Yes
+TRN000608,STY058,Alfie Morgan,CON021,RG01,Level 1 — Colour,Client Communication,2020-05-04,2020-05-30,2022-05-30,93.3,Expired,Yes
+TRN000609,STY058,Alfie Morgan,CON021,RG01,Level 2 — Style,Body Shape Analysis,2020-11-07,2020-12-13,2022-12-13,77.5,Expired,No
+TRN000610,STY058,Alfie Morgan,CON021,RG01,Level 2 — Style,Clothing Lines & Textures,2020-11-07,2020-12-13,2022-12-13,77.5,Expired,No
+TRN000611,STY058,Alfie Morgan,CON021,RG01,Level 2 — Style,Style Archetypes,2020-11-07,2020-12-13,2022-12-13,77.5,Expired,No
+TRN000612,STY058,Alfie Morgan,CON021,RG01,Level 2 — Style,Wardrobe Building,2020-11-07,2020-12-13,2022-12-13,77.5,Expired,No
+TRN000613,STY058,Alfie Morgan,CON021,RG01,Level 3 — Full Stylist,Advanced Colour,2021-05-17,2021-06-14,2023-06-14,74.9,Expired,No
+TRN000614,STY058,Alfie Morgan,CON021,RG01,Level 3 — Full Stylist,Advanced Style,2021-05-17,2021-06-14,2023-06-14,74.9,Expired,No
+TRN000615,STY058,Alfie Morgan,CON021,RG01,Level 3 — Full Stylist,Makeup Integration,2021-05-17,2021-06-14,2023-06-14,74.9,Expired,No
+TRN000616,STY058,Alfie Morgan,CON021,RG01,Level 3 — Full Stylist,Business Development,2021-05-17,2021-06-14,2023-06-14,74.9,Expired,No
+TRN000617,STY059,Charlie Bell,CON021,RG01,Level 1 — Colour,Colour Theory Fundamentals,2022-04-29,2022-05-25,2024-05-24,80.4,Expired,No
+TRN000618,STY059,Charlie Bell,CON021,RG01,Level 1 — Colour,Seasonal Analysis Basics,2022-04-29,2022-05-25,2024-05-24,80.4,Expired,No
+TRN000619,STY059,Charlie Bell,CON021,RG01,Level 1 — Colour,Draping Technique,2022-04-29,2022-05-25,2024-05-24,80.4,Expired,No
+TRN000620,STY059,Charlie Bell,CON021,RG01,Level 1 — Colour,Client Communication,2022-04-29,2022-05-25,2024-05-24,80.4,Expired,No
+TRN000621,STY059,Charlie Bell,CON021,RG01,Level 2 — Style,Body Shape Analysis,2022-10-13,2022-10-31,2024-10-30,98.0,Expired,Yes
+TRN000622,STY059,Charlie Bell,CON021,RG01,Level 2 — Style,Clothing Lines & Textures,2022-10-13,2022-10-31,2024-10-30,98.0,Expired,Yes
+TRN000623,STY059,Charlie Bell,CON021,RG01,Level 2 — Style,Style Archetypes,2022-10-13,2022-10-31,2024-10-30,98.0,Expired,Yes
+TRN000624,STY059,Charlie Bell,CON021,RG01,Level 2 — Style,Wardrobe Building,2022-10-13,2022-10-31,2024-10-30,98.0,Expired,Yes
+TRN000625,STY059,Charlie Bell,CON021,RG01,Level 3 — Full Stylist,Advanced Colour,2023-04-11,2023-05-17,2025-05-16,87.9,Expired,Yes
+TRN000626,STY059,Charlie Bell,CON021,RG01,Level 3 — Full Stylist,Advanced Style,2023-04-11,2023-05-17,2025-05-16,87.9,Expired,Yes
+TRN000627,STY059,Charlie Bell,CON021,RG01,Level 3 — Full Stylist,Makeup Integration,2023-04-11,2023-05-17,2025-05-16,87.9,Expired,Yes
+TRN000628,STY059,Charlie Bell,CON021,RG01,Level 3 — Full Stylist,Business Development,2023-04-11,2023-05-17,2025-05-16,87.9,Expired,Yes
+TRN000629,STY060,Oscar Murphy,CON021,RG01,Level 1 — Colour,Colour Theory Fundamentals,2024-01-26,2024-03-23,2026-03-23,98.4,Active,Yes
+TRN000630,STY060,Oscar Murphy,CON021,RG01,Level 1 — Colour,Seasonal Analysis Basics,2024-01-26,2024-03-23,2026-03-23,98.4,Active,Yes
+TRN000631,STY060,Oscar Murphy,CON021,RG01,Level 1 — Colour,Draping Technique,2024-01-26,2024-03-23,2026-03-23,98.4,Active,Yes
+TRN000632,STY060,Oscar Murphy,CON021,RG01,Level 1 — Colour,Client Communication,2024-01-26,2024-03-23,2026-03-23,98.4,Active,Yes
+TRN000633,STY060,Oscar Murphy,CON021,RG01,Level 2 — Style,Body Shape Analysis,2024-07-29,2024-09-02,2026-09-02,97.1,Active,Yes
+TRN000634,STY060,Oscar Murphy,CON021,RG01,Level 2 — Style,Clothing Lines & Textures,2024-07-29,2024-09-02,2026-09-02,97.1,Active,Yes
+TRN000635,STY060,Oscar Murphy,CON021,RG01,Level 2 — Style,Style Archetypes,2024-07-29,2024-09-02,2026-09-02,97.1,Active,Yes
+TRN000636,STY060,Oscar Murphy,CON021,RG01,Level 2 — Style,Wardrobe Building,2024-07-29,2024-09-02,2026-09-02,97.1,Active,Yes
+TRN000637,STY061,Eleanor Bailey,CON021,RG01,Level 1 — Colour,Colour Theory Fundamentals,2021-10-11,2021-11-10,2023-11-10,73.5,Expired,No
+TRN000638,STY061,Eleanor Bailey,CON021,RG01,Level 1 — Colour,Seasonal Analysis Basics,2021-10-11,2021-11-10,2023-11-10,73.5,Expired,No
+TRN000639,STY061,Eleanor Bailey,CON021,RG01,Level 1 — Colour,Draping Technique,2021-10-11,2021-11-10,2023-11-10,73.5,Expired,No
+TRN000640,STY061,Eleanor Bailey,CON021,RG01,Level 1 — Colour,Client Communication,2021-10-11,2021-11-10,2023-11-10,73.5,Expired,No
+TRN000641,STY061,Eleanor Bailey,CON021,RG01,Level 2 — Style,Body Shape Analysis,2022-05-06,2022-06-05,2024-06-04,69.2,Expired,No
+TRN000642,STY061,Eleanor Bailey,CON021,RG01,Level 2 — Style,Clothing Lines & Textures,2022-05-06,2022-06-05,2024-06-04,69.2,Expired,No
+TRN000643,STY061,Eleanor Bailey,CON021,RG01,Level 2 — Style,Style Archetypes,2022-05-06,2022-06-05,2024-06-04,69.2,Expired,No
+TRN000644,STY061,Eleanor Bailey,CON021,RG01,Level 2 — Style,Wardrobe Building,2022-05-06,2022-06-05,2024-06-04,69.2,Expired,No
+TRN000645,STY061,Eleanor Bailey,CON021,RG01,Level 3 — Full Stylist,Advanced Colour,2022-10-22,2022-12-02,2024-12-01,78.7,Expired,No
+TRN000646,STY061,Eleanor Bailey,CON021,RG01,Level 3 — Full Stylist,Advanced Style,2022-10-22,2022-12-02,2024-12-01,78.7,Expired,No
+TRN000647,STY061,Eleanor Bailey,CON021,RG01,Level 3 — Full Stylist,Makeup Integration,2022-10-22,2022-12-02,2024-12-01,78.7,Expired,No
+TRN000648,STY061,Eleanor Bailey,CON021,RG01,Level 3 — Full Stylist,Business Development,2022-10-22,2022-12-02,2024-12-01,78.7,Expired,No
+TRN000649,STY062,Harriet Rivera,CON022,RG02,Level 1 — Colour,Colour Theory Fundamentals,2024-09-15,2024-10-19,2026-10-19,81.5,Active,No
+TRN000650,STY062,Harriet Rivera,CON022,RG02,Level 1 — Colour,Seasonal Analysis Basics,2024-09-15,2024-10-19,2026-10-19,81.5,Active,No
+TRN000651,STY062,Harriet Rivera,CON022,RG02,Level 1 — Colour,Draping Technique,2024-09-15,2024-10-19,2026-10-19,81.5,Active,No
+TRN000652,STY062,Harriet Rivera,CON022,RG02,Level 1 — Colour,Client Communication,2024-09-15,2024-10-19,2026-10-19,81.5,Active,No
+TRN000653,STY062,Harriet Rivera,CON022,RG02,Level 2 — Style,Body Shape Analysis,2025-03-05,2025-03-26,2027-03-26,79.9,Active,No
+TRN000654,STY062,Harriet Rivera,CON022,RG02,Level 2 — Style,Clothing Lines & Textures,2025-03-05,2025-03-26,2027-03-26,79.9,Active,No
+TRN000655,STY062,Harriet Rivera,CON022,RG02,Level 2 — Style,Style Archetypes,2025-03-05,2025-03-26,2027-03-26,79.9,Active,No
+TRN000656,STY062,Harriet Rivera,CON022,RG02,Level 2 — Style,Wardrobe Building,2025-03-05,2025-03-26,2027-03-26,79.9,Active,No
+TRN000657,STY062,Harriet Rivera,CON022,RG02,Level 3 — Full Stylist,Advanced Colour,2025-09-03,2025-09-29,2027-09-29,75.9,Active,No
+TRN000658,STY062,Harriet Rivera,CON022,RG02,Level 3 — Full Stylist,Advanced Style,2025-09-03,2025-09-29,2027-09-29,75.9,Active,No
+TRN000659,STY062,Harriet Rivera,CON022,RG02,Level 3 — Full Stylist,Makeup Integration,2025-09-03,2025-09-29,2027-09-29,75.9,Active,No
+TRN000660,STY062,Harriet Rivera,CON022,RG02,Level 3 — Full Stylist,Business Development,2025-09-03,2025-09-29,2027-09-29,75.9,Active,No
+TRN000661,STY063,Imogen Cooper,CON022,RG02,Level 1 — Colour,Colour Theory Fundamentals,2018-08-16,2018-09-26,2020-09-25,68.1,Expired,No
+TRN000662,STY063,Imogen Cooper,CON022,RG02,Level 1 — Colour,Seasonal Analysis Basics,2018-08-16,2018-09-26,2020-09-25,68.1,Expired,No
+TRN000663,STY063,Imogen Cooper,CON022,RG02,Level 1 — Colour,Draping Technique,2018-08-16,2018-09-26,2020-09-25,68.1,Expired,No
+TRN000664,STY063,Imogen Cooper,CON022,RG02,Level 1 — Colour,Client Communication,2018-08-16,2018-09-26,2020-09-25,68.1,Expired,No
+TRN000665,STY063,Imogen Cooper,CON022,RG02,Level 2 — Style,Body Shape Analysis,2019-02-19,2019-04-08,2021-04-07,89.3,Expired,Yes
+TRN000666,STY063,Imogen Cooper,CON022,RG02,Level 2 — Style,Clothing Lines & Textures,2019-02-19,2019-04-08,2021-04-07,89.3,Expired,Yes
+TRN000667,STY063,Imogen Cooper,CON022,RG02,Level 2 — Style,Style Archetypes,2019-02-19,2019-04-08,2021-04-07,89.3,Expired,Yes
+TRN000668,STY063,Imogen Cooper,CON022,RG02,Level 2 — Style,Wardrobe Building,2019-02-19,2019-04-08,2021-04-07,89.3,Expired,Yes
+TRN000669,STY063,Imogen Cooper,CON022,RG02,Level 3 — Full Stylist,Advanced Colour,2019-08-19,2019-10-14,2021-10-13,74.1,Expired,No
+TRN000670,STY063,Imogen Cooper,CON022,RG02,Level 3 — Full Stylist,Advanced Style,2019-08-19,2019-10-14,2021-10-13,74.1,Expired,No
+TRN000671,STY063,Imogen Cooper,CON022,RG02,Level 3 — Full Stylist,Makeup Integration,2019-08-19,2019-10-14,2021-10-13,74.1,Expired,No
+TRN000672,STY063,Imogen Cooper,CON022,RG02,Level 3 — Full Stylist,Business Development,2019-08-19,2019-10-14,2021-10-13,74.1,Expired,No
+TRN000673,STY063,Imogen Cooper,CON022,RG02,Senior Stylist,Mentoring Skills,2020-01-29,2020-02-16,2022-02-15,97.4,Expired,Yes
+TRN000674,STY063,Imogen Cooper,CON022,RG02,Senior Stylist,Workshop Facilitation,2020-01-29,2020-02-16,2022-02-15,97.4,Expired,Yes
+TRN000675,STY063,Imogen Cooper,CON022,RG02,Senior Stylist,Corporate Clients,2020-01-29,2020-02-16,2022-02-15,97.4,Expired,Yes
+TRN000676,STY063,Imogen Cooper,CON022,RG02,Senior Stylist,Advanced Draping,2020-01-29,2020-02-16,2022-02-15,97.4,Expired,Yes
+TRN000677,STY064,Martha Richardson,CON022,RG02,Level 1 — Colour,Colour Theory Fundamentals,2021-03-14,2021-04-18,2023-04-18,87.3,Expired,Yes
+TRN000678,STY064,Martha Richardson,CON022,RG02,Level 1 — Colour,Seasonal Analysis Basics,2021-03-14,2021-04-18,2023-04-18,87.3,Expired,Yes
+TRN000679,STY064,Martha Richardson,CON022,RG02,Level 1 — Colour,Draping Technique,2021-03-14,2021-04-18,2023-04-18,87.3,Expired,Yes
+TRN000680,STY064,Martha Richardson,CON022,RG02,Level 1 — Colour,Client Communication,2021-03-14,2021-04-18,2023-04-18,87.3,Expired,Yes
+TRN000681,STY064,Martha Richardson,CON022,RG02,Level 2 — Style,Body Shape Analysis,2021-09-02,2021-09-23,2023-09-23,90.3,Expired,Yes
+TRN000682,STY064,Martha Richardson,CON022,RG02,Level 2 — Style,Clothing Lines & Textures,2021-09-02,2021-09-23,2023-09-23,90.3,Expired,Yes
+TRN000683,STY064,Martha Richardson,CON022,RG02,Level 2 — Style,Style Archetypes,2021-09-02,2021-09-23,2023-09-23,90.3,Expired,Yes
+TRN000684,STY064,Martha Richardson,CON022,RG02,Level 2 — Style,Wardrobe Building,2021-09-02,2021-09-23,2023-09-23,90.3,Expired,Yes
+TRN000685,STY065,Rosie Cox,CON022,RG02,Level 1 — Colour,Colour Theory Fundamentals,2021-12-13,2022-01-28,2024-01-28,77.6,Expired,No
+TRN000686,STY065,Rosie Cox,CON022,RG02,Level 1 — Colour,Seasonal Analysis Basics,2021-12-13,2022-01-28,2024-01-28,77.6,Expired,No
+TRN000687,STY065,Rosie Cox,CON022,RG02,Level 1 — Colour,Draping Technique,2021-12-13,2022-01-28,2024-01-28,77.6,Expired,No
+TRN000688,STY065,Rosie Cox,CON022,RG02,Level 1 — Colour,Client Communication,2021-12-13,2022-01-28,2024-01-28,77.6,Expired,No
+TRN000689,STY065,Rosie Cox,CON022,RG02,Level 2 — Style,Body Shape Analysis,2022-06-15,2022-07-19,2024-07-18,80.5,Expired,No
+TRN000690,STY065,Rosie Cox,CON022,RG02,Level 2 — Style,Clothing Lines & Textures,2022-06-15,2022-07-19,2024-07-18,80.5,Expired,No
+TRN000691,STY065,Rosie Cox,CON022,RG02,Level 2 — Style,Style Archetypes,2022-06-15,2022-07-19,2024-07-18,80.5,Expired,No
+TRN000692,STY065,Rosie Cox,CON022,RG02,Level 2 — Style,Wardrobe Building,2022-06-15,2022-07-19,2024-07-18,80.5,Expired,No
+TRN000693,STY065,Rosie Cox,CON022,RG02,Level 3 — Full Stylist,Advanced Colour,2022-12-08,2023-01-26,2025-01-25,71.9,Expired,No
+TRN000694,STY065,Rosie Cox,CON022,RG02,Level 3 — Full Stylist,Advanced Style,2022-12-08,2023-01-26,2025-01-25,71.9,Expired,No
+TRN000695,STY065,Rosie Cox,CON022,RG02,Level 3 — Full Stylist,Makeup Integration,2022-12-08,2023-01-26,2025-01-25,71.9,Expired,No
+TRN000696,STY065,Rosie Cox,CON022,RG02,Level 3 — Full Stylist,Business Development,2022-12-08,2023-01-26,2025-01-25,71.9,Expired,No
+TRN000697,STY065,Rosie Cox,CON022,RG02,Senior Stylist,Mentoring Skills,2023-06-10,2023-08-05,2025-08-04,97.2,Expired,Yes
+TRN000698,STY065,Rosie Cox,CON022,RG02,Senior Stylist,Workshop Facilitation,2023-06-10,2023-08-05,2025-08-04,97.2,Expired,Yes
+TRN000699,STY065,Rosie Cox,CON022,RG02,Senior Stylist,Corporate Clients,2023-06-10,2023-08-05,2025-08-04,97.2,Expired,Yes
+TRN000700,STY065,Rosie Cox,CON022,RG02,Senior Stylist,Advanced Draping,2023-06-10,2023-08-05,2025-08-04,97.2,Expired,Yes
+TRN000701,STY066,Violet Howard,CON023,RG03,Level 1 — Colour,Colour Theory Fundamentals,2018-04-15,2018-05-10,2020-05-09,87.1,Expired,Yes
+TRN000702,STY066,Violet Howard,CON023,RG03,Level 1 — Colour,Seasonal Analysis Basics,2018-04-15,2018-05-10,2020-05-09,87.1,Expired,Yes
+TRN000703,STY066,Violet Howard,CON023,RG03,Level 1 — Colour,Draping Technique,2018-04-15,2018-05-10,2020-05-09,87.1,Expired,Yes
+TRN000704,STY066,Violet Howard,CON023,RG03,Level 1 — Colour,Client Communication,2018-04-15,2018-05-10,2020-05-09,87.1,Expired,Yes
+TRN000705,STY066,Violet Howard,CON023,RG03,Level 2 — Style,Body Shape Analysis,2018-09-30,2018-11-08,2020-11-07,85.0,Expired,Yes
+TRN000706,STY066,Violet Howard,CON023,RG03,Level 2 — Style,Clothing Lines & Textures,2018-09-30,2018-11-08,2020-11-07,85.0,Expired,Yes
+TRN000707,STY066,Violet Howard,CON023,RG03,Level 2 — Style,Style Archetypes,2018-09-30,2018-11-08,2020-11-07,85.0,Expired,Yes
+TRN000708,STY066,Violet Howard,CON023,RG03,Level 2 — Style,Wardrobe Building,2018-09-30,2018-11-08,2020-11-07,85.0,Expired,Yes
+TRN000709,STY066,Violet Howard,CON023,RG03,Level 3 — Full Stylist,Advanced Colour,2019-03-20,2019-04-22,2021-04-21,76.9,Expired,No
+TRN000710,STY066,Violet Howard,CON023,RG03,Level 3 — Full Stylist,Advanced Style,2019-03-20,2019-04-22,2021-04-21,76.9,Expired,No
+TRN000711,STY066,Violet Howard,CON023,RG03,Level 3 — Full Stylist,Makeup Integration,2019-03-20,2019-04-22,2021-04-21,76.9,Expired,No
+TRN000712,STY066,Violet Howard,CON023,RG03,Level 3 — Full Stylist,Business Development,2019-03-20,2019-04-22,2021-04-21,76.9,Expired,No
+TRN000713,STY066,Violet Howard,CON023,RG03,Senior Stylist,Mentoring Skills,2019-09-29,2019-11-19,2021-11-18,86.8,Expired,Yes
+TRN000714,STY066,Violet Howard,CON023,RG03,Senior Stylist,Workshop Facilitation,2019-09-29,2019-11-19,2021-11-18,86.8,Expired,Yes
+TRN000715,STY066,Violet Howard,CON023,RG03,Senior Stylist,Corporate Clients,2019-09-29,2019-11-19,2021-11-18,86.8,Expired,Yes
+TRN000716,STY066,Violet Howard,CON023,RG03,Senior Stylist,Advanced Draping,2019-09-29,2019-11-19,2021-11-18,86.8,Expired,Yes
+TRN000717,STY066,Violet Howard,CON023,RG03,Master Stylist,Master Practitioner,2020-03-24,2020-05-06,2022-05-06,81.7,Expired,No
+TRN000718,STY066,Violet Howard,CON023,RG03,Master Stylist,Training Others,2020-03-24,2020-05-06,2022-05-06,81.7,Expired,No
+TRN000719,STY066,Violet Howard,CON023,RG03,Master Stylist,Quality Assessment,2020-03-24,2020-05-06,2022-05-06,81.7,Expired,No
+TRN000720,STY066,Violet Howard,CON023,RG03,Master Stylist,Brand Ambassador,2020-03-24,2020-05-06,2022-05-06,81.7,Expired,No
+TRN000721,STY067,Willow Ward,CON023,RG03,Level 1 — Colour,Colour Theory Fundamentals,2023-04-10,2023-05-07,2025-05-06,83.8,Expired,No
+TRN000722,STY067,Willow Ward,CON023,RG03,Level 1 — Colour,Seasonal Analysis Basics,2023-04-10,2023-05-07,2025-05-06,83.8,Expired,No
+TRN000723,STY067,Willow Ward,CON023,RG03,Level 1 — Colour,Draping Technique,2023-04-10,2023-05-07,2025-05-06,83.8,Expired,No
+TRN000724,STY067,Willow Ward,CON023,RG03,Level 1 — Colour,Client Communication,2023-04-10,2023-05-07,2025-05-06,83.8,Expired,No
+TRN000725,STY068,Amber Torres,CON024,RG04,Level 1 — Colour,Colour Theory Fundamentals,2021-07-23,2021-08-16,2023-08-16,88.4,Expired,Yes
+TRN000726,STY068,Amber Torres,CON024,RG04,Level 1 — Colour,Seasonal Analysis Basics,2021-07-23,2021-08-16,2023-08-16,88.4,Expired,Yes
+TRN000727,STY068,Amber Torres,CON024,RG04,Level 1 — Colour,Draping Technique,2021-07-23,2021-08-16,2023-08-16,88.4,Expired,Yes
+TRN000728,STY068,Amber Torres,CON024,RG04,Level 1 — Colour,Client Communication,2021-07-23,2021-08-16,2023-08-16,88.4,Expired,Yes
+TRN000729,STY068,Amber Torres,CON024,RG04,Level 2 — Style,Body Shape Analysis,2022-01-03,2022-02-18,2024-02-18,88.6,Expired,Yes
+TRN000730,STY068,Amber Torres,CON024,RG04,Level 2 — Style,Clothing Lines & Textures,2022-01-03,2022-02-18,2024-02-18,88.6,Expired,Yes
+TRN000731,STY068,Amber Torres,CON024,RG04,Level 2 — Style,Style Archetypes,2022-01-03,2022-02-18,2024-02-18,88.6,Expired,Yes
+TRN000732,STY068,Amber Torres,CON024,RG04,Level 2 — Style,Wardrobe Building,2022-01-03,2022-02-18,2024-02-18,88.6,Expired,Yes
+TRN000733,STY068,Amber Torres,CON024,RG04,Level 3 — Full Stylist,Advanced Colour,2022-07-12,2022-08-16,2024-08-15,70.9,Expired,No
+TRN000734,STY068,Amber Torres,CON024,RG04,Level 3 — Full Stylist,Advanced Style,2022-07-12,2022-08-16,2024-08-15,70.9,Expired,No
+TRN000735,STY068,Amber Torres,CON024,RG04,Level 3 — Full Stylist,Makeup Integration,2022-07-12,2022-08-16,2024-08-15,70.9,Expired,No
+TRN000736,STY068,Amber Torres,CON024,RG04,Level 3 — Full Stylist,Business Development,2022-07-12,2022-08-16,2024-08-15,70.9,Expired,No
+TRN000737,STY068,Amber Torres,CON024,RG04,Senior Stylist,Mentoring Skills,2023-01-19,2023-02-17,2025-02-16,88.9,Expired,Yes
+TRN000738,STY068,Amber Torres,CON024,RG04,Senior Stylist,Workshop Facilitation,2023-01-19,2023-02-17,2025-02-16,88.9,Expired,Yes
+TRN000739,STY068,Amber Torres,CON024,RG04,Senior Stylist,Corporate Clients,2023-01-19,2023-02-17,2025-02-16,88.9,Expired,Yes
+TRN000740,STY068,Amber Torres,CON024,RG04,Senior Stylist,Advanced Draping,2023-01-19,2023-02-17,2025-02-16,88.9,Expired,Yes
+TRN000741,STY069,Jade Peterson,CON024,RG04,Level 1 — Colour,Colour Theory Fundamentals,2022-06-20,2022-07-16,2024-07-15,72.6,Expired,No
+TRN000742,STY069,Jade Peterson,CON024,RG04,Level 1 — Colour,Seasonal Analysis Basics,2022-06-20,2022-07-16,2024-07-15,72.6,Expired,No
+TRN000743,STY069,Jade Peterson,CON024,RG04,Level 1 — Colour,Draping Technique,2022-06-20,2022-07-16,2024-07-15,72.6,Expired,No
+TRN000744,STY069,Jade Peterson,CON024,RG04,Level 1 — Colour,Client Communication,2022-06-20,2022-07-16,2024-07-15,72.6,Expired,No
+TRN000745,STY069,Jade Peterson,CON024,RG04,Level 2 — Style,Body Shape Analysis,2022-12-11,2023-01-09,2025-01-08,98.5,Expired,Yes
+TRN000746,STY069,Jade Peterson,CON024,RG04,Level 2 — Style,Clothing Lines & Textures,2022-12-11,2023-01-09,2025-01-08,98.5,Expired,Yes
+TRN000747,STY069,Jade Peterson,CON024,RG04,Level 2 — Style,Style Archetypes,2022-12-11,2023-01-09,2025-01-08,98.5,Expired,Yes
+TRN000748,STY069,Jade Peterson,CON024,RG04,Level 2 — Style,Wardrobe Building,2022-12-11,2023-01-09,2025-01-08,98.5,Expired,Yes
+TRN000749,STY069,Jade Peterson,CON024,RG04,Level 3 — Full Stylist,Advanced Colour,2023-06-27,2023-07-15,2025-07-14,82.1,Expired,No
+TRN000750,STY069,Jade Peterson,CON024,RG04,Level 3 — Full Stylist,Advanced Style,2023-06-27,2023-07-15,2025-07-14,82.1,Expired,No
+TRN000751,STY069,Jade Peterson,CON024,RG04,Level 3 — Full Stylist,Makeup Integration,2023-06-27,2023-07-15,2025-07-14,82.1,Expired,No
+TRN000752,STY069,Jade Peterson,CON024,RG04,Level 3 — Full Stylist,Business Development,2023-06-27,2023-07-15,2025-07-14,82.1,Expired,No
+TRN000753,STY069,Jade Peterson,CON024,RG04,Senior Stylist,Mentoring Skills,2024-01-02,2024-02-25,2026-02-24,85.8,Active,Yes
+TRN000754,STY069,Jade Peterson,CON024,RG04,Senior Stylist,Workshop Facilitation,2024-01-02,2024-02-25,2026-02-24,85.8,Active,Yes
+TRN000755,STY069,Jade Peterson,CON024,RG04,Senior Stylist,Corporate Clients,2024-01-02,2024-02-25,2026-02-24,85.8,Active,Yes
+TRN000756,STY069,Jade Peterson,CON024,RG04,Senior Stylist,Advanced Draping,2024-01-02,2024-02-25,2026-02-24,85.8,Active,Yes
+TRN000757,STY069,Jade Peterson,CON024,RG04,Master Stylist,Master Practitioner,2024-06-24,2024-08-21,2026-08-21,79.9,Active,No
+TRN000758,STY069,Jade Peterson,CON024,RG04,Master Stylist,Training Others,2024-06-24,2024-08-21,2026-08-21,79.9,Active,No
+TRN000759,STY069,Jade Peterson,CON024,RG04,Master Stylist,Quality Assessment,2024-06-24,2024-08-21,2026-08-21,79.9,Active,No
+TRN000760,STY069,Jade Peterson,CON024,RG04,Master Stylist,Brand Ambassador,2024-06-24,2024-08-21,2026-08-21,79.9,Active,No
+TRN000761,STY070,Leah Gray,CON024,RG04,Level 1 — Colour,Colour Theory Fundamentals,2021-06-01,2021-06-30,2023-06-30,72.6,Expired,No
+TRN000762,STY070,Leah Gray,CON024,RG04,Level 1 — Colour,Seasonal Analysis Basics,2021-06-01,2021-06-30,2023-06-30,72.6,Expired,No
+TRN000763,STY070,Leah Gray,CON024,RG04,Level 1 — Colour,Draping Technique,2021-06-01,2021-06-30,2023-06-30,72.6,Expired,No
+TRN000764,STY070,Leah Gray,CON024,RG04,Level 1 — Colour,Client Communication,2021-06-01,2021-06-30,2023-06-30,72.6,Expired,No
+TRN000765,STY070,Leah Gray,CON024,RG04,Level 2 — Style,Body Shape Analysis,2021-12-08,2021-12-22,2023-12-22,95.7,Expired,Yes
+TRN000766,STY070,Leah Gray,CON024,RG04,Level 2 — Style,Clothing Lines & Textures,2021-12-08,2021-12-22,2023-12-22,95.7,Expired,Yes
+TRN000767,STY070,Leah Gray,CON024,RG04,Level 2 — Style,Style Archetypes,2021-12-08,2021-12-22,2023-12-22,95.7,Expired,Yes
+TRN000768,STY070,Leah Gray,CON024,RG04,Level 2 — Style,Wardrobe Building,2021-12-08,2021-12-22,2023-12-22,95.7,Expired,Yes
+TRN000769,STY071,Nathan Ramirez,CON024,RG04,Level 1 — Colour,Colour Theory Fundamentals,2022-11-17,2022-12-07,2024-12-06,92.1,Expired,Yes
+TRN000770,STY071,Nathan Ramirez,CON024,RG04,Level 1 — Colour,Seasonal Analysis Basics,2022-11-17,2022-12-07,2024-12-06,92.1,Expired,Yes
+TRN000771,STY071,Nathan Ramirez,CON024,RG04,Level 1 — Colour,Draping Technique,2022-11-17,2022-12-07,2024-12-06,92.1,Expired,Yes
+TRN000772,STY071,Nathan Ramirez,CON024,RG04,Level 1 — Colour,Client Communication,2022-11-17,2022-12-07,2024-12-06,92.1,Expired,Yes
+TRN000773,STY072,Dylan James,CON025,RG05,Level 1 — Colour,Colour Theory Fundamentals,2022-11-18,2022-12-13,2024-12-12,92.9,Expired,Yes
+TRN000774,STY072,Dylan James,CON025,RG05,Level 1 — Colour,Seasonal Analysis Basics,2022-11-18,2022-12-13,2024-12-12,92.9,Expired,Yes
+TRN000775,STY072,Dylan James,CON025,RG05,Level 1 — Colour,Draping Technique,2022-11-18,2022-12-13,2024-12-12,92.9,Expired,Yes
+TRN000776,STY072,Dylan James,CON025,RG05,Level 1 — Colour,Client Communication,2022-11-18,2022-12-13,2024-12-12,92.9,Expired,Yes
+TRN000777,STY072,Dylan James,CON025,RG05,Level 2 — Style,Body Shape Analysis,2023-06-01,2023-07-18,2025-07-17,82.4,Expired,No
+TRN000778,STY072,Dylan James,CON025,RG05,Level 2 — Style,Clothing Lines & Textures,2023-06-01,2023-07-18,2025-07-17,82.4,Expired,No
+TRN000779,STY072,Dylan James,CON025,RG05,Level 2 — Style,Style Archetypes,2023-06-01,2023-07-18,2025-07-17,82.4,Expired,No
+TRN000780,STY072,Dylan James,CON025,RG05,Level 2 — Style,Wardrobe Building,2023-06-01,2023-07-18,2025-07-17,82.4,Expired,No
+TRN000781,STY072,Dylan James,CON025,RG05,Level 3 — Full Stylist,Advanced Colour,2023-11-23,2023-12-22,2025-12-21,96.4,Expired,Yes
+TRN000782,STY072,Dylan James,CON025,RG05,Level 3 — Full Stylist,Advanced Style,2023-11-23,2023-12-22,2025-12-21,96.4,Expired,Yes
+TRN000783,STY072,Dylan James,CON025,RG05,Level 3 — Full Stylist,Makeup Integration,2023-11-23,2023-12-22,2025-12-21,96.4,Expired,Yes
+TRN000784,STY072,Dylan James,CON025,RG05,Level 3 — Full Stylist,Business Development,2023-11-23,2023-12-22,2025-12-21,96.4,Expired,Yes
+TRN000785,STY072,Dylan James,CON025,RG05,Senior Stylist,Mentoring Skills,2024-05-07,2024-06-19,2026-06-19,72.1,Active,No
+TRN000786,STY072,Dylan James,CON025,RG05,Senior Stylist,Workshop Facilitation,2024-05-07,2024-06-19,2026-06-19,72.1,Active,No
+TRN000787,STY072,Dylan James,CON025,RG05,Senior Stylist,Corporate Clients,2024-05-07,2024-06-19,2026-06-19,72.1,Active,No
+TRN000788,STY072,Dylan James,CON025,RG05,Senior Stylist,Advanced Draping,2024-05-07,2024-06-19,2026-06-19,72.1,Active,No
+TRN000789,STY073,Ethan Watson,CON025,RG05,Level 1 — Colour,Colour Theory Fundamentals,2021-01-25,2021-03-22,2023-03-22,84.5,Expired,No
+TRN000790,STY073,Ethan Watson,CON025,RG05,Level 1 — Colour,Seasonal Analysis Basics,2021-01-25,2021-03-22,2023-03-22,84.5,Expired,No
+TRN000791,STY073,Ethan Watson,CON025,RG05,Level 1 — Colour,Draping Technique,2021-01-25,2021-03-22,2023-03-22,84.5,Expired,No
+TRN000792,STY073,Ethan Watson,CON025,RG05,Level 1 — Colour,Client Communication,2021-01-25,2021-03-22,2023-03-22,84.5,Expired,No
+TRN000793,STY073,Ethan Watson,CON025,RG05,Level 2 — Style,Body Shape Analysis,2021-07-27,2021-09-17,2023-09-17,77.8,Expired,No
+TRN000794,STY073,Ethan Watson,CON025,RG05,Level 2 — Style,Clothing Lines & Textures,2021-07-27,2021-09-17,2023-09-17,77.8,Expired,No
+TRN000795,STY073,Ethan Watson,CON025,RG05,Level 2 — Style,Style Archetypes,2021-07-27,2021-09-17,2023-09-17,77.8,Expired,No
+TRN000796,STY073,Ethan Watson,CON025,RG05,Level 2 — Style,Wardrobe Building,2021-07-27,2021-09-17,2023-09-17,77.8,Expired,No
+TRN000797,STY073,Ethan Watson,CON025,RG05,Level 3 — Full Stylist,Advanced Colour,2022-01-30,2022-03-13,2024-03-12,87.0,Expired,Yes
+TRN000798,STY073,Ethan Watson,CON025,RG05,Level 3 — Full Stylist,Advanced Style,2022-01-30,2022-03-13,2024-03-12,87.0,Expired,Yes
+TRN000799,STY073,Ethan Watson,CON025,RG05,Level 3 — Full Stylist,Makeup Integration,2022-01-30,2022-03-13,2024-03-12,87.0,Expired,Yes
+TRN000800,STY073,Ethan Watson,CON025,RG05,Level 3 — Full Stylist,Business Development,2022-01-30,2022-03-13,2024-03-12,87.0,Expired,Yes
+TRN000801,STY073,Ethan Watson,CON025,RG05,Senior Stylist,Mentoring Skills,2022-07-28,2022-09-12,2024-09-11,81.2,Expired,No
+TRN000802,STY073,Ethan Watson,CON025,RG05,Senior Stylist,Workshop Facilitation,2022-07-28,2022-09-12,2024-09-11,81.2,Expired,No
+TRN000803,STY073,Ethan Watson,CON025,RG05,Senior Stylist,Corporate Clients,2022-07-28,2022-09-12,2024-09-11,81.2,Expired,No
+TRN000804,STY073,Ethan Watson,CON025,RG05,Senior Stylist,Advanced Draping,2022-07-28,2022-09-12,2024-09-11,81.2,Expired,No
+TRN000805,STY074,Mason Brooks,CON025,RG05,Level 1 — Colour,Colour Theory Fundamentals,2020-10-31,2020-12-19,2022-12-19,81.8,Expired,No
+TRN000806,STY074,Mason Brooks,CON025,RG05,Level 1 — Colour,Seasonal Analysis Basics,2020-10-31,2020-12-19,2022-12-19,81.8,Expired,No
+TRN000807,STY074,Mason Brooks,CON025,RG05,Level 1 — Colour,Draping Technique,2020-10-31,2020-12-19,2022-12-19,81.8,Expired,No
+TRN000808,STY074,Mason Brooks,CON025,RG05,Level 1 — Colour,Client Communication,2020-10-31,2020-12-19,2022-12-19,81.8,Expired,No
+TRN000809,STY074,Mason Brooks,CON025,RG05,Level 2 — Style,Body Shape Analysis,2021-04-05,2021-05-19,2023-05-19,82.0,Expired,No
+TRN000810,STY074,Mason Brooks,CON025,RG05,Level 2 — Style,Clothing Lines & Textures,2021-04-05,2021-05-19,2023-05-19,82.0,Expired,No
+TRN000811,STY074,Mason Brooks,CON025,RG05,Level 2 — Style,Style Archetypes,2021-04-05,2021-05-19,2023-05-19,82.0,Expired,No
+TRN000812,STY074,Mason Brooks,CON025,RG05,Level 2 — Style,Wardrobe Building,2021-04-05,2021-05-19,2023-05-19,82.0,Expired,No
+TRN000813,STY074,Mason Brooks,CON025,RG05,Level 3 — Full Stylist,Advanced Colour,2021-10-21,2021-11-19,2023-11-19,94.0,Expired,Yes
+TRN000814,STY074,Mason Brooks,CON025,RG05,Level 3 — Full Stylist,Advanced Style,2021-10-21,2021-11-19,2023-11-19,94.0,Expired,Yes
+TRN000815,STY074,Mason Brooks,CON025,RG05,Level 3 — Full Stylist,Makeup Integration,2021-10-21,2021-11-19,2023-11-19,94.0,Expired,Yes
+TRN000816,STY074,Mason Brooks,CON025,RG05,Level 3 — Full Stylist,Business Development,2021-10-21,2021-11-19,2023-11-19,94.0,Expired,Yes

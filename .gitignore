@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+env.local
+.env
+server.log
+
+# Rebuilt from data/*.csv by build_db.py — no need to version an 8MB binary
+data.duckdb
+*.bak

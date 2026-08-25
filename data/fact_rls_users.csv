@@ -1,0 +1,108 @@
+UserID,Email,FullName,Role,RegionID,ConsultantID,StylistID,DataScope,CanViewFinancials,Status
+USR0001,em.williams@houseofcolour.com,Emma Williams,Regional Director,RG01,,,All Consultants in Region,Yes,Active
+USR0002,j.chen@houseofcolour.com,James Chen,Regional Director,RG02,,,All Consultants in Region,Yes,Active
+USR0003,l.park@houseofcolour.com,Lisa Park,Regional Director,RG03,,,All Consultants in Region,Yes,Active
+USR0004,s.hughes@houseofcolour.com,Sarah Hughes,Regional Director,RG04,,,All Consultants in Region,Yes,Active
+USR0005,f.macleod@houseofcolour.com,Fiona MacLeod,Regional Director,RG05,,,All Consultants in Region,Yes,Active
+USR0006,k.patel@houseofcolour.com,Karen Patel,Regional Director,RG06,,,All Consultants in Region,Yes,Active
+USR0007,d.taylor@houseofcolour.com,David Taylor,Regional Director,RG07,,,All Consultants in Region,Yes,Active
+USR0008,r.brown@houseofcolour.com,Rachel Brown,Regional Director,RG08,,,All Consultants in Region,Yes,Active
+USR0009,c.davis@houseofcolour.com,Claire Davis,Regional Director,RG09,,,All Consultants in Region,Yes,Active
+USR0010,a.wilson@houseofcolour.com,Anna Wilson,Regional Director,RG10,,,All Consultants in Region,Yes,Active
+USR0011,s.marlowe@houseofcolour.com,Sophie Marlowe,Consultant,RG01,CON001,,Own Data + Stylists Under Them,Yes,Active
+USR0012,e.patel@houseofcolour.com,Emma Patel,Consultant,RG02,CON002,,Own Data + Stylists Under Them,Yes,Active
+USR0013,c.hughes@houseofcolour.com,Claire Hughes,Consultant,RG03,CON003,,Own Data + Stylists Under Them,Yes,Active
+USR0014,l.carter@houseofcolour.com,Lisa Carter,Consultant,RG04,CON004,,Own Data + Stylists Under Them,Yes,Active
+USR0015,s.walsh@houseofcolour.com,Sarah Walsh,Consultant,RG05,CON005,,Own Data + Stylists Under Them,Yes,Active
+USR0016,a.singh@houseofcolour.com,Anna Singh,Consultant,RG06,CON006,,Own Data + Stylists Under Them,Yes,Active
+USR0017,k.okoye@houseofcolour.com,Kate Okoye,Consultant,RG07,CON007,,Own Data + Stylists Under Them,Yes,Active
+USR0018,h.chen@houseofcolour.com,Helen Chen,Consultant,RG08,CON008,,Own Data + Stylists Under Them,Yes,Active
+USR0019,f.williams@houseofcolour.com,Fiona Williams,Consultant,RG09,CON009,,Own Data + Stylists Under Them,Yes,Active
+USR0020,r.johnson@houseofcolour.com,Rachel Johnson,Consultant,RG10,CON010,,Own Data + Stylists Under Them,Yes,Active
+USR0021,j.smith@houseofcolour.com,James Smith,Consultant,RG01,CON011,,Own Data + Stylists Under Them,Yes,Active
+USR0022,d.brown@houseofcolour.com,David Brown,Consultant,RG02,CON012,,Own Data + Stylists Under Them,Yes,Active
+USR0023,m.taylor@houseofcolour.com,Mark Taylor,Consultant,RG03,CON013,,Own Data + Stylists Under Them,Yes,Active
+USR0024,t.davis@houseofcolour.com,Tom Davis,Consultant,RG04,CON014,,Own Data + Stylists Under Them,Yes,Active
+USR0025,r.miller@houseofcolour.com,Raj Miller,Consultant,RG05,CON015,,Own Data + Stylists Under Them,Yes,Active
+USR0026,l.wilson@houseofcolour.com,Liam Wilson,Consultant,RG06,CON016,,Own Data + Stylists Under Them,Yes,Active
+USR0027,m.moore@houseofcolour.com,Michael Moore,Consultant,RG07,CON017,,Own Data + Stylists Under Them,Yes,Active
+USR0028,o.anderson@houseofcolour.com,Oliver Anderson,Consultant,RG08,CON018,,Own Data + Stylists Under Them,Yes,Active
+USR0029,p.thomas@houseofcolour.com,Peter Thomas,Consultant,RG09,CON019,,Own Data + Stylists Under Them,Yes,Active
+USR0030,a.jackson@houseofcolour.com,Andrew Jackson,Consultant,RG10,CON020,,Own Data + Stylists Under Them,Yes,Active
+USR0031,j.white@houseofcolour.com,Jessica White,Consultant,RG01,CON021,,Own Data + Stylists Under Them,Yes,Active
+USR0032,l.harris@houseofcolour.com,Lucy Harris,Consultant,RG02,CON022,,Own Data + Stylists Under Them,Yes,Active
+USR0033,c.martin@houseofcolour.com,Charlotte Martin,Consultant,RG03,CON023,,Own Data + Stylists Under Them,Yes,Active
+USR0034,a.thompson@houseofcolour.com,Amy Thompson,Consultant,RG04,CON024,,Own Data + Stylists Under Them,Yes,Active
+USR0035,n.garcia@houseofcolour.com,Natalie Garcia,Consultant,RG05,CON025,,Own Data + Stylists Under Them,Yes,Active
+USR0036,s.marlowe1@houseofcolour.com,Sophie Marlowe,Stylist,RG01,CON001,STY001,Own Data Only,Yes,Active
+USR0037,e.patel2@houseofcolour.com,Emma Patel,Stylist,RG01,CON001,STY002,Own Data Only,Yes,Active
+USR0038,c.hughes3@houseofcolour.com,Claire Hughes,Stylist,RG02,CON002,STY003,Own Data Only,Yes,Active
+USR0039,l.carter4@houseofcolour.com,Lisa Carter,Stylist,RG02,CON002,STY004,Own Data Only,Yes,Active
+USR0040,s.walsh5@houseofcolour.com,Sarah Walsh,Stylist,RG02,CON002,STY005,Own Data Only,Yes,Active
+USR0041,a.singh6@houseofcolour.com,Anna Singh,Stylist,RG02,CON002,STY006,Own Data Only,Yes,Active
+USR0042,k.okoye7@houseofcolour.com,Kate Okoye,Stylist,RG03,CON003,STY007,Own Data Only,Yes,Active
+USR0043,h.chen8@houseofcolour.com,Helen Chen,Stylist,RG03,CON003,STY008,Own Data Only,Yes,Active
+USR0044,r.johnson10@houseofcolour.com,Rachel Johnson,Stylist,RG04,CON004,STY010,Own Data Only,Yes,Active
+USR0045,j.smith11@houseofcolour.com,James Smith,Stylist,RG04,CON004,STY011,Own Data Only,Yes,Active
+USR0046,d.brown12@houseofcolour.com,David Brown,Stylist,RG04,CON004,STY012,Own Data Only,Yes,Active
+USR0047,m.taylor13@houseofcolour.com,Mark Taylor,Stylist,RG04,CON004,STY013,Own Data Only,Yes,Active
+USR0048,t.davis14@houseofcolour.com,Tom Davis,Stylist,RG05,CON005,STY014,Own Data Only,Yes,Active
+USR0049,r.miller15@houseofcolour.com,Raj Miller,Stylist,RG05,CON005,STY015,Own Data Only,Yes,Active
+USR0050,l.wilson16@houseofcolour.com,Liam Wilson,Stylist,RG05,CON005,STY016,Own Data Only,Yes,Active
+USR0051,o.moore17@houseofcolour.com,Oliver Moore,Stylist,RG05,CON005,STY017,Own Data Only,Yes,Active
+USR0052,h.anderson18@houseofcolour.com,Harry Anderson,Stylist,RG06,CON006,STY018,Own Data Only,Yes,Active
+USR0053,s.thomas19@houseofcolour.com,Sam Thomas,Stylist,RG06,CON006,STY019,Own Data Only,Yes,Active
+USR0054,z.jackson20@houseofcolour.com,Zoe Jackson,Stylist,RG07,CON007,STY020,Own Data Only,Yes,Active
+USR0055,a.white21@houseofcolour.com,Amy White,Stylist,RG07,CON007,STY021,Own Data Only,Yes,Active
+USR0056,l.harris22@houseofcolour.com,Lucy Harris,Stylist,RG07,CON007,STY022,Own Data Only,Yes,Active
+USR0057,n.martin23@houseofcolour.com,Natalie Martin,Stylist,RG08,CON008,STY023,Own Data Only,Yes,Active
+USR0058,j.garcia25@houseofcolour.com,Jessica Garcia,Stylist,RG09,CON009,STY025,Own Data Only,Yes,Active
+USR0059,p.robinson26@houseofcolour.com,Priya Robinson,Stylist,RG09,CON009,STY026,Own Data Only,Yes,Active
+USR0060,a.clark27@houseofcolour.com,Aisha Clark,Stylist,RG09,CON009,STY027,Own Data Only,Yes,Active
+USR0061,l.lee29@houseofcolour.com,Laura Lee,Stylist,RG10,CON010,STY029,Own Data Only,Yes,Active
+USR0062,b.walker30@houseofcolour.com,Beth Walker,Stylist,RG10,CON010,STY030,Own Data Only,Yes,Active
+USR0063,m.hall31@houseofcolour.com,Michael Hall,Stylist,RG01,CON011,STY031,Own Data Only,Yes,Active
+USR0064,j.allen32@houseofcolour.com,John Allen,Stylist,RG01,CON011,STY032,Own Data Only,Yes,Active
+USR0065,p.young33@houseofcolour.com,Peter Young,Stylist,RG02,CON012,STY033,Own Data Only,Yes,Active
+USR0066,a.king34@houseofcolour.com,Andrew King,Stylist,RG02,CON012,STY034,Own Data Only,Yes,Active
+USR0067,c.scott36@houseofcolour.com,Chris Scott,Stylist,RG02,CON012,STY036,Own Data Only,Yes,Active
+USR0068,d.green37@houseofcolour.com,Daniel Green,Stylist,RG03,CON013,STY037,Own Data Only,Yes,Active
+USR0069,r.baker38@houseofcolour.com,Ryan Baker,Stylist,RG03,CON013,STY038,Own Data Only,Yes,Active
+USR0070,l.adams39@houseofcolour.com,Luke Adams,Stylist,RG04,CON014,STY039,Own Data Only,Yes,Active
+USR0071,j.nelson40@houseofcolour.com,Jack Nelson,Stylist,RG04,CON014,STY040,Own Data Only,Yes,Active
+USR0072,g.hill41@houseofcolour.com,Grace Hill,Stylist,RG04,CON014,STY041,Own Data Only,Yes,Active
+USR0073,m.ramirez42@houseofcolour.com,Mia Ramirez,Stylist,RG05,CON015,STY042,Own Data Only,Yes,Active
+USR0074,e.campbell43@houseofcolour.com,Ella Campbell,Stylist,RG05,CON015,STY043,Own Data Only,Yes,Active
+USR0075,c.mitchell44@houseofcolour.com,Chloe Mitchell,Stylist,RG06,CON016,STY044,Own Data Only,Yes,Active
+USR0076,i.roberts45@houseofcolour.com,Isla Roberts,Stylist,RG06,CON016,STY045,Own Data Only,Yes,Active
+USR0077,r.turner46@houseofcolour.com,Ruby Turner,Stylist,RG06,CON016,STY046,Own Data Only,Yes,Active
+USR0078,p.phillips47@houseofcolour.com,Poppy Phillips,Stylist,RG07,CON017,STY047,Own Data Only,Yes,Active
+USR0079,f.parker48@houseofcolour.com,Freya Parker,Stylist,RG07,CON017,STY048,Own Data Only,Yes,Active
+USR0080,d.evans49@houseofcolour.com,Daisy Evans,Stylist,RG07,CON017,STY049,Own Data Only,Yes,Active
+USR0081,a.edwards50@houseofcolour.com,Alice Edwards,Stylist,RG08,CON018,STY050,Own Data Only,Yes,Active
+USR0082,g.collins51@houseofcolour.com,George Collins,Stylist,RG08,CON018,STY051,Own Data Only,Yes,Active
+USR0083,w.stewart52@houseofcolour.com,William Stewart,Stylist,RG08,CON018,STY052,Own Data Only,Yes,Active
+USR0084,e.morris54@houseofcolour.com,Edward Morris,Stylist,RG09,CON019,STY054,Own Data Only,Yes,Active
+USR0085,a.rogers55@houseofcolour.com,Arthur Rogers,Stylist,RG10,CON020,STY055,Own Data Only,Yes,Active
+USR0086,l.reed56@houseofcolour.com,Leo Reed,Stylist,RG10,CON020,STY056,Own Data Only,Yes,Active
+USR0087,f.cook57@houseofcolour.com,Freddie Cook,Stylist,RG10,CON020,STY057,Own Data Only,Yes,Active
+USR0088,a.morgan58@houseofcolour.com,Alfie Morgan,Stylist,RG01,CON021,STY058,Own Data Only,Yes,Active
+USR0089,o.murphy60@houseofcolour.com,Oscar Murphy,Stylist,RG01,CON021,STY060,Own Data Only,Yes,Active
+USR0090,e.bailey61@houseofcolour.com,Eleanor Bailey,Stylist,RG01,CON021,STY061,Own Data Only,Yes,Active
+USR0091,h.rivera62@houseofcolour.com,Harriet Rivera,Stylist,RG02,CON022,STY062,Own Data Only,Yes,Active
+USR0092,i.cooper63@houseofcolour.com,Imogen Cooper,Stylist,RG02,CON022,STY063,Own Data Only,Yes,Active
+USR0093,m.richardson64@houseofcolour.com,Martha Richardson,Stylist,RG02,CON022,STY064,Own Data Only,Yes,Active
+USR0094,r.cox65@houseofcolour.com,Rosie Cox,Stylist,RG02,CON022,STY065,Own Data Only,Yes,Active
+USR0095,v.howard66@houseofcolour.com,Violet Howard,Stylist,RG03,CON023,STY066,Own Data Only,Yes,Active
+USR0096,w.ward67@houseofcolour.com,Willow Ward,Stylist,RG03,CON023,STY067,Own Data Only,Yes,Active
+USR0097,j.peterson69@houseofcolour.com,Jade Peterson,Stylist,RG04,CON024,STY069,Own Data Only,Yes,Active
+USR0098,l.gray70@houseofcolour.com,Leah Gray,Stylist,RG04,CON024,STY070,Own Data Only,Yes,Active
+USR0099,n.ramirez71@houseofcolour.com,Nathan Ramirez,Stylist,RG04,CON024,STY071,Own Data Only,Yes,Active
+USR0100,d.james72@houseofcolour.com,Dylan James,Stylist,RG05,CON025,STY072,Own Data Only,Yes,Active
+USR0101,e.watson73@houseofcolour.com,Ethan Watson,Stylist,RG05,CON025,STY073,Own Data Only,Yes,Active
+USR0102,m.brooks74@houseofcolour.com,Mason Brooks,Stylist,RG05,CON025,STY074,Own Data Only,Yes,Active
+USR0103,marcus.king@houseofcolour.com,Marcus King,HQ Admin,ALL,ALL,ALL,Full Access — All Data,Yes,Active
+USR0104,colin.graham@houseofcolour.com,Colin Graham,HQ Admin,ALL,ALL,ALL,Full Access — All Data,Yes,Active
+USR0105,ceo@houseofcolour.com,Sarah Mitchell,CEO,ALL,ALL,ALL,Full Access — All Data,Yes,Active
+USR0106,finance@houseofcolour.com,Finance Team,Finance,ALL,ALL,ALL,Full Access — All Data,Yes,Active
+USR0107,analytics@houseofcolour.com,Analytics Team,HQ Analytics,ALL,ALL,ALL,Full Access — All Data,Yes,Active

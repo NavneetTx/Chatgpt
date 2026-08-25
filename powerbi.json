@@ -1,0 +1,23 @@
+{
+  "_comment": "Paste your Power BI embed URLs here, one per portal page. Get a URL from Power BI Service: open the report -> File -> Embed report -> Publish to web (public)  OR  Share -> Embed. Leave a value as \"\" to show the AI report only for that page. Save the file and refresh the portal - no restart needed.",
+  "_howto": "A .pbix file cannot be embedded directly. The report must be published to the Power BI Service first, then use the generated https://app.powerbi.com/... URL.",
+  "defaultSrc": "",
+  "pages": {
+    "executive": {
+      "src": "",
+      "label": "Executive Summary"
+    },
+    "stylist_perf": {
+      "src": "",
+      "label": "Stylist Performance"
+    },
+    "stylist_rls": {
+      "src": "",
+      "label": "Stylist View (RLS)"
+    },
+    "client_journey": {
+      "src": "",
+      "label": "Client Journey"
+    }
+  }
+}

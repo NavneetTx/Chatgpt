@@ -1,0 +1,13 @@
+ServiceID,ServiceName,ServiceCategory,Price_GBP,Duration_Mins,Description
+SV01,Colour Analysis,Core,285,120,Full 2-hour colour draping. Season & sub-season identified. Colour Fan included.
+SV02,Style Analysis,Core,195,90,"Most flattering shapes, lines, textures for body type."
+SV03,Colour & Style Combined,Core,420,180,Full colour + style analysis. Best value package.
+SV04,Makeup Lesson,Beauty,125,75,Personalised makeup using client season palette.
+SV05,Wardrobe Edit,Style,245,120,Home visit — edits wardrobe to season-flattering pieces only.
+SV06,Personal Shopping,Style,295,180,Guided shopping trip with stylist.
+SV07,Teen Colour Analysis,Core,195,90,Colour analysis for ages 13-17.
+SV08,Online Colour Analysis,Online,145,60,Remote colour consultation via video call.
+SV09,Group Colour Workshop,Group,85,60,Group session — colour theory & season basics. Per person.
+SV10,Follow-up Consultation,Follow-up,95,45,Review for existing clients.
+SV11,Corporate Image Workshop,Corporate,150,90,Workplace image & colour session. Per person.
+SV12,Colour Fan Replacement,Retail,45,15,Replacement colour fan for existing clients.

@@ -1,0 +1,6 @@
+currency_code,currency_name,currency_symbol,fx_rate_per_usd,market,locale
+GBP,British Pound,£,0.79,EMEA,gb
+USD,US Dollar,$,1.0,Americas,us
+AUD,Australian Dollar,A$,1.52,APAC,au
+AED,UAE Dirham,AED,3.67,EMEA,ae
+INR,Indian Rupee,₹,83.0,APAC,in

@@ -1,0 +1,6 @@
+user_id,email,name,role,can_see_executive,can_see_finance,can_see_my_page,can_see_stylist,territory_access,stylist_id_access,currency_code,currency_symbol,rls_filter
+U01,exec@houseofcolour.example,Executive,Executive,Y,Y,N,Y,ALL,ALL,USD,$,ALL
+U02,finance@houseofcolour.example,Finance Lead,Finance,N,Y,N,Y,ALL,ALL,USD,$,ALL
+U03,uk.manager@houseofcolour.example,UK Manager,Territory Manager,N,N,N,Y,T01,ALL,GBP,£,territory_id = 'T01'
+U04,useast.manager@houseofcolour.example,US East Manager,Territory Manager,N,N,N,Y,T02,ALL,USD,$,territory_id = 'T02'
+U05,olivia.clarke@houseofcolour.example,Olivia Clarke,Stylist,N,N,Y,N,T01,S001,GBP,£,stylist_id = 'S001'

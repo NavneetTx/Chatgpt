@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House of Colour — Stylist Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #F5F0EA;
+      --cream-dark: #EDE7DF;
+      --cream-mid:  #E0D9D0;
+      --black:      #1A1A1A;
+      --charcoal:   #333333;
+      --grey:       #7A7267;
+      --grey-light: #C8C2BA;
+      --white:      #FFFFFF;
+      --tx-red:     #C8102E;
+      --gold:       #9A7B4F;
+      --gold-light: #F7F1E8;
+      --sidebar-w:  230px;
+      --header-h:   64px;
+    }
+
+    html, body {
+      height: 100%; width: 100%;
+      font-family: "Jost", sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════
+       TOP BAR
+    ═══════════════════════════════════════ */
+    .top-bar {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: var(--black);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px;
+      z-index: 100;
+    }
+    .top-bar__left  { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+    .top-bar__right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+
+
+    .divider-v {
+      width: 1px; height: 26px;
+      background: rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+
+    .portal-tag {
+      font-size: 10px; font-weight: 400;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      white-space: nowrap;
+    }
+
+    /* TX badge — white pill so logo colours are true */
+    .tx-badge {
+      display: flex; align-items: center; gap: 9px;
+      background: var(--white);
+      border-radius: 4px;
+      padding: 5px 12px 5px 8px;
+      flex-shrink: 0;
+    }
+    .tx-badge img {
+      height: 34px; width: 34px;
+      object-fit: contain;
+      display: block;
+      flex-shrink: 0;
+    }
+    .tx-badge-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .tx-badge-text .tx-name {
+      font-size: 11px; font-weight: 600;
+      color: var(--black); letter-spacing: 0.2px;
+    }
+    .tx-badge-text .tx-name span { color: var(--tx-red); }
+    .tx-badge-text .tx-tagline {
+      font-size: 8.5px; font-weight: 400;
+      color: var(--grey); letter-spacing: 0.5px;
+    }
+
+    /* notification */
+    .notif-btn {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: rgba(255,255,255,0.55);
+      font-size: 14px; position: relative; flex-shrink: 0;
+    }
+    .notif-pip {
+      position: absolute; top: 6px; right: 6px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--tx-red); border: 1.5px solid var(--black);
+    }
+
+    /* user chip */
+    .user-chip { display: flex; align-items: center; gap: 9px; cursor: pointer; }
+    .user-avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 600; color: white;
+    }
+    .user-info { display: flex; flex-direction: column; }
+    .user-info .u-name  { font-size: 12px; font-weight: 500; color: white; line-height: 1.25; }
+    .user-info .u-zone  { font-size: 10px; color: rgba(255,255,255,0.38); line-height: 1.25; }
+
+    /* ═══════════════════════════════════════
+       SIDEBAR
+    ═══════════════════════════════════════ */
+    .sidebar {
+      position: fixed; top: var(--header-h); left: 0; bottom: 0;
+      width: var(--sidebar-w);
+      background: var(--white);
+      border-right: 1px solid var(--cream-mid);
+      display: flex; flex-direction: column;
+      z-index: 90; overflow-y: auto;
+    }
+    .sidebar-inner { padding: 22px 0; flex: 1; }
+
+    .nav-group-label {
+      font-size: 9px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--grey-light);
+      padding: 10px 22px 5px;
+    }
+    .nav-item {
+      display: flex; align-items: center; gap: 11px;
+      padding: 10px 22px; cursor: pointer;
+      text-decoration: none; position: relative;
+      transition: background 0.12s;
+    }
+    .nav-item:hover  { background: var(--cream); }
+    .nav-item.active { background: var(--cream); }
+    .nav-item.active::before {
+      content: ""; position: absolute;
+      left: 0; top: 0; bottom: 0; width: 2px;
+      background: var(--black);
+    }
+    .nav-icon  { font-size: 13px; width: 18px; text-align: center; flex-shrink: 0; }
+    .nav-label { font-size: 12.5px; font-weight: 400; color: var(--charcoal); }
+    .nav-item.active .nav-label { font-weight: 600; color: var(--black); }
+    .nav-pill {
+      margin-left: auto;
+      background: var(--black); color: white;
+      font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 20px;
+    }
+
+    .sidebar-footer {
+      padding: 16px 18px;
+      border-top: 1px solid var(--cream-mid);
+    }
+    .territory-block {
+      padding: 14px;
+      background: var(--gold-light);
+      border: 1px solid rgba(154,123,79,0.2);
+    }
+    .territory-block .t-label {
+      font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 5px;
+    }
+    .territory-block .t-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px; font-weight: 500; color: var(--black); margin-bottom: 2px;
+    }
+    .territory-block .t-detail { font-size: 11px; color: var(--grey); }
+
+    /* ═══════════════════════════════════════
+       MAIN AREA
+    ═══════════════════════════════════════ */
+    .main {
+      margin-top: var(--header-h);
+      margin-left: var(--sidebar-w);
+      width: calc(100vw - var(--sidebar-w));
+      min-height: calc(100vh - var(--header-h));
+      display: flex; flex-direction: column;
+    }
+
+    /* Page header */
+    .page-header {
+      position: relative; overflow: hidden;
+      background: linear-gradient(120deg, #1A1A1A 0%, #2a1a26 55%, #3a2230 100%);
+      padding: 22px 30px 20px;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+      flex-shrink: 0;
+      animation: fadeUp .45s ease both;
+    }
+    /* soft gold glow, top-right */
+    .page-header::before {
+      content: ""; position: absolute; top: -70px; right: -40px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(201,123,79,0.24), transparent 70%);
+      pointer-events: none;
+    }
+    /* colour accent line along the bottom edge */
+    .page-header::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--tx-red), var(--gold));
+    }
+    .page-header > div { position: relative; z-index: 1; }
+    .ph-eyebrow {
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 7px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .ph-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #4ade80;
+      box-shadow: 0 0 0 3px rgba(74,222,128,0.18); animation: pulse 2s infinite;
+    }
+    .page-header h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px; font-weight: 600; color: #ffffff;
+      line-height: 1.05; letter-spacing: 0.3px;
+    }
+    .page-header p {
+      font-size: 12px; color: rgba(255,255,255,0.62); margin-top: 5px;
+    }
+    .page-header .chip {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: #fff;
+    }
+    .page-header .chip-dark {
+      background: var(--gold); color: #1A1A1A; border: none; font-weight: 600;
+    }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .chip {
+      border: 1px solid var(--cream-mid); background: var(--cream);
+      padding: 6px 12px; font-size: 11px; color: var(--charcoal);
+      cursor: pointer; display: flex; align-items: center; gap: 5px;
+    }
+    .chip-dark {
+      background: var(--black); color: var(--white);
+      border: 1px solid var(--black);
+      padding: 6px 14px; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.5px; cursor: pointer;
+      font-family: "Jost", sans-serif;
+    }
+
+    /* KPI strip */
+    .kpi-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--cream-mid);
+      flex-shrink: 0;
+    }
+    .kpi-card {
+      background: var(--white); padding: 18px 22px;
+      border-right: 1px solid var(--cream-mid);
+      position: relative;
+    }
+    .kpi-card:last-child { border-right: none; }
+    .kpi-label {
+      font-size: 9px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--grey); margin-bottom: 9px;
+    }
+    .kpi-value {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px; font-weight: 500; color: var(--black);
+      line-height: 1; margin-bottom: 7px;
+    }
+    .kpi-delta {
+      display: inline-flex; align-items: center; gap: 3px;
+      font-size: 10px; font-weight: 500; padding: 2px 7px;
+    }
+    .kpi-delta.up   { background: #F0FAF4; color: #276749; }
+    .kpi-rule { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; }
+    .kpi-rule.black { background: var(--black); }
+    .kpi-rule.gold  { background: var(--gold); }
+    .kpi-rule.green { background: #276749; }
+
+    /* ═══════════════════════════════════════
+       REPORT AREA — flush, no side padding
+    ═══════════════════════════════════════ */
+    .report-section {
+      flex: 1;
+      padding: 20px 0 0;        /* NO left/right padding — report is full width */
+      display: flex; flex-direction: column;
+    }
+
+    .report-card {
+      background: var(--white);
+      border-top: 1px solid var(--cream-mid);
+      border-bottom: 1px solid var(--cream-mid);
+      display: flex; flex-direction: column;
+      flex: 1;
+      /* Slight margin so it's visually separated but iframe itself is full width */
+      margin: 0 20px 20px;
+    }
+
+    .report-card-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--cream-mid);
+      flex-shrink: 0;
+    }
+    .rch-left  { display: flex; align-items: center; gap: 10px; }
+    .live-pip  {
+      width: 8px; height: 8px; border-radius: 50%; background: #276749;
+      box-shadow: 0 0 0 3px rgba(39,103,73,0.12);
+      animation: pulse 2s infinite; flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 3px rgba(39,103,73,0.12); }
+      50%      { box-shadow: 0 0 0 5px rgba(39,103,73,0.05); }
+    }
+    .report-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px; font-weight: 500; color: var(--black);
+    }
+    .live-chip {
+      font-size: 9px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; color: #276749;
+      border: 1px solid rgba(39,103,73,0.25); padding: 2px 7px;
+    }
+    .rch-right { display: flex; gap: 6px; }
+    .icon-btn {
+      width: 28px; height: 28px;
+      border: 1px solid var(--cream-mid); background: var(--cream);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--grey);
+    }
+    .icon-btn:hover { background: var(--cream-dark); }
+
+    /* ── IFRAME: aspect-ratio fill, zero side gap ── */
+    .embed-wrap {
+      width: 100%;
+      /* Use native report ratio: 541.25/1140 = 47.48% */
+      aspect-ratio: 1140 / 541.25;
+      position: relative;
+      background: var(--cream);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .embed-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .security-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 18px;
+      background: var(--gold-light);
+      border-top: 1px solid rgba(154,123,79,0.18);
+      font-size: 10.5px; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .security-bar strong { font-weight: 600; }
+
+    /* ── responsive ── */
+    @media (max-width: 860px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; width: 100vw; }
+      .kpi-strip { grid-template-columns: repeat(2,1fr); }
+      .report-card { margin: 0; }
+    }
+
+    /* ── Dashboard description block ── */
+    .dash-desc-block {
+      padding: 18px 28px 0;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .hoc-quote {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--gold-light);
+      border-left: 3px solid var(--gold);
+      padding: 12px 16px;
+    }
+    .hoc-quote-mark {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px; color: var(--gold);
+      line-height: 0.8; flex-shrink: 0; margin-top: 4px;
+    }
+    .hoc-quote-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 14.5px; font-style: italic;
+      color: var(--charcoal); line-height: 1.6;
+    }
+    .hoc-quote-source {
+      font-family: "Jost", sans-serif;
+      font-size: 9.5px; font-style: normal; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gold); margin-top: 5px; display: block;
+    }
+    .dash-desc-card {
+      background: var(--white);
+      border: 1px solid var(--cream-mid);
+      border-left: 3px solid var(--black);
+      padding: 14px 18px;
+    }
+    .dash-desc-card-head {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+    }
+    .dash-desc-icon {
+      width: 24px; height: 24px;
+      background: var(--cream); border: 1px solid var(--cream-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; flex-shrink: 0;
+    }
+    .dash-desc-title { font-size: 12px; font-weight: 600; color: var(--black); }
+    .dash-desc-sub   { font-size: 10px; color: var(--grey); margin-top: 1px; }
+    .dash-desc-body  {
+      font-size: 12px; color: var(--grey); line-height: 1.7;
+    }
+    .dash-desc-chips {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+    }
+    .dash-chip {
+      font-size: 10px; font-weight: 500; color: var(--charcoal);
+      background: var(--cream); border: 1px solid var(--cream-mid);
+      padding: 3px 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ TOP BAR ══════════════════════════════════════════ -->
+<!-- ══ LOGIN CONSOLE ══════════════════════════════════════ -->
+<div class="login-screen" id="loginScreen">
+  <form class="login-card" id="loginForm" autocomplete="on">
+    <div class="login-brand">House <span>of</span> Colour</div>
+    <div class="login-tag">Stylist Portal · Secure Sign-in</div>
+    <label for="luser">Username</label>
+    <input id="luser" type="text" autocomplete="username" placeholder="e.g. marcus"/>
+    <label for="lpass">Password</label>
+    <input id="lpass" type="password" autocomplete="current-password" placeholder="••••••"/>
+    <button class="login-btn" type="submit">Sign in</button>
+    <div class="login-err" id="loginErr"></div>
+    <div class="login-hint">
+      <div class="login-hint-title">Demo accounts</div>
+      <div class="login-acct" onclick="fillLogin('navneet','navneet123')"><b>navneet</b> / navneet123 — Navneet Virdi · <span>HQ Admin · all data</span></div>
+      <div class="login-acct" onclick="fillLogin('marcus','admin123')"><b>marcus</b> / admin123 — Marcus King · <span>HQ Admin · all data</span></div>
+      <div class="login-acct" onclick="fillLogin('sophie','sophie123')"><b>sophie</b> / sophie123 — Sophie Marlowe · <span>Consultant · London North</span></div>
+      <div class="login-acct" onclick="fillLogin('claire','claire123')"><b>claire</b> / claire123 — Claire Hughes · <span>Consultant · Manchester</span></div>
+    </div>
+  </form>
+</div>
+
+<!-- ══ EMAIL MODAL ══════════════════════════════════════ -->
+<div class="sched-overlay" id="emailModal">
+  <div class="sched-card">
+    <div class="sched-head">✉️ Email this report</div>
+    <div class="sched-report" id="emailReportTitle"></div>
+    <label class="sched-label" for="emailRecipients">Recipients (comma-separated)</label>
+    <input id="emailRecipients" class="sched-input" type="text" placeholder="name@houseofcolour.com, ..."/>
+    <div class="sched-msg" id="emailMsg"></div>
+    <div class="sched-actions">
+      <button class="sched-cancel" type="button" onclick="closeEmailModal()">Cancel</button>
+      <button class="sched-create" id="emailSendBtn" type="button" onclick="sendEmailNow()">✉️ Send now</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCHEDULE MODAL ══════════════════════════════════ -->
+<div class="sched-overlay" id="schedModal">
+  <div class="sched-card">
+    <div class="sched-head">📅 Schedule monthly email</div>
+    <div class="sched-report" id="schedReport"></div>
+    <label class="sched-label" for="schedRecipients">Recipients (comma-separated)</label>
+    <input id="schedRecipients" class="sched-input" type="text" placeholder="leadership@houseofcolour.com, ..."/>
+    <label class="sched-label" for="schedDay">Send on day of month</label>
+    <input id="schedDay" class="sched-input" type="number" min="1" max="28" value="1"/>
+    <div class="sched-msg" id="schedMsg"></div>
+    <div class="sched-actions">
+      <button class="sched-cancel" type="button" onclick="closeSchedModal()">Cancel</button>
+      <button class="sched-create" id="schedCreateBtn" type="button" onclick="createSchedule()">📅 Schedule monthly</button>
+      <button class="sched-test" id="schedTestBtn" type="button" style="display:none" onclick="sendTestNow()">✉️ Send test now</button>
+    </div>
+  </div>
+</div>
+
+<header class="top-bar">
+  <div class="top-bar__left">
+    <span class="portal-tag">Stylist Portal</span>
+  </div>
+
+  <div class="top-bar__right">
+    <!-- TX badge: white pill so logo colours are true to brand -->
+    <div class="tx-badge">
+      <img src="data:image/png;base64,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" alt="TestingXperts"/>
+      <div class="tx-badge-text">
+        <span class="tx-name">Testing<span>Xperts</span></span>
+        <span class="tx-tagline">Passion For Perfection</span>
+      </div>
+    </div>
+
+    <div class="notif-btn">🔔<span class="notif-pip"></span></div>
+
+    <div class="user-chip" onclick="logout()" title="Sign out">
+      <div class="user-avatar" id="uAvatar">MK</div>
+      <div class="user-info">
+        <span class="u-name" id="uName">Marcus King</span>
+        <span class="u-zone" id="uZone">North London · Territory 14</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ SIDEBAR ══════════════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-inner">
+    <div class="nav-group-label">Reports</div>
+    <a class="nav-item active admin-only" href="#" onclick="navigate('executive',this)">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </span>
+      <span class="nav-label">Executive Summary</span>
+    </a>
+    <a class="nav-item admin-only" href="#" onclick="navigate('stylist_perf',this)">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </span>
+      <span class="nav-label">Stylist Performance</span>
+    </a>
+    <a class="nav-item" href="#" onclick="navigate('stylist_rls',this)">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </span>
+      <span class="nav-label">Stylist (with RLS)</span>
+      <span class="nav-pill" style="background:#92400E">RLS</span>
+    </a>
+    <a class="nav-item admin-only" href="#" onclick="navigate('client_journey',this)">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </span>
+      <span class="nav-label">Client Journey</span>
+    </a>
+
+    <div class="nav-group-label" style="margin-top:14px">Bookmarks</div>
+    <div id="bmNav"><div class="bm-nav-empty">No saved reports yet.</div></div>
+
+    <div class="nav-group-label" style="margin-top:14px">Monthly Reports</div>
+    <div id="schedNav"><div class="bm-nav-empty">No scheduled reports yet.</div></div>
+
+    <div class="nav-group-label" style="margin-top:14px">Admin</div>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+      </span>
+      <span class="nav-label">Settings</span>
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </span>
+      <span class="nav-label">Export Reports</span>
+    </a>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="territory-block">
+      <p class="t-label" id="tLabel">My Territory</p>
+      <p class="t-name" id="tName">Marcus King</p>
+      <p class="t-detail" id="tDetail">North London · Zone 14</p>
+    </div>
+  </div>
+</aside>
+
+<!-- ══ MAIN ═════════════════════════════════════════════ -->
+<main class="main">
+
+  <!-- Page Header (dynamic) -->
+  <div class="page-header">
+    <div>
+      <div class="ph-eyebrow"><span class="ph-dot"></span> AI-Powered Analytics · Live</div>
+      <h1 id="ph-title">Executive Summary</h1>
+      <p id="ph-sub">All regions · All stylists · Full financial visibility · Data refreshed daily</p>
+    </div>
+    <div class="header-actions">
+      <div class="chip">📅&nbsp; Last 30 days</div>
+      <button class="chip-dark">⚙&nbsp; Filters</button>
+    </div>
+  </div>
+
+  <!-- Scrollable content area -->
+  <div class="page-content" id="pageContent"></div>
+
+</main>
+
+<style>
+  .page-content { flex: 1; overflow-y: auto; padding: 0; display: flex; flex-direction: column; }
+
+  /* Access banner */
+  .access-banner {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 28px; font-size: 12px; font-weight: 500;
+    flex-shrink: 0; border-bottom: 1px solid transparent; transition: all 0.2s;
+  }
+  .access-banner.full { background: linear-gradient(90deg,rgba(6,214,160,0.07),rgba(6,214,160,0.02)); border-color: rgba(6,214,160,0.18); color: #166534; }
+  .access-banner.rls  { background: linear-gradient(90deg,rgba(245,158,11,0.08),rgba(245,158,11,0.02)); border-color: rgba(245,158,11,0.25); color: #92400E; }
+  .ab-tag { font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; flex-shrink: 0; }
+  .access-banner.full .ab-tag { background: #166534; color: white; }
+  .access-banner.rls  .ab-tag { background: #92400E; color: white; }
+
+  /* Description block */
+  .dash-desc-block { padding: 18px 28px 0; display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
+  .hoc-quote { display: flex; align-items: flex-start; gap: 12px; background: var(--gold-light); border-left: 3px solid var(--gold); padding: 12px 16px; }
+  .hoc-quote-mark { font-family: "Cormorant Garamond", serif; font-size: 42px; color: var(--gold); line-height: 0.8; flex-shrink: 0; margin-top: 4px; }
+  .hoc-quote-text { font-family: "Cormorant Garamond", serif; font-size: 14.5px; font-style: italic; color: var(--charcoal); line-height: 1.6; }
+  .hoc-quote-source { font-family: "Jost", sans-serif; font-size: 9.5px; font-style: normal; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-top: 5px; display: block; }
+  .dash-desc-card { background: var(--white); border: 1px solid var(--cream-mid); border-left: 3px solid var(--black); padding: 14px 18px; }
+  .dash-desc-card.rls-card { border-left-color: #92400E; }
+  .dash-desc-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .dash-desc-icon { width: 24px; height: 24px; background: var(--cream); border: 1px solid var(--cream-mid); display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+  .dash-desc-title { font-size: 12px; font-weight: 600; color: var(--black); }
+  .dash-desc-sub   { font-size: 10px; color: var(--grey); margin-top: 1px; }
+  .dash-desc-body  { font-size: 12px; color: var(--grey); line-height: 1.7; }
+  .dash-desc-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .dash-chip { font-size: 10px; font-weight: 500; color: var(--charcoal); background: var(--cream); border: 1px solid var(--cream-mid); padding: 3px 10px; }
+
+  /* Report section */
+  .report-section { padding: 16px 20px 24px; flex-shrink: 0; }
+  .report-card { background: var(--white); border: 1px solid var(--cream-mid); }
+  .report-card-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid var(--cream-mid); }
+  .rch-left  { display: flex; align-items: center; gap: 10px; }
+  .rch-right { display: flex; gap: 6px; }
+  .live-pip  { width: 8px; height: 8px; border-radius: 50%; background: #276749; box-shadow: 0 0 0 3px rgba(39,103,73,0.12); animation: livepulse 2s infinite; flex-shrink: 0; }
+  @keyframes livepulse { 0%,100%{box-shadow:0 0 0 3px rgba(39,103,73,0.12)} 50%{box-shadow:0 0 0 5px rgba(39,103,73,0.05)} }
+  .report-title { font-family: "Cormorant Garamond", serif; font-size: 15px; font-weight: 500; color: var(--black); }
+  .live-chip { font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #276749; border: 1px solid rgba(39,103,73,0.25); padding: 2px 7px; }
+  .icon-btn  { width: 28px; height: 28px; border: 1px solid var(--cream-mid); background: var(--cream); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--grey); }
+  .icon-btn:hover { background: var(--cream-dark); }
+  .embed-wrap { width: 100%; aspect-ratio: 1140/541.25; position: relative; background: var(--cream); overflow: hidden; }
+  .embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; display: block; }
+
+  /* ── Power BI / AI view switcher ── */
+  .view-tabs { display:flex; gap:0; border:1px solid var(--cream-mid); border-radius:2px; overflow:hidden; }
+  .view-tab { padding:6px 14px; font-family:"Jost",sans-serif; font-size:11px; font-weight:500; letter-spacing:.4px;
+              color:var(--grey); background:var(--cream); border:none; cursor:pointer; transition:all .15s; white-space:nowrap; }
+  .view-tab + .view-tab { border-left:1px solid var(--cream-mid); }
+  .view-tab:hover { color:var(--black); background:var(--cream-dark); }
+  .view-tab.active { background:var(--black); color:#fff; }
+  .view-pane { display:none; }
+  .view-pane.active { display:block; }
+
+  /* Power BI pane */
+  .pbi-wrap { width:100%; aspect-ratio:16/9; position:relative; background:var(--cream); overflow:hidden; }
+  .pbi-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; display:block; }
+  .pbi-wrap:fullscreen, .pbi-wrap:-webkit-full-screen { aspect-ratio:auto; height:100%; background:var(--white); }
+
+  /* Shown when no embed URL has been configured yet */
+  .pbi-setup { padding:40px 34px; display:flex; flex-direction:column; gap:16px; align-items:flex-start;
+               background:var(--cream); border-top:1px solid var(--cream-mid); }
+  .pbi-setup-icon { font-size:26px; line-height:1; }
+  .pbi-setup-title { font-family:"Cormorant Garamond",serif; font-size:21px; font-weight:500; color:var(--black); }
+  .pbi-setup-sub { font-size:12.5px; color:var(--grey); max-width:70ch; line-height:1.65; }
+  .pbi-setup-steps { font-size:12.5px; color:var(--charcoal); line-height:1.9; max-width:70ch;
+                     padding-left:18px; margin:2px 0; }
+  .pbi-setup-steps code { background:var(--white); border:1px solid var(--cream-mid); padding:1px 6px;
+                          font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11.5px; color:var(--gold); }
+  .pbi-setup-note { font-size:11.5px; color:var(--gold); background:var(--gold-light);
+                    border-left:2px solid var(--gold); padding:10px 14px; max-width:70ch; line-height:1.6; }
+  .pbi-quickform { display:flex; gap:10px; width:100%; max-width:70ch; margin-top:2px; }
+  .pbi-quickform input { flex:1; padding:11px 13px; border:1px solid var(--cream-mid); background:var(--white);
+                         font-family:"Jost",sans-serif; font-size:12.5px; color:var(--black); border-radius:2px; }
+  .pbi-quickform input:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(154,123,79,.12); }
+  .pbi-quickform button { padding:0 20px; border:none; background:var(--black); color:#fff; font-family:"Jost",sans-serif;
+                          font-size:11.5px; font-weight:500; letter-spacing:.5px; cursor:pointer; border-radius:2px;
+                          transition:background .2s; flex-shrink:0; }
+  .pbi-quickform button:hover { background:var(--gold); }
+  .security-bar { display: flex; align-items: center; gap: 8px; padding: 8px 18px; font-size: 10.5px; flex-shrink: 0; }
+  .security-bar.full { background: rgba(154,123,79,0.07); color: var(--gold); border-top: 1px solid rgba(154,123,79,0.18); }
+  .security-bar.rls  { background: rgba(245,158,11,0.07); color: #92400E; border-top: 1px solid rgba(245,158,11,0.2); }
+  .security-bar strong { font-weight: 600; }
+
+  .fade-page { animation: fadeUp 0.22s ease; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── AI report generator (replaces the embedded report) ── */
+  .ai-panel { padding: 26px 28px 32px; display:flex; flex-direction:column; gap:16px; }
+  .ai-panel-head { display:flex; align-items:flex-start; gap:12px; }
+  .ai-spark { color: var(--gold); font-size:16px; line-height:1.4; flex-shrink:0; }
+  .ai-panel-title { font-family:"Cormorant Garamond",serif; font-size:21px; font-weight:500; color:var(--black); }
+  .ai-panel-sub { font-size:12px; color:var(--grey); margin-top:2px; max-width:64ch; }
+  .ai-form { display:flex; gap:10px; }
+  .ai-input { flex:1; padding:14px 16px; border:1px solid var(--cream-mid); background:var(--white); color:var(--black); font-size:14px; font-family:"Jost",sans-serif; border-radius:2px; transition:border-color .2s, box-shadow .2s; }
+  .ai-input:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(154,123,79,.12); }
+  .ai-input::placeholder { color:var(--grey-light); }
+  .ai-btn { padding:0 22px; border:none; background:var(--black); color:#fff; font-family:"Jost",sans-serif; font-size:12px; font-weight:500; letter-spacing:.6px; cursor:pointer; border-radius:2px; transition:background .2s, transform .15s; flex-shrink:0; }
+  .ai-btn:hover { background:var(--gold); transform:translateY(-1px); }
+  .ai-suggest { display:flex; flex-wrap:wrap; gap:8px; }
+  .ai-suggest span { font-size:11px; color:var(--charcoal); background:var(--cream); border:1px solid var(--cream-mid); padding:6px 11px; border-radius:20px; cursor:pointer; transition:all .15s; }
+  .ai-suggest span:hover { border-color:var(--gold); color:var(--gold); }
+  .ai-output { margin-top:4px; }
+  .ai-loading { display:flex; align-items:center; gap:8px; padding:26px 2px; color:var(--grey); font-size:13px; }
+  .ai-dot { width:7px; height:7px; border-radius:50%; background:var(--gold); animation:aiblink 1s infinite both; }
+  .ai-dot:nth-child(2){ animation-delay:.2s } .ai-dot:nth-child(3){ animation-delay:.4s }
+  @keyframes aiblink { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+  .ai-result { border:1px solid var(--cream-mid); border-radius:4px; background:var(--white); overflow:hidden; animation:fadeUp .3s ease; }
+  .ai-result-head { display:flex; align-items:center; gap:10px; padding:13px 18px; border-bottom:1px solid var(--cream-mid); background:var(--cream); }
+  .ai-result-q { flex:1; font-family:"Cormorant Garamond",serif; font-size:17px; color:var(--black); }
+  .ai-tag { font-size:9px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--gold); border:1px solid rgba(154,123,79,.35); padding:2px 8px; border-radius:20px; white-space:nowrap; }
+  .ai-narr { font-size:13px; color:var(--charcoal); line-height:1.6; padding:16px 18px 0; }
+  .ai-chartbox { position:relative; height:320px; width:100%; padding:10px 18px 22px; }
+
+  /* ── chat thread ── */
+  .ai-thread { display:flex; flex-direction:column; gap:16px; padding-right:2px; }
+  .ai-msg { scroll-margin-top:14px; }
+  .ai-thread:empty { display:none; }
+  .ai-msg { display:flex; gap:10px; }
+  .ai-msg-user { justify-content:flex-end; }
+  .ai-bubble-user { background:var(--black); color:#fff; font-size:13px; line-height:1.5; padding:10px 14px; border-radius:14px 14px 2px 14px; max-width:80%; }
+  .ai-msg-ai { align-items:flex-start; }
+  .ai-avatar { width:26px; height:26px; border-radius:50%; background:var(--gold-light); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; border:1px solid rgba(154,123,79,.3); }
+  .ai-bubble-ai { flex:1; min-width:0; border:1px solid var(--cream-mid); border-radius:2px 14px 14px 14px; background:var(--white); overflow:hidden; }
+  .ai-bubble-ai .ai-narr { padding:14px 16px 0; }
+  .ai-bubble-ai .ai-chartbox { padding:8px 16px 14px; height:300px; }
+  .ai-bubble-ai .ai-loading { padding:18px 16px; }
+  /* ── AI Analysis panel (key takeaways · actions · forecast) ── */
+  .ai-analysis { margin:18px 16px 16px; border:1px solid var(--cream-mid); border-radius:10px; overflow:hidden; background:var(--white); box-shadow:0 18px 40px -22px rgba(40,20,10,.4); }
+  .ai-analysis-head { display:flex; align-items:center; gap:9px; padding:13px 20px; color:#fff;
+    font-family:"Cormorant Garamond",serif; font-size:19px; font-weight:600; letter-spacing:.4px;
+    background:linear-gradient(120deg,#1A1A1A 0%, #3a2230 55%, #5a2f55 100%); }
+  .ai-analysis-head .aa-spark { color:var(--c-gold2); font-size:16px; }
+  .ai-analysis-grid { display:grid; grid-template-columns:1fr 1fr; }
+  @media (max-width:760px){ .ai-analysis-grid{ grid-template-columns:1fr; } .aa-card.aa-insights{ border-right:none; border-bottom:1px solid var(--cream-mid);} }
+  .aa-card { padding:16px 20px; }
+  .aa-card.aa-insights { border-right:1px solid var(--cream-mid); }
+  .aa-card-h { display:flex; align-items:center; gap:9px; font-size:11px; font-weight:600; letter-spacing:1.4px; text-transform:uppercase; margin-bottom:12px; }
+  .aa-insights .aa-card-h { color:var(--c-teal); }
+  .aa-recs .aa-card-h { color:var(--c-coral); }
+  .aa-ic { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; font-size:12px; flex-shrink:0; }
+  .aa-insights .aa-ic { background:rgba(44,140,153,.15); color:var(--c-teal); }
+  .aa-recs .aa-ic { background:rgba(226,109,90,.15); color:var(--c-coral); }
+  .aa-card ul { margin:0; padding:0; list-style:none; }
+  .aa-card li { position:relative; padding:8px 0 8px 18px; font-size:13px; line-height:1.55; color:var(--charcoal); border-bottom:1px solid var(--cream); }
+  .aa-card li:last-child { border-bottom:none; }
+  .aa-card li::before { content:""; position:absolute; left:0; top:14px; width:6px; height:6px; border-radius:50%; }
+  .aa-insights li::before { background:var(--c-teal); }
+  .aa-recs li::before { background:var(--c-coral); }
+  .aa-forecast { padding:16px 20px; border-top:1px solid var(--cream-mid);
+    background:linear-gradient(120deg, rgba(201,162,39,.16), rgba(142,69,133,.10)); }
+  .aa-forecast-h { display:flex; align-items:center; gap:9px; font-size:11px; font-weight:600; letter-spacing:1.4px; text-transform:uppercase; color:#8a6a12; margin-bottom:7px; }
+  .aa-forecast .aa-ic { background:rgba(201,162,39,.22); color:#8a6a12; }
+  .aa-forecast p { margin:0; font-family:"Cormorant Garamond",serif; font-size:18px; line-height:1.5; color:var(--black); font-style:italic; }
+  .ai-followhint { font-size:11px; color:var(--grey); padding:2px 16px 14px; font-style:italic; }
+  .ai-composer { display:flex; gap:10px; }
+
+  /* ── Research mode toggle ── */
+  .ai-modebar { display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding:2px 0 4px; }
+  .ai-switch { display:inline-flex; align-items:center; gap:9px; cursor:pointer; user-select:none; }
+  .ai-switch input { display:none; }
+  .ai-switch-track { width:38px; height:21px; border-radius:20px; background:var(--cream-mid); position:relative; transition:background .2s; flex-shrink:0; }
+  .ai-switch-thumb { position:absolute; top:2px; left:2px; width:17px; height:17px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.25); transition:transform .2s; }
+  .ai-switch input:checked + .ai-switch-track { background:linear-gradient(120deg,var(--c-teal),var(--c-sky)); }
+  .ai-switch input:checked + .ai-switch-track .ai-switch-thumb { transform:translateX(17px); }
+  .ai-switch-label { font-size:12px; font-weight:500; color:var(--charcoal); }
+  .ai-mode-note { font-size:11px; color:var(--grey); }
+
+  /* ── Research answer ── */
+  .ai-tag-research { background:linear-gradient(120deg,var(--c-teal),var(--c-sky)) !important; }
+  .ai-research-body { padding:14px 18px 4px; font-size:13.5px; line-height:1.65; color:var(--charcoal); }
+  .ai-research-body h4 { font-family:"Cormorant Garamond",serif; color:var(--black); margin:13px 0 6px; font-size:16.5px; font-weight:600; }
+  .ai-research-body p { margin:0 0 9px; }
+  .ai-research-body ul { margin:0 0 9px; padding-left:20px; }
+  .ai-research-body li { margin-bottom:4px; }
+  .ai-research-body strong { color:var(--black); }
+  .ai-research-body hr { border:none; border-top:1px solid var(--cream-mid); margin:12px 0; }
+  .ai-research-body ol { margin:0 0 9px; padding-left:20px; }
+  .ai-md-table { border-collapse:collapse; width:100%; margin:10px 0 14px; font-size:12.5px; }
+  .ai-md-table th { text-align:left; padding:7px 10px; background:var(--cream); border:1px solid var(--cream-mid); color:var(--black); font-weight:600; }
+  .ai-md-table td { padding:7px 10px; border:1px solid var(--cream-mid); color:var(--charcoal); }
+  .ai-md-table tr:nth-child(even) td { background:rgba(0,0,0,.015); }
+  .ai-sources { margin:6px 18px 12px; padding:12px 14px; background:rgba(44,140,153,.06); border:1px solid var(--cream-mid); border-left:3px solid var(--c-teal); border-radius:4px; }
+  .ai-sources-h { font-size:10px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; color:var(--c-teal); margin-bottom:6px; }
+  .ai-sources ol { margin:0; padding-left:18px; }
+  .ai-sources li { font-size:11.5px; line-height:1.5; margin-bottom:3px; word-break:break-word; }
+  .ai-sources a { color:#2f6f7d; text-decoration:none; }
+  .ai-sources a:hover { text-decoration:underline; }
+
+  /* ── login console ── */
+  .login-screen { position:fixed; inset:0; z-index:1000; background:var(--black);
+    display:flex; align-items:center; justify-content:center; padding:24px; }
+  .login-screen.hidden { display:none; }
+  .login-card { width:100%; max-width:380px; background:var(--white); border-radius:6px; padding:34px 32px; }
+  .login-brand { font-family:"Cormorant Garamond",serif; font-size:30px; font-weight:500; color:var(--black); letter-spacing:.5px; }
+  .login-brand span { font-style:italic; color:var(--gold); }
+  .login-tag { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--grey); margin:4px 0 22px; }
+  .login-card label { display:block; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--grey); margin:14px 0 6px; font-weight:600; }
+  .login-card input { width:100%; padding:12px 14px; border:1px solid var(--cream-mid); background:var(--cream); font-size:14px; font-family:"Jost",sans-serif; border-radius:2px; }
+  .login-card input:focus { outline:none; border-color:var(--gold); background:var(--white); }
+  .login-btn { width:100%; margin-top:22px; padding:14px; border:none; background:var(--black); color:#fff; font-family:"Jost",sans-serif; font-size:13px; font-weight:500; letter-spacing:1px; cursor:pointer; border-radius:2px; transition:background .2s; }
+  .login-btn:hover { background:var(--gold); }
+  .login-err { color:var(--tx-red); font-size:12px; margin-top:12px; min-height:1em; }
+  .login-hint { margin-top:22px; padding-top:18px; border-top:1px solid var(--cream-mid); }
+  .login-hint-title { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--grey-light); margin-bottom:10px; }
+  .login-acct { font-size:12px; color:var(--charcoal); padding:6px 8px; border-radius:3px; cursor:pointer; transition:background .15s; }
+  .login-acct:hover { background:var(--cream); }
+  .login-acct b { color:var(--black); }
+  .login-acct span { color:var(--gold); }
+
+  /* hide admin-only items for non-admins */
+  body.role-stylist .admin-only { display:none !important; }
+
+  /* ── bookmarks ── */
+  .bubble-actions { display:flex; align-items:center; gap:8px; }
+  .bm-btn { background:var(--cream); border:1px solid var(--cream-mid); color:var(--charcoal); font-family:"Jost",sans-serif; font-size:10.5px; letter-spacing:.4px; text-transform:uppercase; padding:6px 11px; border-radius:3px; cursor:pointer; transition:all .15s; }
+  .bm-btn:hover { border-color:var(--gold); color:var(--gold); }
+  .bm-btn.saved { background:var(--gold-light); border-color:var(--gold); color:var(--gold); cursor:default; }
+  .saved-wrap { position:relative; flex:none; }
+  .saved-btn { background:var(--white); border:1px solid var(--cream-mid); color:var(--charcoal); font-family:"Jost",sans-serif; font-size:11px; letter-spacing:.4px; padding:7px 13px; border-radius:4px; cursor:pointer; transition:all .15s; white-space:nowrap; }
+  .saved-btn:hover { border-color:var(--gold); color:var(--gold); }
+  .saved-menu { position:absolute; right:0; top:calc(100% + 8px); width:320px; max-height:340px; overflow-y:auto; background:var(--white); border:1px solid var(--cream-mid); border-radius:6px; box-shadow:0 20px 44px -20px rgba(40,20,10,.45); padding:6px; z-index:40; display:none; }
+  .saved-menu.open { display:block; }
+  .saved-empty { padding:16px 12px; font-size:12px; color:var(--grey); text-align:center; line-height:1.6; }
+  .saved-item { display:flex; align-items:center; gap:8px; padding:2px; border-radius:4px; }
+  .saved-item:hover { background:var(--cream); }
+  .saved-open { flex:1; padding:9px 10px; font-size:12.5px; color:var(--charcoal); cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .saved-del { background:none; border:none; color:var(--grey-light); font-size:17px; line-height:1; cursor:pointer; padding:4px 9px; border-radius:4px; flex-shrink:0; }
+  .saved-del:hover { color:var(--tx-red); background:rgba(200,16,46,.08); }
+
+  /* ── bookmarks in the sidebar ── */
+  .bm-nav-empty { padding:4px 22px 8px; font-size:11px; color:var(--grey-light); line-height:1.5; }
+  .bm-nav-item { padding-right:10px; }
+  .bm-nav-item .nav-label { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12px; }
+  .bm-nav-del { margin-left:auto; color:var(--grey-light); font-size:15px; line-height:1; padding:0 5px; border-radius:4px; flex-shrink:0; }
+  .bm-nav-del:hover { color:var(--tx-red); }
+
+  /* ── schedule modal ── */
+  .sched-overlay { position:fixed; inset:0; z-index:500; background:rgba(20,12,8,.45); display:none; align-items:center; justify-content:center; padding:24px; }
+  .sched-overlay.open { display:flex; }
+  .sched-card { width:100%; max-width:440px; background:var(--white); border-radius:12px; padding:26px 28px; box-shadow:0 40px 90px -30px rgba(0,0,0,.5); }
+  .sched-head { font-family:"Cormorant Garamond",serif; font-size:22px; font-weight:600; color:var(--black); margin-bottom:4px; }
+  .sched-report { font-size:13px; color:var(--grey); font-style:italic; margin-bottom:18px; }
+  .sched-label { display:block; font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--grey); margin:14px 0 6px; font-weight:600; }
+  .sched-input { width:100%; padding:12px 14px; border:1px solid var(--cream-mid); background:var(--cream); border-radius:8px; font-family:"Jost",sans-serif; font-size:14px; }
+  .sched-input:focus { outline:none; border-color:var(--gold); background:var(--white); }
+  .sched-msg { font-size:12.5px; color:var(--charcoal); margin:14px 0 4px; min-height:1.2em; line-height:1.5; }
+  .sched-msg a { color:var(--c-teal); }
+  .sched-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:14px; }
+  .sched-actions button { padding:11px 18px; border-radius:8px; font-family:"Jost",sans-serif; font-size:13px; font-weight:500; cursor:pointer; border:1px solid var(--cream-mid); }
+  .sched-cancel { background:var(--white); color:var(--charcoal); }
+  .sched-cancel:hover { border-color:var(--grey); }
+  .sched-create { background:var(--black); color:#fff; border-color:var(--black); }
+  .sched-create:hover { background:var(--gold); border-color:var(--gold); }
+  .sched-test { background:linear-gradient(120deg,var(--c-teal),var(--c-sky)); color:#fff; border:none; }
+
+  /* ── per-report download menu ── */
+  .ai-bubble-head { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 16px 0; }
+  .rep-export { position:relative; }
+  .rep-dl { background:var(--cream); border:1px solid var(--cream-mid); color:var(--charcoal); font-family:"Jost",sans-serif; font-size:10.5px; letter-spacing:.4px; text-transform:uppercase; padding:6px 11px; border-radius:3px; cursor:pointer; transition:all .15s; }
+  .rep-dl:hover { border-color:var(--gold); color:var(--gold); }
+  .rep-menu { position:absolute; right:0; top:calc(100% + 6px); min-width:170px; background:var(--white); border:1px solid var(--cream-mid); border-radius:4px; box-shadow:0 16px 32px -16px rgba(40,20,10,.4); padding:5px; z-index:30; display:none; }
+  .rep-menu.open { display:block; }
+  .rep-menu button { display:block; width:100%; text-align:left; background:none; border:none; padding:9px 11px; font-family:"Jost",sans-serif; font-size:12.5px; color:var(--charcoal); cursor:pointer; border-radius:3px; }
+  .rep-menu button:hover { background:var(--cream); color:var(--gold); }
+
+  /* ════════ COLOUR REFRESH — a little more vibrant ════════ */
+  :root{
+    --c-coral:#E26D5A; --c-teal:#2C8C99; --c-gold2:#C9A227;
+    --c-plum:#8E4585; --c-sky:#4A90C2; --c-sage:#5B8C5A;
+  }
+  /* login — colourful backdrop + gradient CTA */
+  .login-screen{
+    background:
+      radial-gradient(circle at 16% 20%, rgba(226,109,90,.32), transparent 42%),
+      radial-gradient(circle at 84% 80%, rgba(44,140,153,.30), transparent 46%),
+      radial-gradient(circle at 78% 12%, rgba(201,162,39,.22), transparent 40%),
+      radial-gradient(circle at 20% 88%, rgba(142,69,133,.22), transparent 42%),
+      #16131a;
+  }
+  .login-card{ box-shadow:0 36px 90px -34px rgba(0,0,0,.65); }
+  .login-btn{ background:linear-gradient(120deg,#1A1A1A,#3a2230); }
+  .login-btn:hover{ background:linear-gradient(120deg,var(--c-coral),var(--c-plum)); }
+  .login-acct span{ color:var(--c-teal); }
+
+  /* top bar — gradient accent strip */
+  .top-bar::after{ content:""; position:absolute; left:0; right:0; bottom:-3px; height:3px;
+    background:linear-gradient(90deg,var(--c-coral),var(--c-gold2),var(--c-sage),var(--c-teal),var(--c-sky),var(--c-plum)); }
+  .user-avatar{ background:linear-gradient(135deg,var(--c-coral),var(--c-plum)) !important; }
+
+  /* sidebar — coloured active nav */
+  .nav-item.active{ background:linear-gradient(90deg, rgba(226,109,90,.12), transparent) !important; }
+  .nav-item.active::before{ background:linear-gradient(var(--c-coral),var(--c-plum)) !important; width:3px !important; }
+  .nav-item.active .nav-icon{ color:var(--c-coral); }
+  .nav-pill{ background:linear-gradient(120deg,var(--c-coral),var(--c-plum)) !important; }
+  .territory-block{ background:linear-gradient(135deg, rgba(201,162,39,.14), rgba(226,109,90,.10)) !important;
+    border-color:rgba(201,162,39,.32) !important; }
+  .t-label{ color:var(--c-coral) !important; }
+
+  /* page header + chips */
+  .page-header h1{ background:none; -webkit-text-fill-color:#ffffff; color:#ffffff; }
+  .chip-dark{ background:linear-gradient(120deg,#1A1A1A,#2b2230) !important; border:none !important; }
+  .dash-chip:nth-child(6n+1){ border-color:rgba(226,109,90,.4); color:#a24a3c; }
+  .dash-chip:nth-child(6n+2){ border-color:rgba(44,140,153,.4); color:#1f6b75; }
+  .dash-chip:nth-child(6n+3){ border-color:rgba(201,162,39,.5); color:#917214; }
+  .dash-chip:nth-child(6n+4){ border-color:rgba(142,69,133,.4); color:#7a3a72; }
+  .dash-chip:nth-child(6n+5){ border-color:rgba(74,144,194,.4); color:#3a6e96; }
+  .dash-chip:nth-child(6n+6){ border-color:rgba(91,140,90,.45); color:#3f6b3e; }
+
+  /* report header chip + pip */
+  .live-chip{ color:#fff !important; background:linear-gradient(120deg,var(--c-teal),var(--c-sky)); border:none !important; }
+  .live-pip{ background:var(--c-coral) !important; box-shadow:0 0 0 3px rgba(226,109,90,.18) !important; }
+
+  /* AI panel + chat */
+  .ai-spark{ color:var(--c-coral); }
+  .ai-tag{ color:#fff !important; background:linear-gradient(120deg,var(--c-gold2),var(--c-coral)); border:none !important; }
+  .ai-btn{ background:linear-gradient(120deg,#1A1A1A,#2b2230) !important; }
+  .ai-btn:hover{ background:linear-gradient(120deg,var(--c-coral),var(--c-plum)) !important; }
+  .ai-suggest span:hover{ border-color:var(--c-teal) !important; color:var(--c-teal) !important; }
+  .ai-input:focus{ border-color:var(--c-teal) !important; box-shadow:0 0 0 3px rgba(44,140,153,.14) !important; }
+  .ai-bubble-user{ background:linear-gradient(120deg,#1A1A1A,#3a2230); }
+  .ai-avatar{ background:linear-gradient(135deg, rgba(226,109,90,.20), rgba(44,140,153,.20)); color:var(--c-coral); border-color:rgba(226,109,90,.32); }
+  .rep-dl:hover{ border-color:var(--c-teal); color:var(--c-teal); }
+
+  /* access banners — colourful tints */
+  .access-banner.full{ background:linear-gradient(90deg, rgba(91,140,90,.16), rgba(44,140,153,.10)) !important; }
+  .access-banner.rls{ background:linear-gradient(90deg, rgba(226,109,90,.16), rgba(201,162,39,.10)) !important; }
+</style>
+
+<script>
+const PAGES = {
+  executive: {
+    iframeSrc: "",
+    navLabel:  "Executive Summary",
+    phTitle:   "Executive Summary",
+    phSub:     "All regions · All stylists · Full financial visibility · Data refreshed daily",
+    bannerClass: "full",
+    bannerIcon:  "🟢",
+    bannerTag:   "Full Access",
+    bannerText:  "Consolidated view across all regions, all stylists and complete financial data.",
+    quote: {
+      text:   "For over four decades, our expert stylists have been blending colour science and fashion psychology, empowering over 100,000 people to embrace personal styling with ease — transforming confusion into clarity, and insecurity into confidence.",
+      source: "House of Colour · houseofcolour.com"
+    },
+    descIcon:  "📊",
+    descTitle: "Executive Summary Dashboard",
+    descSub:   "AI Report · POC Demo · March 2026 · All regions enabled",
+    descCardClass: "",
+    descBody:  `This Executive Summary report provides leadership and regional managers at House of Colour with a
+      consolidated, cross-network view of stylist and business performance. The dashboard covers all four
+      operating regions and can be filtered by region, service type, consultant or stylist, and across a
+      range of time periods — from daily views through to full year-to-date.
+      <br/><br/>
+      Within this report you will find metrics relating to <strong>average revenue per stylist</strong>
+      against defined targets, <strong>appointment volume and mix</strong> broken down by service category,
+      and <strong>average revenue per appointment type</strong> — enabling leadership to understand which
+      services drive the most value per session. The report spans five pages: Executive Summary, Financial,
+      Stylist Performance, Stylist Detail, and a personalised <em>My Page</em>.`,
+    chips: ["📍 All Operating Regions","📅 Flexible Period Filters","💷 Revenue per Stylist","🎯 Target Tracking","✂ Appointment Type Breakdown","📄 5 Report Pages"],
+    reportTitle: "HOC Analytics — Executive Summary (All Regions)",
+    secBarClass: "full",
+    secIcon:  "🔓",
+    secText:  "<strong>Full Access:</strong> Consolidated view — all regions, all stylists, complete financial data. Secured via Microsoft SSO."
+  },
+
+  stylist_perf: {
+    iframeSrc: "",
+    navLabel:  "Stylist Performance",
+    phTitle:   "Stylist Performance",
+    phSub:     "Network-wide stylist rankings · Revenue · Bookings · Retention · All regions",
+    bannerClass: "full",
+    bannerIcon:  "🟢",
+    bannerTag:   "Full Access",
+    bannerText:  "You are viewing performance data across all stylists and all regions.",
+    quote: {
+      text:   "Our stylists are the heart of House of Colour — each one a trained expert in colour science and personal image, dedicated to helping clients look and feel their best every day.",
+      source: "House of Colour · houseofcolour.com"
+    },
+    descIcon:  "✂",
+    descTitle: "Stylist Performance Dashboard",
+    descSub:   "AI Report · Individual & Network-wide Rankings · All Regions",
+    descCardClass: "",
+    descBody:  `This page provides a detailed breakdown of performance across House of Colour's entire stylist network.
+      Managers and HQ users can view metrics related to <strong>individual stylist revenue</strong> against
+      defined targets, <strong>booking volumes and appointment frequency</strong>, <strong>client retention
+      rates</strong>, and <strong>year-on-year growth trajectories</strong> per stylist.
+      <br/><br/>
+      The report enables regional comparison — identifying top performers, stylists trending above or below
+      target, and service mix patterns by individual. All data is presented at network level with no
+      row-level restrictions applied at this access tier.`,
+    chips: ["👤 All 487 Stylists","📈 Revenue vs Target","🔁 Retention Rate","📅 YoY Growth","🗺 Regional Breakdown","🏆 Performance Ranking"],
+    reportTitle: "HOC Analytics — Stylist Performance (All Stylists)",
+    secBarClass: "full",
+    secIcon:  "🔓",
+    secText:  "<strong>Full Access:</strong> Network-wide stylist data — all regions and all stylists visible. Secured via Microsoft SSO."
+  },
+
+  stylist_rls: {
+    iframeSrc: "",
+    navLabel:  "Stylist (with RLS)",
+    phTitle:   "Stylist View — RLS Restricted",
+    phSub:     "Territory data only · North London · Zone 14 · Row Level Security enforced",
+    bannerClass: "rls",
+    bannerIcon:  "🔒",
+    bannerTag:   "RLS Restricted",
+    bannerText:  "Data is filtered to your territory only (North London · Zone 14). Cross-stylist and regional data is not accessible.",
+    quote: {
+      text:   "Every stylist in our network runs their own business — with the backing of a global brand, a proven methodology, and the tools they need to grow their client base confidently.",
+      source: "House of Colour · houseofcolour.com"
+    },
+    descIcon:  "🔒",
+    descTitle: "Stylist View — Row Level Security (RLS) Demonstration",
+    descSub:   "AI Report · RLS enforced at data source · Territory-filtered session",
+    descCardClass: "rls-card",
+    descBody:  `This page demonstrates how House of Colour's 450+ stylists would experience the AI-based report within MaxCRM. Row Level Security (RLS) is enforced at the data source
+      level — meaning each stylist's session is automatically filtered to display only their own territory
+      data, regardless of the report page they navigate to.
+      <br/><br/>
+      Stylists will be able to see metrics related to <strong>their own booking history</strong>,
+      <strong>personal revenue performance</strong> against targets, <strong>client retention</strong>
+      within their territory, and <strong>service mix</strong> for their appointments. Data belonging to
+      other stylists, regions, or financial overviews is restricted at source — not just hidden in the UI
+      — ensuring full data privacy across the network. This is powered by Microsoft SSO via MaxCRM with
+      no separate reporting licence required per stylist.`,
+    chips: ["🔒 RLS Active","👤 Own Territory Only","💷 Personal Revenue","🎯 My Target Status","🔁 My Client Retention","🔗 SSO via MaxCRM · No extra licence"],
+    reportTitle: "HOC Analytics — Stylist View (RLS Active · Territory Filtered)",
+    secBarClass: "rls",
+    secIcon:  "🔒",
+    secText:  "<strong>Row Level Security Active:</strong> Data filtered to your territory only (North London · Zone 14). Enforced at data source level via RLS. Secured via Microsoft SSO."
+  },
+
+  client_journey: {
+    iframeSrc: "",
+    navLabel:  "Client Journey",
+    phTitle:   "Client Journey",
+    phSub:     "Client lifecycle · Retention · Appointment patterns · Spend behaviour · All regions",
+    bannerClass: "full",
+    bannerIcon:  "🟢",
+    bannerTag:   "Full Access",
+    bannerText:  "Full client journey data visible across all regions and all stylists.",
+    quote: {
+      text:   "Confidence starts here. Tired of investing time and money in a wardrobe that falls short? Discover how to look your best every day — for every occasion, big or small.",
+      source: "House of Colour · houseofcolour.com"
+    },
+    descIcon:  "👥",
+    descTitle: "Client Journey Dashboard",
+    descSub:   "AI Report · Client Lifecycle & Retention Analytics · All Regions",
+    descCardClass: "",
+    descBody:  `The Client Journey dashboard gives House of Colour a lens into the full lifecycle of a client
+      across the stylist network. This view tracks how clients move from their first appointment through to
+      becoming loyal, repeat visitors — and identifies patterns in <strong>appointment frequency</strong>,
+      <strong>service progression</strong>, and <strong>spend behaviour over time</strong>.
+      <br/><br/>
+      Key areas covered include <strong>new versus returning client ratios</strong> by region and stylist,
+      <strong>average visit frequency</strong> and intervals between appointments, <strong>cross-service
+      upsell patterns</strong> (for example, clients who progress from Colour Analysis to Colour &amp;
+      Style Combined), and <strong>client lifetime value</strong> trends. This data informs both
+      network-level strategy and individual stylist coaching on client retention.`,
+    chips: ["👥 New vs Returning Clients","📅 Visit Frequency","💷 Client Lifetime Value","🔁 Retention Trends","📈 Service Progression","🗺 Regional Client Patterns"],
+    reportTitle: "HOC Analytics — Client Journey & Retention (All Regions)",
+    secBarClass: "full",
+    secIcon:  "🔓",
+    secText:  "<strong>Full Access:</strong> Client journey data across all regions and all stylists. Secured via Microsoft SSO."
+  }
+};
+
+let currentPage = "executive";
+
+function navigate(pageKey, el) {
+  event.preventDefault();
+  if (pageKey === currentPage) return;
+  currentPage = pageKey;
+
+  // Update nav active state
+  document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
+  if (el) el.classList.add("active");
+
+  renderPage(pageKey);
+}
+
+function renderPage(key) {
+  const p = PAGES[key];
+
+  // Power BI embed: per-page URL from powerbi.json, falling back to defaultSrc.
+  // If no URL is configured we open on the AI pane and show setup instructions.
+  const pbiSrc    = pbiSrcFor(key);
+  const startView = pbiSrc ? 'pbi' : 'ai';
+  currentView = startView;
+
+  // Page header
+  document.getElementById("ph-title").textContent = p.phTitle;
+  document.getElementById("ph-sub").textContent   = p.phSub;
+
+  // Render content
+  document.getElementById("pageContent").innerHTML = `
+    <div class="fade-page">
+
+      <!-- Access banner -->
+      <div class="access-banner ${p.bannerClass}">
+        <span>${p.bannerIcon}</span>
+        <span class="ab-tag">${p.bannerTag}</span>
+        <span>${p.bannerText}</span>
+      </div>
+
+      <!-- Description + quote -->
+      <div class="dash-desc-block">
+        <div class="hoc-quote">
+          <div class="hoc-quote-mark">&ldquo;</div>
+          <div>
+            <div class="hoc-quote-text">${p.quote.text}</div>
+            <span class="hoc-quote-source">— ${p.quote.source}</span>
+          </div>
+        </div>
+        <div class="dash-desc-card ${p.descCardClass}">
+          <div class="dash-desc-card-head">
+            <div class="dash-desc-icon">${p.descIcon}</div>
+            <div>
+              <div class="dash-desc-title">${p.descTitle}</div>
+              <div class="dash-desc-sub">${p.descSub}</div>
+            </div>
+          </div>
+          <div class="dash-desc-body">${p.descBody}</div>
+          <div class="dash-desc-chips">
+            ${p.chips.map(c => `<span class="dash-chip">${c}</span>`).join("")}
+          </div>
+        </div>
+      </div>
+
+      <!-- Embedded report -->
+      <div class="report-section">
+        <div class="report-card">
+          <div class="report-card-header">
+            <div class="rch-left">
+              <div class="live-pip"></div>
+              <span class="report-title">${p.reportTitle}</span>
+              <span class="live-chip">AI</span>
+            </div>
+            <div class="rch-right">
+              <div class="view-tabs">
+                <button class="view-tab ${startView === 'pbi' ? 'active' : ''}" id="tabPbi"
+                        onclick="switchView('pbi')" title="Embedded Power BI report">▦ Power BI</button>
+                <button class="view-tab ${startView === 'ai' ? 'active' : ''}" id="tabAi"
+                        onclick="switchView('ai')" title="Generate a report with AI">✦ AI Report</button>
+              </div>
+              <button class="icon-btn" title="Fullscreen" onclick="fullscreenReport()">⛶</button>
+              <button class="icon-btn" title="Open report in a new tab" onclick="openReportTab()">⬇</button>
+              <button class="icon-btn" title="Share" onclick="shareReport()">↗</button>
+            </div>
+          </div>
+
+          <!-- ── Power BI pane ── -->
+          <div class="view-pane ${startView === 'pbi' ? 'active' : ''}" id="panePbi">
+            ${pbiSrc ? `
+              <div class="pbi-wrap" id="pbiWrap">
+                <iframe id="pbiFrame" title="${p.reportTitle}" src="${pbiSrc}"
+                        allowfullscreen frameborder="0"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
+              </div>
+            ` : `
+              <div class="pbi-setup">
+                <div class="pbi-setup-icon">▦</div>
+                <div class="pbi-setup-title">Connect your Power BI report</div>
+                <div class="pbi-setup-sub">
+                  No embed URL is configured for <strong>${p.navLabel}</strong> yet. A <code>.pbix</code> file
+                  can't be embedded directly &mdash; the report has to be published to the Power BI Service first,
+                  which then gives you an embeddable URL.
+                </div>
+                <ol class="pbi-setup-steps">
+                  <li>Open your report in Power BI Desktop and click <strong>Publish</strong> to a workspace.</li>
+                  <li>In the Power BI Service, open the report &rarr; <strong>File</strong> &rarr;
+                      <strong>Embed report</strong> &rarr; <strong>Publish to web (public)</strong>.</li>
+                  <li>Copy the <code>https://app.powerbi.com/view?r=...</code> URL it generates.</li>
+                  <li>Paste it below to preview instantly, or save it permanently in
+                      <code>powerbi.json</code> under <code>pages.${currentPage}.src</code>.</li>
+                </ol>
+                <form class="pbi-quickform" onsubmit="return previewPbi(event)">
+                  <input type="url" id="pbiUrlInput" placeholder="https://app.powerbi.com/view?r=..." autocomplete="off"/>
+                  <button type="submit">Preview</button>
+                </form>
+                <div class="pbi-setup-note">
+                  <strong>Note:</strong> &ldquo;Publish to web&rdquo; makes the report publicly accessible to anyone
+                  with the link &mdash; fine for a demo with sample data, never for real client data. For a secured
+                  embed, use <em>Embed for your organisation</em> (viewers sign in with Microsoft SSO) or Power BI
+                  Embedded with a service principal and an embed token.
+                </div>
+              </div>
+            `}
+          </div>
+
+          <!-- ── AI report pane ── -->
+          <div class="view-pane ${startView === 'ai' ? 'active' : ''}" id="paneAi">
+          <div class="ai-panel">
+            <div class="ai-panel-head">
+              <span class="ai-spark">✦</span>
+              <div style="flex:1">
+                <div class="ai-panel-title">Generate a report with AI</div>
+                <div class="ai-panel-sub">Ask a question in plain English — then keep the conversation going to refine, filter, or go deeper, just like a chat.</div>
+              </div>
+            </div>
+            <div class="ai-thread" id="aiThread"></div>
+            <div class="ai-suggest" id="aiSuggest">
+              ${aiExamplesFor(key).map(e => `<span onclick="setAIQuestion(this)">${e}</span>`).join("")}
+            </div>
+            <div class="ai-modebar">
+              <label class="ai-switch">
+                <input type="checkbox" id="researchToggle" ${researchMode ? 'checked' : ''} onchange="setResearch(this.checked)"/>
+                <span class="ai-switch-track"><span class="ai-switch-thumb"></span></span>
+                <span class="ai-switch-label">🔎 Research mode</span>
+              </label>
+              <span class="ai-mode-note" id="aiModeNote">${researchMode ? 'On — answers can use live web data + your data, with sources.' : 'Off — fast charts from your data only.'}</span>
+            </div>
+            <form class="ai-composer" onsubmit="return generateReport(event)">
+              <input id="aiQuestion" class="ai-input" type="text" autocomplete="off" placeholder="${aiPlaceholderFor(key)}"/>
+              <button class="ai-btn" type="submit">✦ Send</button>
+            </form>
+          </div>
+          </div>
+          <div class="security-bar ${p.secBarClass}">
+            ${p.secIcon}&nbsp;
+            <span>${p.secText}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `;
+  lastAIConfig = null; aiMsgSeq = 0;   // fresh conversation per tab
+
+  // For a stylist, swap the demo territory copy for their own (thread is empty here, so safe).
+  if (currentUser && currentUser.role === 'stylist') {
+    const terr = currentUser.territory + ' · ' + currentUser.zone;
+    const pc = document.getElementById('pageContent');
+    pc.innerHTML = pc.innerHTML.split('North London · Zone 14').join(terr).split('North London').join(currentUser.territory);
+    const sub = document.getElementById('ph-sub');
+    if (sub) sub.textContent = sub.textContent.split('North London · Zone 14').join(terr).split('North London').join(currentUser.territory);
+  }
+}
+
+/* ───────── Power BI embed ───────── */
+// Embed URLs are served by GET /api/powerbi (backed by powerbi.json), so they can
+// be changed without editing this file. A URL pasted into the setup form is kept
+// in sessionStorage so a quick demo works before anything is saved server-side.
+let PBI_CONFIG  = { defaultSrc: "", pages: {} };
+let currentView = 'ai';
+
+function pbiSrcFor(key){
+  const local = sessionStorage.getItem('pbiSrc:' + key);
+  if (local) return local;
+  const page = (PBI_CONFIG.pages || {})[key] || {};
+  return (page.src || PBI_CONFIG.defaultSrc || '').trim();
+}
+
+async function loadPowerBIConfig(){
+  try{
+    const res = await fetch(API_BASE + '/api/powerbi');
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const cfg = await res.json();
+    PBI_CONFIG = { defaultSrc: cfg.defaultSrc || '', pages: cfg.pages || {} };
+    // Keep PAGES.iframeSrc in sync so anything else reading it stays correct.
+    Object.keys(PAGES).forEach(k => { PAGES[k].iframeSrc = pbiSrcFor(k); });
+  }catch(e){
+    // Portal still works without the backend — it just opens on the AI pane.
+    console.warn('[powerbi] config unavailable, AI-only mode:', e.message);
+  }
+}
+
+function switchView(view){
+  currentView = view;
+  const pbi = document.getElementById('panePbi');
+  const ai  = document.getElementById('paneAi');
+  const tp  = document.getElementById('tabPbi');
+  const ta  = document.getElementById('tabAi');
+  if(!pbi || !ai) return;
+  pbi.classList.toggle('active', view === 'pbi');
+  ai .classList.toggle('active', view === 'ai');
+  if(tp) tp.classList.toggle('active', view === 'pbi');
+  if(ta) ta.classList.toggle('active', view === 'ai');
+}
+
+// Paste-a-URL preview: validates it's a Power BI embed link, then re-renders.
+function previewPbi(ev){
+  ev.preventDefault();
+  const input = document.getElementById('pbiUrlInput');
+  const url   = (input.value || '').trim();
+  if(!url) return false;
+  let host;
+  try { host = new URL(url).hostname.toLowerCase(); }
+  catch(e){ alert('That does not look like a valid URL.'); return false; }
+  const ok = host === 'app.powerbi.com' || host.endsWith('.powerbi.com');
+  if(!ok){
+    alert('Expected a Power BI embed URL on app.powerbi.com — for example\nhttps://app.powerbi.com/view?r=...');
+    return false;
+  }
+  sessionStorage.setItem('pbiSrc:' + currentPage, url);
+  PAGES[currentPage].iframeSrc = url;
+  renderPage(currentPage);
+  return false;
+}
+
+function fullscreenReport(){
+  if(currentView === 'pbi'){
+    const el = document.getElementById('pbiWrap');
+    if(el && el.requestFullscreen) { el.requestFullscreen().catch(()=>{}); return; }
+  }
+  const card = document.querySelector('.report-card');
+  if(card && card.requestFullscreen) card.requestFullscreen().catch(()=>{});
+}
+
+function openReportTab(){
+  const src = pbiSrcFor(currentPage);
+  if(currentView === 'pbi' && src){ window.open(src, '_blank', 'noopener'); return; }
+  alert('Switch to the Power BI tab with a report connected to open it in a new tab.');
+}
+
+function shareReport(){
+  const src = pbiSrcFor(currentPage);
+  const link = (currentView === 'pbi' && src) ? src : location.href;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(link)
+      .then(()  => alert('Link copied to clipboard:\n' + link))
+      .catch(() => window.prompt('Copy this link:', link));
+  } else {
+    window.prompt('Copy this link:', link);
+  }
+}
+
+/* ───────── AI report generator ───────── */
+let aiChart;
+const AI_PALETTE = ['#E26D5A','#2C8C99','#C9A227','#8E4585','#4A90C2','#5B8C5A'];
+const AI_PROMPTS = {
+  executive:      { ph:"e.g. Total revenue by region this quarter", ex:["Revenue by region","Revenue trend over the last 9 months","Appointment mix by service type","Top performing regions"] },
+  stylist_perf:   { ph:"e.g. Top stylists by revenue vs target",    ex:["Top stylists by revenue","Retention rate by region","Revenue vs target","Booking volume trend"] },
+  stylist_rls:    { ph:"e.g. My revenue vs target this year",        ex:["My revenue trend","My client retention","My appointment mix","My target progress"] },
+  client_journey: { ph:"e.g. New vs returning clients by region",    ex:["New vs returning clients","Client lifetime value trend","Visit frequency by service","Retention over time"] }
+};
+function aiPlaceholderFor(k){ return (AI_PROMPTS[k] || AI_PROMPTS.executive).ph; }
+function aiExamplesFor(k){ return (AI_PROMPTS[k] || AI_PROMPTS.executive).ex; }
+function setAIQuestion(el){ const i = document.getElementById('aiQuestion'); i.value = el.textContent; i.focus(); }
+function escapeHtmlLite(s){ return (s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+let aiMsgSeq = 0;          // unique canvas ids per message
+let lastAIConfig = null;   // last report, so follow-ups can refine it
+const aiCharts = {};
+let researchMode = false;  // session "Research mode" — web search + internal data
+
+function setResearch(on){
+  researchMode = on;
+  const n = document.getElementById('aiModeNote');
+  if(n) n.textContent = on ? 'On — answers can use live web data + your data, with sources.' : 'Off — fast charts from your data only.';
+  const i = document.getElementById('aiQuestion');
+  if(i) i.placeholder = on ? 'e.g. How does our UK revenue compare to the UK beauty market?' : aiPlaceholderFor(currentPage);
+}
+
+// Markdown → HTML for research answers: tables, headings, bullets, ordered lists, bold.
+function mdToHtml(t){
+  const inline = s => escapeHtmlLite(s)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  const lines = (t || '').split('\n');
+  const isRow = l => l.trim().startsWith('|') && l.indexOf('|', 1) > 0;
+  const cells = l => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim());
+  const isSep = arr => arr.length && arr.every(c => /^[:\s‐-―-]*$/.test(c) && /[-‐-―]/.test(c));
+  let html = '', ul = false, ol = false, i = 0;
+  const close = () => { if(ul){ html += '</ul>'; ul = false; } if(ol){ html += '</ol>'; ol = false; } };
+
+  while(i < lines.length){
+    const line = lines[i], tr = line.trim();
+
+    // table block
+    if(isRow(line)){
+      close();
+      const block = [];
+      while(i < lines.length && isRow(lines[i])){ block.push(cells(lines[i])); i++; }
+      let header = block[0], body = block.slice(1);
+      if(body.length && isSep(body[0])) body = body.slice(1);
+      html += '<table class="ai-md-table"><thead><tr>' +
+        header.map(c => '<th>' + inline(c) + '</th>').join('') +
+        '</tr></thead><tbody>' +
+        body.map(r => '<tr>' + r.map(c => '<td>' + inline(c) + '</td>').join('') + '</tr>').join('') +
+        '</tbody></table>';
+      continue;
+    }
+    if(!tr){ close(); i++; continue; }
+    if(/^#{2,}\s+/.test(tr)){ close(); html += '<h4>' + inline(tr.replace(/^#{2,}\s+/, '')) + '</h4>'; i++; continue; }
+    if(/^-{3,}$/.test(tr)){ close(); html += '<hr>'; i++; continue; }
+    if(/^[-•]\s+/.test(tr)){ if(ol){ html += '</ol>'; ol = false; } if(!ul){ html += '<ul>'; ul = true; } html += '<li>' + inline(tr.replace(/^[-•]\s+/, '')) + '</li>'; i++; continue; }
+    if(/^\d+\.\s+/.test(tr)){ if(ul){ html += '</ul>'; ul = false; } if(!ol){ html += '<ol>'; ol = true; } html += '<li>' + inline(tr.replace(/^\d+\.\s+/, '')) + '</li>'; i++; continue; }
+    close(); html += '<p>' + inline(tr) + '</p>'; i++;
+  }
+  close();
+  return html;
+}
+
+function fillResearch(slot, d, id, q){
+  const sources = d.sources || [];
+  reportStore[id] = { q, type:'research', answer: d.answer || '', sources };
+  const srcHTML = sources.length
+    ? `<div class="ai-sources"><div class="ai-sources-h">Sources</div><ol>${sources.map(s=>`<li><a href="${escapeHtmlLite(s.url)}" target="_blank" rel="noopener">${escapeHtmlLite(s.title||s.url)}</a></li>`).join('')}</ol></div>`
+    : '';
+  slot.innerHTML = `
+    <div class="ai-bubble-head">
+      <span class="ai-tag ai-tag-research">🔎 Researched</span>
+      <div class="bubble-actions">
+        <button class="bm-btn" type="button" onclick="bookmarkReport('${id}', this)" title="Bookmark this report">★ Save</button>
+        <button class="bm-btn" type="button" onclick="openScheduleModal('${id}')" title="Email this monthly">📅 Schedule</button>
+        <button class="bm-btn" type="button" onclick="emailReport('${id}')" title="Email this report now">✉️ Email</button>
+        <div class="rep-export">
+          <button class="rep-dl" type="button" onclick="toggleDl(this)">⬇ Download</button>
+          <div class="rep-menu">
+            <button onclick="exportReport('${id}','pdf')">PDF document</button>
+            <button onclick="exportReport('${id}','html')">HTML page</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ai-research-body">${mdToHtml(d.answer || '')}</div>
+    ${srcHTML}
+    <div class="ai-followhint">🔎 Research mode is on — ask a follow-up, or switch it off for a quick chart.</div>`;
+  scrollThread();
+}
+
+let lastUserQuestion = null;
+async function generateReport(e){
+  e.preventDefault();
+  const input = document.getElementById('aiQuestion');
+  const q = input.value.trim();
+  if(!q) return false;
+  input.value = ''; input.focus();
+  runQuery(q);
+  return false;
+}
+
+// Requests are processed ONE AT A TIME via a queue — clicking the chart or Send
+// multiple times enqueues them; each is processed fully before the next starts.
+let aiBusy = false;
+const aiQueue = [];
+
+function runQuery(q, displayText){
+  if(!q || !currentUser) return;
+  aiQueue.push({ q, displayText });
+  setComposerBusy(true);
+  processQueue();
+}
+
+async function processQueue(){
+  if(aiBusy) return;
+  aiBusy = true;
+  try{
+    while(aiQueue.length){
+      const job = aiQueue.shift();
+      await runOne(job.q, job.displayText);
+    }
+  } finally {
+    aiBusy = false;
+    setComposerBusy(false);
+  }
+}
+
+function setComposerBusy(b){
+  const btn = document.querySelector('.ai-composer .ai-btn');
+  const inp = document.getElementById('aiQuestion');
+  if(btn){ btn.disabled = b; btn.textContent = b ? '…' : '✦ Send'; }
+  if(inp) inp.disabled = b;
+}
+
+// Core pipeline for a single request. `displayText` is what shows in the user
+// bubble — lets drill-through show a friendly label while sending detail to Claude.
+async function runOne(q, displayText){
+  if(!q || !currentUser) return;
+  const sg = document.getElementById('aiSuggest'); if(sg) sg.style.display = 'none';
+  const userEl = appendUserMsg(displayText || q);
+  const slot = appendThinking(researchMode ? 'Researching the web + your data…' : 'Generating…');
+  const id = 'aiChart' + (++aiMsgSeq);
+
+  const ask = lastUserQuestion
+    ? `Previous question: "${lastUserQuestion}". Follow-up — refine that answer: ${q}`
+    : q;
+  lastUserQuestion = q;
+
+  try{
+    const res = await fetch(API_BASE + '/api/ask', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer ' + currentUser.token },
+      body: JSON.stringify({ question: ask, research: researchMode })
+    });
+    if(res.status === 401){ logout(); return; }
+    const d = await res.json();
+    if(d.error){ slot.innerHTML = `<p class="ai-narr" style="color:#C8102E">${escapeHtmlLite(d.error)}</p>`; revealLatest(userEl); return; }
+    if(d.research){ fillResearch(slot, d, id, q); if(reportStore[id]) reportStore[id].raw = d; revealLatest(userEl); return; }
+    fillAssistant(slot, buildConfigFromResponse(d), id, q);
+    if(reportStore[id]) reportStore[id].raw = d;
+    revealLatest(userEl);
+  }catch(ex){
+    slot.innerHTML = `<p class="ai-narr" style="color:#C8102E">Couldn’t reach the data service. Is the backend running on :8000?<br><small>${escapeHtmlLite(ex.message)}</small></p>`;
+    revealLatest(userEl);
+  }
+}
+
+// Drill-through: clicking a chart category asks Claude for that item's deeper breakdown.
+function drillInto(label, baseQuestion){
+  if(label === undefined || label === null || label === '') return;
+  const detail = `Drill into "${label}". Based on my previous question (${baseQuestion || ''}), `
+    + `show ${label}'s breakdown one level deeper — for example ${label} by stylist, or ${label} by month — `
+    + `using the same metric, as a bar chart.`;
+  runQuery(detail, `🔎 Drill into ${label}`);
+}
+
+/* ───────── Bookmarks (per-user, server-stored) ───────── */
+let savedCache = [];
+
+async function bookmarkReport(id, btn){
+  const r = reportStore[id];
+  if(!r || !currentUser){ return; }
+  if(!r.raw){ btn.textContent = 'Cannot save'; return; }
+  btn.disabled = true; const prev = btn.textContent; btn.textContent = 'Saving…';
+  try{
+    const res = await fetch(API_BASE + '/api/bookmarks', {
+      method:'POST', headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer ' + currentUser.token },
+      body: JSON.stringify({ title: r.q || 'Report', kind: r.type || 'chart', data: r.raw })
+    });
+    if(res.ok){ btn.textContent = '★ Saved'; btn.classList.add('saved'); refreshBookmarksNav(); }
+    else { btn.textContent = prev; btn.disabled = false; }
+  }catch(e){ btn.textContent = prev; btn.disabled = false; }
+}
+
+function kindIcon(k){ return k === 'research' ? '🔎' : (k === 'table' ? '▦' : '📊'); }
+
+// Render the signed-in user's bookmarks into the left sidebar.
+async function refreshBookmarksNav(){
+  const nav = document.getElementById('bmNav'); if(!nav || !currentUser) return;
+  try{
+    const res = await fetch(API_BASE + '/api/bookmarks', { headers:{ 'Authorization':'Bearer ' + currentUser.token } });
+    const d = await res.json(); savedCache = d.bookmarks || [];
+    if(!savedCache.length){ nav.innerHTML = '<div class="bm-nav-empty">No saved reports yet.</div>'; return; }
+    nav.innerHTML = savedCache.map(b => `<a class="nav-item bm-nav-item" href="#" onclick="openBookmark('${b.id}');return false;">
+        <span class="nav-icon">${kindIcon(b.kind)}</span>
+        <span class="nav-label" title="${escapeHtmlLite(b.title)}">${escapeHtmlLite(b.title)}</span>
+        <span class="bm-nav-del" title="Remove" onclick="delBookmark('${b.id}', event)">×</span>
+      </a>`).join('');
+  }catch(e){ /* keep current list */ }
+}
+
+function openBookmark(id){
+  const b = savedCache.find(x => x.id === id); if(!b) return;
+  const userEl = appendUserMsg('★ ' + (b.title || 'Saved report'));
+  const slot = appendThinking('Loading saved report…');
+  const mid = 'aiChart' + (++aiMsgSeq);
+  const d = b.data || {};
+  if(d.research) fillResearch(slot, d, mid, b.title);
+  else fillAssistant(slot, buildConfigFromResponse(d), mid, b.title);
+  if(reportStore[mid]) reportStore[mid].raw = d;
+  revealLatest(userEl);
+}
+
+async function delBookmark(id, ev){
+  ev.stopPropagation(); if(ev.preventDefault) ev.preventDefault();
+  try{ await fetch(API_BASE + '/api/bookmarks/' + id, { method:'DELETE', headers:{ 'Authorization':'Bearer ' + currentUser.token } }); }catch(e){}
+  savedCache = savedCache.filter(b => b.id !== id);
+  refreshBookmarksNav();
+}
+
+/* ───────── Scheduled email reports ───────── */
+let schedReportId = null;
+let createdScheduleId = null;
+
+function openScheduleModal(id){
+  const r = reportStore[id];
+  if(!r || !r.raw){ return; }
+  schedReportId = id; createdScheduleId = null;
+  document.getElementById('schedReport').textContent = '“' + (r.q || 'Report') + '”';
+  document.getElementById('schedRecipients').value = '';
+  document.getElementById('schedDay').value = '1';
+  document.getElementById('schedMsg').textContent = '';
+  document.getElementById('schedCreateBtn').style.display = '';
+  document.getElementById('schedTestBtn').style.display = 'none';
+  document.getElementById('schedModal').classList.add('open');
+}
+function closeSchedModal(){ document.getElementById('schedModal').classList.remove('open'); }
+
+async function createSchedule(){
+  const r = reportStore[schedReportId]; if(!r) return;
+  const recipients = document.getElementById('schedRecipients').value.split(',').map(s=>s.trim()).filter(Boolean);
+  const day = parseInt(document.getElementById('schedDay').value, 10) || 1;
+  const msg = document.getElementById('schedMsg');
+  if(!recipients.length){ msg.textContent = 'Add at least one recipient.'; return; }
+  msg.textContent = 'Scheduling…';
+  try{
+    const res = await fetch(API_BASE + '/api/schedules', {
+      method:'POST', headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer ' + currentUser.token },
+      body: JSON.stringify({ title: r.q || 'Report', kind: r.type || 'chart', data: r.raw, recipients, day_of_month: day })
+    });
+    const d = await res.json();
+    if(d.id){
+      createdScheduleId = d.id;
+      msg.innerHTML = `✓ Scheduled — emails <b>${recipients.join(', ')}</b> on day <b>${d.day_of_month}</b> each month. Added to <b>Monthly Reports</b>.`;
+      document.getElementById('schedCreateBtn').style.display = 'none';
+      document.getElementById('schedTestBtn').style.display = '';
+      refreshSchedulesNav();
+    } else { msg.textContent = 'Could not schedule.'; }
+  }catch(e){ msg.textContent = 'Could not reach the server.'; }
+}
+
+async function sendTestNow(){
+  if(!createdScheduleId) return;
+  const msg = document.getElementById('schedMsg');
+  msg.textContent = 'Sending test email…';
+  try{
+    const res = await fetch(API_BASE + '/api/schedules/' + createdScheduleId + '/run', {
+      method:'POST', headers:{ 'Authorization':'Bearer ' + currentUser.token } });
+    const d = await res.json();
+    if(d.ok){ msg.innerHTML = `✉️ Sent! Open the Mailpit inbox at <a href="http://localhost:8025" target="_blank">localhost:8025</a> to view it.`; }
+    else { msg.textContent = 'Send failed: ' + (d.error || 'unknown'); }
+  }catch(e){ msg.textContent = 'Could not reach the server.'; }
+}
+
+// close modal on backdrop click
+document.addEventListener('click', function(e){
+  if(e.target && e.target.id === 'schedModal') closeSchedModal();
+});
+
+/* ───────── Instant email share ───────── */
+let emailReportId = null;
+
+function emailReport(id){
+  const r = reportStore[id];
+  if(!r || !r.raw) return;
+  emailReportId = id;
+  document.getElementById('emailReportTitle').textContent = '“' + (r.q || 'Report') + '”';
+  document.getElementById('emailRecipients').value = '';
+  document.getElementById('emailMsg').textContent = '';
+  document.getElementById('emailSendBtn').disabled = false;
+  document.getElementById('emailModal').classList.add('open');
+}
+function closeEmailModal(){ document.getElementById('emailModal').classList.remove('open'); }
+
+async function sendEmailNow(){
+  const r = reportStore[emailReportId]; if(!r) return;
+  const recipients = document.getElementById('emailRecipients').value.split(',').map(s=>s.trim()).filter(Boolean);
+  const msg = document.getElementById('emailMsg');
+  if(!recipients.length){ msg.textContent = 'Add at least one recipient.'; return; }
+  const btn = document.getElementById('emailSendBtn'); btn.disabled = true; msg.textContent = 'Sending…';
+  try{
+    const res = await fetch(API_BASE + '/api/email', {
+      method:'POST', headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer ' + currentUser.token },
+      body: JSON.stringify({ recipients, data: r.raw })
+    });
+    const d = await res.json();
+    if(d.ok){ msg.innerHTML = `✓ Sent to <b>${recipients.join(', ')}</b>. Open <a href="http://localhost:8025" target="_blank">localhost:8025</a> to view.`; }
+    else { msg.textContent = 'Send failed: ' + (d.error || 'unknown'); btn.disabled = false; }
+  }catch(e){ msg.textContent = 'Could not reach the server.'; btn.disabled = false; }
+}
+
+document.addEventListener('click', function(e){
+  if(e.target && e.target.id === 'emailModal') closeEmailModal();
+});
+
+/* ───────── Monthly Reports sidebar section ───────── */
+let schedCache = [];
+
+async function refreshSchedulesNav(){
+  const nav = document.getElementById('schedNav'); if(!nav || !currentUser) return;
+  try{
+    const res = await fetch(API_BASE + '/api/schedules', { headers:{ 'Authorization':'Bearer ' + currentUser.token } });
+    const d = await res.json(); schedCache = d.schedules || [];
+    if(!schedCache.length){ nav.innerHTML = '<div class="bm-nav-empty">No scheduled reports yet.</div>'; return; }
+    nav.innerHTML = schedCache.map(s => `<a class="nav-item bm-nav-item" href="#"
+        title="Emails ${escapeHtmlLite((s.recipients||[]).join(', '))} on day ${s.day_of_month} each month"
+        onclick="openSchedule('${s.id}');return false;">
+        <span class="nav-icon">📅</span>
+        <span class="nav-label">${escapeHtmlLite(s.title)}</span>
+        <span class="bm-nav-del" title="Cancel schedule" onclick="delSchedule('${s.id}', event)">×</span>
+      </a>`).join('');
+  }catch(e){ /* keep current */ }
+}
+
+function openSchedule(id){
+  const s = schedCache.find(x => x.id === id); if(!s) return;
+  const userEl = appendUserMsg('📅 ' + (s.title || 'Scheduled report'));
+  const slot = appendThinking('Loading scheduled report…');
+  const mid = 'aiChart' + (++aiMsgSeq);
+  const d = s.data || {};
+  if(d.research) fillResearch(slot, d, mid, s.title);
+  else fillAssistant(slot, buildConfigFromResponse(d), mid, s.title);
+  if(reportStore[mid]) reportStore[mid].raw = d;
+  revealLatest(userEl);
+}
+
+async function delSchedule(id, ev){
+  ev.stopPropagation(); if(ev.preventDefault) ev.preventDefault();
+  try{ await fetch(API_BASE + '/api/schedules/' + id, { method:'DELETE', headers:{ 'Authorization':'Bearer ' + currentUser.token } }); }catch(e){}
+  schedCache = schedCache.filter(s => s.id !== id);
+  refreshSchedulesNav();
+}
+
+// Show value labels on charts without hovering (Chart.js datalabels plugin).
+if (window.Chart && window.ChartDataLabels) Chart.register(window.ChartDataLabels);
+
+function fmtNum(v){
+  if(v === null || v === undefined || isNaN(v)) return '';
+  const a = Math.abs(v);
+  if(a >= 1000000) return (v/1000000).toFixed(1).replace(/\.0$/,'') + 'M';
+  if(a >= 1000)    return (v/1000).toFixed(1).replace(/\.0$/,'') + 'k';
+  return (Math.round(v*10)/10).toString();
+}
+
+// Per-chart-type label styling.
+function dataLabels(kind){
+  if(kind === 'pie'){
+    return { color:'#fff', font:{ family:'Jost', weight:'600', size:11 },
+             formatter:(v)=>fmtNum(v), display:(c)=> Number(c.dataset.data[c.dataIndex]) > 0 };
+  }
+  if(kind === 'stacked'){
+    return { color:'#fff', anchor:'center', align:'center', clamp:true,
+             font:{ family:'Jost', size:9 }, formatter:(v)=> v>0 ? fmtNum(v) : '',
+             display:(c)=> Number(c.dataset.data[c.dataIndex]) > 0 };
+  }
+  if(kind === 'line'){
+    return { color:'#5a4a42', anchor:'end', align:'top', offset:3,
+             font:{ family:'Jost', size:9 }, formatter:(v)=>fmtNum(v) };
+  }
+  // bar / grouped — above the bar
+  return { color:'#5a4a42', anchor:'end', align:'end', offset:2,
+           font:{ family:'Jost', size:10, weight:'600' }, formatter:(v)=>fmtNum(v) };
+}
+
+// Build a Chart.js config (or a table) from the backend's /api/ask response.
+function buildConfigFromResponse(d){
+  const rows = d.rows || [];
+  const xk = d.x, yk = d.y, sk = d.series;
+  const type0 = d.chart_type || 'bar';
+  const narrative = (d.explanation || d.title || '') + (d.attempts > 1 ? '  ↻ query auto-corrected' : '');
+  const meta = { narrative, insights:d.insights||[], recommendations:d.recommendations||[], forecast:d.forecast||'' };
+
+  // ── Multi-series: grouped / stacked bar, or multi-series line ──
+  const seriesType = (type0==='stacked_bar' || type0==='grouped_bar' || type0==='line');
+  if(sk && seriesType && rows.length && xk && yk){
+    const xvals = [...new Set(rows.map(r => r[xk]))];
+    const svals = [...new Set(rows.map(r => r[sk]))];
+    const lookup = {};
+    rows.forEach(r => { lookup[r[xk] + '||' + r[sk]] = Number(r[yk]); });
+    const isLine = (type0 === 'line');
+    const datasets = svals.map((sv, i) => ({
+      label: String(sv),
+      data: xvals.map(xv => lookup[xv + '||' + sv] ?? 0),
+      backgroundColor: isLine ? 'transparent' : AI_PALETTE[i % AI_PALETTE.length],
+      borderColor: AI_PALETTE[i % AI_PALETTE.length],
+      borderWidth: isLine ? 2.5 : 0, fill:false, tension:.35,
+      pointBackgroundColor: AI_PALETTE[i % AI_PALETTE.length]
+    }));
+    const stacked = (type0 === 'stacked_bar');
+    return { ...meta, chart: {
+      type: isLine ? 'line' : 'bar',
+      data: { labels: xvals, datasets },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{ display:true, position:'top', labels:{ color:'#333', font:{family:'Jost'}, usePointStyle:true, pointStyle:'rectRounded', padding:14 } },
+                  datalabels: dataLabels(isLine ? 'line' : (stacked ? 'stacked' : 'bar')) },
+        scales:{ x:{ stacked, ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{display:false} },
+                 y:{ stacked, ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{color:'#EDE7DF'} } } }
+    }};
+  }
+
+  // ── Single series ──
+  const labels = (xk ? rows.map(r => r[xk]) : []);
+  const data   = (yk ? rows.map(r => Number(r[yk])) : []);
+  const usable = xk && yk && labels.length && data.every(v => !isNaN(v));
+  if(!usable){   // fall back to a data table (single-value / text answers)
+    return { ...meta, chart:null, columns:d.columns||[], rows };
+  }
+  let type = type0;
+  if(type === 'table' || type === 'scatter' || type === 'grouped_bar' || type === 'stacked_bar') type = 'bar';  // no series -> plain bar
+  const circular = (type === 'pie' || type === 'doughnut');   // pie stays pie, doughnut stays doughnut
+  return { ...meta, chart: {
+    type,
+    data: { labels, datasets: [{ label: yk || 'Value', data,
+      backgroundColor: type==='line' ? 'rgba(226,109,90,.18)' : labels.map((_,i)=>AI_PALETTE[i%AI_PALETTE.length]),
+      borderColor: type==='line' ? '#E26D5A' : '#fff',
+      borderWidth: circular ? 2 : (type==='line' ? 2.5 : 0),
+      fill: type==='line', tension:.35, pointBackgroundColor:'#E26D5A' }] },
+    options: { responsive:true, maintainAspectRatio:false,
+      layout:{ padding:{ top: circular ? 0 : 18 } },
+      plugins:{ legend:{ display:circular, position:'right', labels:{ color:'#333', font:{family:'Jost'} } },
+                datalabels: dataLabels(circular ? 'pie' : (type==='line' ? 'line' : 'bar')) },
+      scales: circular ? {} : { x:{ ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{display:false} },
+                                y:{ ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{color:'#EDE7DF'} } } }
+  }};
+}
+
+function tableHTML(columns, rows){
+  if(!rows || !rows.length) return '<p class="ai-narr">No data.</p>';
+  const cols = columns && columns.length ? columns : Object.keys(rows[0]);
+  return '<div style="padding:6px 16px 14px;overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr>'
+    + cols.map(c=>`<th style="text-align:left;padding:7px 10px;border-bottom:1px solid var(--cream-mid);color:var(--grey);font-size:11px;text-transform:uppercase;letter-spacing:.5px">${escapeHtmlLite(String(c))}</th>`).join('')
+    + '</tr></thead><tbody>'
+    + rows.map(r=>'<tr>'+cols.map(c=>`<td style="padding:7px 10px;border-bottom:1px solid var(--cream)">${escapeHtmlLite(String(r[c]??''))}</td>`).join('')+'</tr>').join('')
+    + '</tbody></table></div>';
+}
+
+function threadEl(){ return document.getElementById('aiThread'); }
+function scrollThread(){ const t = threadEl(); if(t) t.scrollTop = t.scrollHeight; }
+// Scroll the given message to the top of the report area so the answer is fully in view.
+function revealLatest(el){ if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth', block:'start'}), 90); }
+
+function appendUserMsg(q){
+  const d = document.createElement('div'); d.className = 'ai-msg ai-msg-user';
+  d.innerHTML = `<div class="ai-bubble-user">${escapeHtmlLite(q)}</div>`;
+  threadEl().appendChild(d);
+  return d;
+}
+function appendThinking(label){
+  const d = document.createElement('div'); d.className = 'ai-msg ai-msg-ai';
+  d.innerHTML = `<div class="ai-avatar">✦</div><div class="ai-bubble-ai"><div class="ai-loading"><span class="ai-dot"></span><span class="ai-dot"></span><span class="ai-dot"></span> ${label || 'Generating…'}</div></div>`;
+  threadEl().appendChild(d); scrollThread();
+  return d.querySelector('.ai-bubble-ai');   // fill this in once ready
+}
+function fillAssistant(slot, cfg, id, q){
+  const hasChart = !!cfg.chart;
+  const insights = cfg.insights || [];
+  const recommendations = cfg.recommendations || [];
+  const forecast = cfg.forecast || '';
+  if(hasChart){
+    const ds = cfg.chart.data.datasets[0];
+    reportStore[id] = { q, narrative: cfg.narrative, insights, recommendations, forecast, type: cfg.chart.type,
+      labels: cfg.chart.data.labels.slice(), data: ds.data.slice(), label: ds.label };
+  } else {
+    reportStore[id] = { q, narrative: cfg.narrative, insights, recommendations, forecast, type:'table',
+      columns: cfg.columns || [], tableRows: cfg.rows || [] };
+  }
+  const pngBtn = hasChart ? `<button onclick="exportReport('${id}','png')">Chart image · PNG</button>` : '';
+  const body = hasChart
+    ? `<div class="ai-chartbox"><canvas id="${id}"></canvas></div>`
+    : tableHTML(cfg.columns, cfg.rows);
+  const hasAnalysis = insights.length || recommendations.length || forecast;
+  const analysisHTML = hasAnalysis ? `
+    <div class="ai-analysis">
+      <div class="ai-analysis-head"><span class="aa-spark">✦</span> AI Analysis</div>
+      <div class="ai-analysis-grid">
+        ${insights.length ? `<div class="aa-card aa-insights">
+          <div class="aa-card-h"><span class="aa-ic">✦</span> Key Takeaways</div>
+          <ul>${insights.map(t=>`<li>${escapeHtmlLite(t)}</li>`).join('')}</ul></div>` : ''}
+        ${recommendations.length ? `<div class="aa-card aa-recs">
+          <div class="aa-card-h"><span class="aa-ic">➜</span> Recommended Actions</div>
+          <ul>${recommendations.map(t=>`<li>${escapeHtmlLite(t)}</li>`).join('')}</ul></div>` : ''}
+      </div>
+      ${forecast ? `<div class="aa-forecast">
+        <div class="aa-forecast-h"><span class="aa-ic">⤳</span> Forecast</div>
+        <p>${escapeHtmlLite(forecast)}</p></div>` : ''}
+    </div>` : '';
+  slot.innerHTML = `
+    <div class="ai-bubble-head">
+      <span class="ai-tag">AI generated</span>
+      <div class="bubble-actions">
+        <button class="bm-btn" type="button" onclick="bookmarkReport('${id}', this)" title="Bookmark this report">★ Save</button>
+        <button class="bm-btn" type="button" onclick="openScheduleModal('${id}')" title="Email this monthly">📅 Schedule</button>
+        <button class="bm-btn" type="button" onclick="emailReport('${id}')" title="Email this report now">✉️ Email</button>
+        <div class="rep-export">
+          <button class="rep-dl" type="button" onclick="toggleDl(this)">⬇ Download</button>
+          <div class="rep-menu">
+            <button onclick="exportReport('${id}','pdf')">PDF document</button>
+            <button onclick="exportReport('${id}','html')">HTML page</button>
+            ${pngBtn}
+            <button onclick="exportReport('${id}','csv')">Raw data · CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="ai-narr">${cfg.narrative}</p>
+    ${body}
+    ${analysisHTML}
+    <div class="ai-followhint">${hasChart ? '👆 Click any bar/slice to drill into its detail — or ask a follow-up' : 'Ask a follow-up to refine'} — e.g. “top 3 only” or “break down by month”.</div>`;
+  if(hasChart){
+    // Make the chart clickable → drill-through into the clicked category.
+    cfg.chart.options = cfg.chart.options || {};
+    cfg.chart.options.onClick = (evt, els) => {
+      if(els && els.length) drillInto(cfg.chart.data.labels[els[0].index], q);
+    };
+    cfg.chart.options.onHover = (evt, els) => {
+      const t = evt && evt.native && evt.native.target;
+      if(t) t.style.cursor = (els && els.length) ? 'pointer' : 'default';
+    };
+    aiCharts[id] = new Chart(document.getElementById(id), cfg.chart);
+  }
+  scrollThread();
+}
+
+function buildConfig(q){
+  const s = q.toLowerCase();
+  const rls = currentPage === 'stylist_rls' || (currentUser && currentUser.role === 'stylist');
+  const terr = (currentUser && currentUser.role === 'stylist') ? (currentUser.territory + ' · ' + currentUser.zone) : 'North London · Zone 14';
+  let type, labels, data, label, narrative;
+
+  if(rls){
+    if(/mix|share|split|type|service/.test(s)){
+      type='doughnut'; labels=['Colour','Colour & Style','Makeup','Style Refresh']; data=[46,30,14,10];
+      label='Appointment mix (%)'; narrative=`Your appointment mix for ${terr}, by service type.`;
+    } else {
+      type='line'; labels=['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar']; data=[8.2,7.4,9.1,8.8,10.2,11.6,9.4,10.1,12.3];
+      label='My revenue (£k)'; narrative=`Your monthly revenue for ${terr} — scoped to your territory only.`;
+    }
+  } else if(/trend|over time|month|growth|trajector/.test(s)){
+    type='line'; labels=['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar']; data=[418,402,455,470,512,560,496,524,587];
+    label='Network revenue ($k)'; narrative='Network revenue trend over the last nine months — a healthy upward trajectory.';
+  } else if(/mix|share|split|proportion|breakdown|service|type|category/.test(s)){
+    type='doughnut'; labels=['Colour','Colour & Style','Makeup','Style Refresh']; data=[42,28,18,12];
+    label='Service mix (%)'; narrative='Appointment mix across the network by service category.';
+  } else if(/retention|rate|percent|%/.test(s)){
+    type='bar'; labels=['London','Manchester','New York','Sydney','Dubai','Mumbai']; data=[88,79,82,74,69,77];
+    label='Retention rate (%)'; narrative='Client retention rate by region across the network.';
+  } else if(/new|returning|client/.test(s)){
+    type='bar'; labels=['London','Manchester','New York','Sydney','Dubai','Mumbai']; data=[64,58,61,55,49,57];
+    label='Returning clients (%)'; narrative='Share of returning clients by region.';
+  } else {
+    type='bar'; labels=['London','Manchester','New York','Sydney','Dubai','Mumbai']; data=[182,140,156,128,96,118];
+    label='Revenue ($k)'; narrative='Total revenue by region across the House of Colour network.';
+  }
+
+  const circular = type === 'doughnut';
+  return { narrative, chart: {
+    type,
+    data: { labels, datasets: [{ label, data,
+      backgroundColor: type==='line' ? 'rgba(226,109,90,.18)' : labels.map((_,i)=>AI_PALETTE[i%AI_PALETTE.length]),
+      borderColor: type==='line' ? '#E26D5A' : '#fff',
+      borderWidth: circular ? 2 : (type==='line' ? 2.5 : 0),
+      fill: type==='line', tension:.35, pointBackgroundColor:'#E26D5A' }] },
+    options: { responsive:true, maintainAspectRatio:false,
+      layout:{ padding:{ top: circular ? 0 : 18 } },
+      plugins:{ legend:{ display:circular, position:'right', labels:{ color:'#333', font:{family:'Jost'} } },
+                datalabels: dataLabels(circular ? 'pie' : (type==='line' ? 'line' : 'bar')) },
+      scales: circular ? {} : { x:{ ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{display:false} },
+                                y:{ ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{color:'#EDE7DF'} } } }
+  }};
+}
+
+// A follow-up is a refinement of the previous report rather than a brand-new ask.
+function isRefine(s){
+  s = s.toLowerCase();
+  return /(top \d|bottom \d|only|instead|as a |line chart|bar chart|pie|doughnut|donut|by month|monthly|sort|highest|lowest|rank|more detail|deeper|drill|break ?down|just )/.test(s);
+}
+
+function styleDataset(cfg, labels){
+  const circular = cfg.chart.type === 'doughnut';
+  const ds = cfg.chart.data.datasets[0];
+  ds.backgroundColor = cfg.chart.type==='line' ? 'rgba(226,109,90,.18)' : labels.map((_,i)=>AI_PALETTE[i%AI_PALETTE.length]);
+  ds.borderColor = cfg.chart.type==='line' ? '#E26D5A' : '#fff';
+  ds.borderWidth = circular ? 2 : (cfg.chart.type==='line' ? 2.5 : 0);
+  ds.fill = cfg.chart.type==='line';
+  cfg.chart.options.plugins.legend.display = circular;
+  cfg.chart.options.scales = circular ? {} : { x:{ ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{display:false} },
+                                               y:{ ticks:{color:'#7A7267',font:{family:'Jost'}}, grid:{color:'#EDE7DF'} } };
+}
+
+function refineConfig(prev, q){
+  const s = q.toLowerCase();
+  if(/by month|monthly|over time|by quarter/.test(s)){
+    const c = buildConfig('revenue trend over time'); c.narrative = 'Refined to a monthly trend view.'; return c;
+  }
+  const cfg = JSON.parse(JSON.stringify(prev));   // clone (config holds no functions)
+  let labels = cfg.chart.data.labels.slice();
+  let data = cfg.chart.data.datasets[0].data.slice();
+  const note = [];
+
+  if(/line chart|as a line/.test(s)){ cfg.chart.type='line'; note.push('as a line chart'); }
+  else if(/bar chart|as a bar/.test(s)){ cfg.chart.type='bar'; note.push('as a bar chart'); }
+  else if(/pie|doughnut|donut|share|mix/.test(s)){ cfg.chart.type='doughnut'; note.push('as a share breakdown'); }
+
+  const mt = s.match(/top\s+(\d+)/), mb = s.match(/bottom\s+(\d+)/);
+  if(mt || mb){
+    const pairs = labels.map((l,i)=>[l,data[i]]).sort((a,b)=>b[1]-a[1]);
+    const n = parseInt((mt||mb)[1], 10);
+    const chosen = mb ? pairs.slice(-n) : pairs.slice(0, n);
+    labels = chosen.map(p=>p[0]); data = chosen.map(p=>p[1]);
+    note.push((mt?'top ':'bottom ') + n);
+  } else if(/sort|highest|lowest|rank/.test(s)){
+    const desc = !/lowest/.test(s);
+    const pairs = labels.map((l,i)=>[l,data[i]]).sort((a,b)=> desc ? b[1]-a[1] : a[1]-b[1]);
+    labels = pairs.map(p=>p[0]); data = pairs.map(p=>p[1]);
+    note.push(desc ? 'sorted high → low' : 'sorted low → high');
+  }
+
+  cfg.chart.data.labels = labels;
+  cfg.chart.data.datasets[0].data = data;
+  styleDataset(cfg, labels);
+  cfg.narrative = 'Refined your previous report' + (note.length ? ' (' + note.join(', ') + ')' : '') + '.';
+  return cfg;
+}
+
+/* ───────── Login console & roles (real backend) ───────── */
+// When opened via file:// we call the backend directly; when served from the
+// backend (/portal) we use same-origin relative URLs.
+const API_BASE = (location.protocol === 'file:') ? 'http://localhost:8000' : '';
+// Display-only metadata; the backend is the source of truth for auth + data scope.
+const PORTAL_META = {
+  marcus: { initials:"MK", territory:"All Regions",  zone:"HQ · Full Access" },
+  admin:  { initials:"HQ", territory:"All Regions",  zone:"HQ · Full Access" },
+  sophie: { initials:"SM", territory:"London North", zone:"Consultant · CON001" },
+  claire: { initials:"CH", territory:"Manchester",   zone:"Consultant · CON003" },
+  navneet:{ initials:"NV", territory:"All Regions",  zone:"HQ · Full Access" }
+};
+let currentUser = null;
+
+function fillLogin(u,p){ document.getElementById('luser').value=u; document.getElementById('lpass').value=p; }
+
+document.getElementById('loginForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const u = document.getElementById('luser').value.trim().toLowerCase();
+  const p = document.getElementById('lpass').value;
+  const err = document.getElementById('loginErr'); err.textContent = 'Signing in…';
+  try{
+    const res = await fetch(API_BASE + '/api/login', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({username:u, password:p}) });
+    if(!res.ok){ const d = await res.json().catch(()=>({})); throw new Error(d.detail || 'Invalid username or password.'); }
+    const acc = await res.json();   // { token, name, role, scope_col, scope_val }
+    const meta = PORTAL_META[u] || { initials:(acc.name||'?').slice(0,2).toUpperCase(), territory:'—', zone:'—' };
+    currentUser = { token:acc.token, name:acc.name, role:acc.role, ...meta };
+    err.textContent = '';
+    applyUser(currentUser);
+    document.getElementById('loginScreen').classList.add('hidden');
+  }catch(ex){
+    err.textContent = /fetch|Failed|NetworkError/i.test(ex.message)
+      ? 'Cannot reach the data service — start the backend on :8000.'
+      : ex.message;
+  }
+});
+
+function logout(){
+  if(currentUser) fetch(API_BASE + '/api/logout', { method:'POST', headers:{'Authorization':'Bearer '+currentUser.token} }).catch(()=>{});
+  currentUser = null;
+  if(typeof aiQueue !== 'undefined'){ aiQueue.length = 0; }
+  document.getElementById('lpass').value = '';
+  document.getElementById('loginScreen').classList.remove('hidden');
+}
+
+async function applyUser(u){
+  currentUser = u;
+  document.getElementById('uAvatar').textContent = u.initials;
+  document.getElementById('uName').textContent   = u.name;
+  document.getElementById('uZone').textContent   = u.role==='admin' ? 'Administrator · All Access' : (u.territory + ' · Stylist');
+  document.getElementById('tLabel').textContent  = u.role==='admin' ? 'Access Level' : 'My Territory';
+  document.getElementById('tName').textContent   = u.name;
+  document.getElementById('tDetail').textContent = u.role==='admin' ? 'All regions · All stylists' : (u.territory + ' · ' + u.zone);
+  document.body.classList.toggle('role-stylist', u.role !== 'admin');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const land = u.role==='admin' ? 'executive' : 'stylist_rls';
+  const navEl = document.querySelector('.nav-item[onclick*="\'' + land + '\'"]');
+  if(navEl) navEl.classList.add('active');
+  currentPage = land;
+  await loadPowerBIConfig();   // fetch embed URLs before the first render
+  renderPage(land);
+  refreshBookmarksNav();
+  refreshSchedulesNav();
+}
+
+/* ───────── Per-report download ───────── */
+const reportStore = {};
+function toggleDl(btn){
+  const menu = btn.nextElementSibling;
+  const open = menu.classList.contains('open');
+  document.querySelectorAll('.rep-menu.open').forEach(m=>m.classList.remove('open'));
+  if(!open) menu.classList.add('open');
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.rep-export')) document.querySelectorAll('.rep-menu.open').forEach(m=>m.classList.remove('open'));
+});
+function repSlug(s){ return (s||'report').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,48) || 'report'; }
+function repSave(blob, fn){ const u=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=u; a.download=fn; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(u),1500); }
+
+function exportReport(id, fmt){
+  document.querySelectorAll('.rep-menu.open').forEach(m=>m.classList.remove('open'));
+  const r = reportStore[id]; if(!r) return;
+  const name = repSlug(r.q);
+
+  // Research-type answers (text + sources).
+  if(r.type === 'research'){
+    if(fmt==='html'){
+      const src = (r.sources||[]).length ? '<h3>Sources</h3><ol>'+r.sources.map(s=>'<li><a href="'+s.url+'">'+(s.title||s.url)+'</a></li>').join('')+'</ol>' : '';
+      const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 24px;color:#1A1A1A;line-height:1.65"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">House of Colour · AI Research</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1>'+mdToHtml(r.answer)+src+'</body></html>';
+      repSave(new Blob([doc],{type:'text/html;charset=utf-8'}), name+'.html'); return;
+    }
+    if(fmt==='pdf'){
+      const { jsPDF } = window.jspdf; const pdf=new jsPDF('p','pt','a4'); const W=pdf.internal.pageSize.getWidth();
+      pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('HOUSE OF COLOUR · AI RESEARCH', 40, 40);
+      pdf.setFontSize(15); pdf.setTextColor(26,26,26); const ql=pdf.splitTextToSize(r.q, W-80); pdf.text(ql, 40, 62);
+      pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(40,40,40);
+      const plain=(r.answer||'').replace(/\*\*/g,'').replace(/^#+\s*/gm,'').replace(/^-{3,}$/gm,'');
+      let y=62+ql.length*18+12; pdf.splitTextToSize(plain, W-80).forEach(l=>{ pdf.text(l,40,y); y+=15; if(y>790){pdf.addPage();y=50;} });
+      if((r.sources||[]).length){ y+=12; pdf.setFont('helvetica','bold'); pdf.text('Sources',40,y); y+=16; pdf.setFont('helvetica','normal'); pdf.setTextColor(90,90,120);
+        r.sources.forEach((s,i)=>{ pdf.splitTextToSize((i+1)+'. '+(s.title||'')+' — '+s.url, W-80).forEach(l=>{ pdf.text(l,40,y); y+=13; if(y>790){pdf.addPage();y=50;} }); }); }
+      pdf.save(name+'.pdf'); return;
+    }
+    return;
+  }
+
+  // Table-type reports (no chart) — export the rows directly.
+  if(r.type === 'table'){
+    const cols = r.columns && r.columns.length ? r.columns : (r.tableRows[0] ? Object.keys(r.tableRows[0]) : []);
+    const cell=v=>{ v=(v==null?'':String(v)); return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; };
+    if(fmt==='csv'){
+      const rows=[cols.map(cell).join(',')].concat(r.tableRows.map(row=>cols.map(c=>cell(row[c])).join(',')));
+      repSave(new Blob([rows.join('\n')],{type:'text/csv;charset=utf-8'}), name+'.csv'); return;
+    }
+    const tbl='<table style="border-collapse:collapse;width:100%;font-size:14px;margin-top:16px"><thead><tr>'+cols.map(c=>'<th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">'+c+'</th>').join('')+'</tr></thead><tbody>'+r.tableRows.map(row=>'<tr>'+cols.map(c=>'<td style="padding:8px;border-bottom:1px solid #eee">'+(row[c]??'')+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+    if(fmt==='html'){
+      const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#1A1A1A"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">House of Colour · AI Report</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1><p style="color:#444">'+r.narrative+'</p>'+tbl+'</body></html>';
+      repSave(new Blob([doc],{type:'text/html;charset=utf-8'}), name+'.html'); return;
+    }
+    if(fmt==='pdf'){
+      const { jsPDF } = window.jspdf; const pdf=new jsPDF('p','pt','a4'); const W=pdf.internal.pageSize.getWidth();
+      pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('HOUSE OF COLOUR · AI REPORT', 40, 40);
+      pdf.setFontSize(16); pdf.setTextColor(26,26,26); const ql=pdf.splitTextToSize(r.q, W-80); pdf.text(ql, 40, 64);
+      pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(90,90,90);
+      let y=64+ql.length*18+8; pdf.text(pdf.splitTextToSize(r.narrative, W-80), 40, y); y+=24;
+      r.tableRows.slice(0,40).forEach(row=>{ pdf.text(cols.map(c=>String(row[c]??'')).join('   |   ').slice(0,110), 40, y); y+=16; if(y>780){pdf.addPage(); y=50;} });
+      pdf.save(name+'.pdf'); return;
+    }
+    return;
+  }
+
+  if(fmt==='png'){ const a=document.createElement('a'); a.href=aiCharts[id].toBase64Image('image/png',1); a.download=name+'.png'; document.body.appendChild(a); a.click(); a.remove(); return; }
+  if(fmt==='csv'){
+    const cell=v=>{ v=(v==null?'':String(v)); return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; };
+    const rows=[['Label', r.label||'Value'].map(cell).join(',')].concat(r.labels.map((l,i)=>[l, r.data[i]].map(cell).join(',')));
+    repSave(new Blob([rows.join('\n')],{type:'text/csv;charset=utf-8'}), name+'.csv'); return;
+  }
+  if(fmt==='html'){
+    const img=aiCharts[id].toBase64Image('image/png',1);
+    const tbl='<table style="border-collapse:collapse;width:100%;font-size:14px;margin-top:16px"><thead><tr><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Label</th><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">'+(r.label||'Value')+'</th></tr></thead><tbody>'+r.labels.map((l,i)=>'<tr><td style="padding:8px;border-bottom:1px solid #eee">'+l+'</td><td style="padding:8px;border-bottom:1px solid #eee">'+r.data[i]+'</td></tr>').join('')+'</tbody></table>';
+    const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#1A1A1A"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">House of Colour · AI Report</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1><p style="color:#444">'+r.narrative+'</p><img src="'+img+'" style="max-width:100%;border:1px solid #eee;border-radius:8px"/>'+tbl+'<p style="color:#999;font-size:12px;margin-top:24px">Generated by the House of Colour AI portal.</p></body></html>';
+    repSave(new Blob([doc],{type:'text/html;charset=utf-8'}), name+'.html'); return;
+  }
+  if(fmt==='pdf'){
+    const { jsPDF } = window.jspdf; const pdf=new jsPDF('p','pt','a4'); const W=pdf.internal.pageSize.getWidth();
+    pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('HOUSE OF COLOUR · AI REPORT', 40, 40);
+    pdf.setFontSize(16); pdf.setTextColor(26,26,26); const ql=pdf.splitTextToSize(r.q, W-80); pdf.text(ql, 40, 64);
+    pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(90,90,90);
+    const nl=pdf.splitTextToSize(r.narrative, W-80); let y=64+ql.length*18+8; pdf.text(nl, 40, y); y+=nl.length*14+14;
+    const img=aiCharts[id].toBase64Image('image/png',1); const iw=W-80, ih=iw*0.5; pdf.addImage(img,'PNG',40,y,iw,ih);
+    pdf.save(name+'.pdf'); return;
+  }
+}
+
+// Init on load — show the login console; the portal stays behind it until sign-in.
+document.getElementById('loginScreen').classList.remove('hidden');
+</script>

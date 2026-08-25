@@ -1,0 +1,161 @@
+client_id,client_name,first_name,last_name,stylist_id,territory_id,palette_id,season,tier,status,total_sessions,total_revenue_usd,total_revenue_local,cosm_purchased,days_since_last_session,session_types_used
+C0001,Ava Roy,Ava,Roy,S019,T03,P3,Spring,Platinum,Active,13,3377.58,3377.58,1581.33,285,Colour
+C0002,Liam Cruz,Liam,Cruz,S013,T01,P3,Autumn,Gold,Active,2,6839.85,5403.48,551.68,377,Colour
+C0003,Lily Reed,Lily,Reed,S019,T03,P1,Autumn,Silver,Dormant,3,5792.72,5792.72,1328.61,352,Style
+C0004,Lucas Reed,Lucas,Reed,S023,T06,P1,Winter,Bronze,Active,13,3847.27,319323.41,319.15,23,"Colour, Style, Makeup"
+C0005,Ben Ali,Ben,Ali,S010,T05,P3,Spring,Gold,Active,6,4126.61,15144.66,1379.42,26,"Colour, Style, Makeup"
+C0006,Adam Day,Adam,Day,S009,T04,P4,Winter,Gold,Active,3,1163.52,1768.55,793.93,256,"Colour, Style, Makeup"
+C0007,Ava Day,Ava,Day,S017,T02,P1,Winter,Silver,Dormant,9,2241.74,2241.74,470.03,54,Colour
+C0008,Max Fox,Max,Fox,S011,T06,P4,Summer,Silver,Active,1,5229.77,434070.91,1162.9,182,Style
+C0009,Liam Vance,Liam,Vance,S009,T04,P4,Autumn,Silver,Active,3,5067.18,7702.11,1524.46,75,Style
+C0010,Leo Wood,Leo,Wood,S002,T01,P3,Winter,Platinum,Active,3,1176.82,929.69,1086.5,191,"Colour, Style, Makeup"
+C0011,Kira Reed,Kira,Reed,S015,T01,P3,Winter,Bronze,Active,2,6004.18,4743.3,41.46,97,Style
+C0012,Ben Cole,Ben,Cole,S017,T02,P3,Autumn,Gold,Active,10,3153.36,3153.36,456.92,253,"Colour, Style"
+C0013,Ava Fox,Ava,Fox,S004,T02,P2,Winter,Platinum,Dormant,14,1248.82,1248.82,1578.52,343,"Colour, Style, Makeup"
+C0014,Ben Bell,Ben,Bell,S023,T06,P3,Summer,Gold,Dormant,11,712.24,59115.92,278.55,187,"Colour, Style"
+C0015,Mia Webb,Mia,Webb,S004,T02,P4,Spring,Bronze,Active,8,7687.3,7687.3,1285.86,284,"Colour, Style"
+C0016,Ava Bell,Ava,Bell,S020,T04,P4,Winter,Silver,Active,14,6922.59,10522.34,919.84,66,"Colour, Style, Makeup"
+C0017,Tara Roy,Tara,Roy,S021,T04,P3,Summer,Gold,Dormant,11,782.17,1188.9,940.46,395,"Colour, Style"
+C0018,Liam Cole,Liam,Cole,S014,T01,P2,Autumn,Bronze,Active,12,4031.71,3185.05,360.75,267,"Colour, Style, Makeup"
+C0019,Ben Frost,Ben,Frost,S003,T01,P2,Autumn,Silver,Active,11,2119.59,1674.48,269.82,299,"Colour, Style"
+C0020,Dev Shah,Dev,Shah,S006,T03,P1,Spring,Bronze,Dormant,13,5213.2,5213.2,922.83,335,"Colour, Style"
+C0021,Emma Ali,Emma,Ali,S019,T03,P3,Autumn,Silver,Dormant,11,3377.73,3377.73,649.75,234,Colour
+C0022,Tara Day,Tara,Day,S023,T06,P4,Winter,Bronze,Active,6,674.14,55953.62,1378.38,165,"Colour, Style, Makeup"
+C0023,Adam Roy,Adam,Roy,S013,T01,P1,Autumn,Bronze,Active,8,1211.21,956.86,396.67,51,Colour
+C0024,Dev Day,Dev,Day,S010,T05,P2,Summer,Gold,Dormant,12,7386.02,27106.69,500.34,392,"Colour, Style"
+C0025,Tara Ali,Tara,Ali,S016,T02,P3,Winter,Bronze,Dormant,9,7769.45,7769.45,731.57,125,"Colour, Style"
+C0026,Liam Bell,Liam,Bell,S019,T03,P4,Winter,Bronze,Active,2,2894.94,2894.94,689.48,137,"Colour, Style, Makeup"
+C0027,Nora Park,Nora,Park,S013,T01,P2,Autumn,Silver,Active,9,2993.81,2365.11,720.57,283,"Colour, Style, Makeup"
+C0028,Noah Reed,Noah,Reed,S020,T04,P1,Winter,Bronze,Dormant,9,5377.42,8173.68,1502.32,388,"Colour, Style"
+C0029,Nora Roy,Nora,Roy,S007,T03,P1,Spring,Bronze,Active,13,4786.67,4786.67,757.99,235,"Colour, Style"
+C0030,Mia Shah,Mia,Shah,S020,T04,P3,Summer,Bronze,Active,14,6989.94,10624.71,478.77,174,Style
+C0031,Omar Stone,Omar,Stone,S023,T06,P3,Autumn,Silver,Dormant,10,4486.97,372418.51,492.28,373,Colour
+C0032,Kira Mehta,Kira,Mehta,S020,T04,P2,Spring,Silver,Active,11,3817.39,5802.43,1153.89,398,Style
+C0033,Leo Park,Leo,Park,S005,T02,P1,Summer,Bronze,Active,3,6448.19,6448.19,660.74,106,Style
+C0034,Omar Park,Omar,Park,S017,T02,P2,Summer,Silver,Dormant,8,6094.29,6094.29,840.76,162,"Colour, Style"
+C0035,Lily Kim,Lily,Kim,S015,T01,P3,Autumn,Silver,Active,4,7133.9,5635.78,446.41,154,"Colour, Style"
+C0036,Sofia Ali,Sofia,Ali,S010,T05,P3,Winter,Bronze,Dormant,13,6065.5,22260.38,1154.66,149,Colour
+C0037,Nora Cruz,Nora,Cruz,S019,T03,P3,Summer,Bronze,Active,12,5348.8,5348.8,126.45,228,"Colour, Style, Makeup"
+C0038,Sofia Kim,Sofia,Kim,S024,T06,P3,Autumn,Bronze,Active,10,3851.42,319667.86,382.85,27,"Colour, Style"
+C0039,Noah Day,Noah,Day,S021,T04,P3,Winter,Bronze,Active,1,1984.9,3017.05,1543.23,82,Style
+C0040,Omar Ali,Omar,Ali,S021,T04,P2,Autumn,Bronze,Active,13,7307.54,11107.46,143.14,295,"Colour, Style"
+C0041,Liam Hart,Liam,Hart,S018,T03,P4,Summer,Platinum,Active,14,5819.24,5819.24,635.19,255,"Colour, Style"
+C0042,Max Park,Max,Park,S024,T06,P1,Autumn,Silver,Active,6,7512.96,623575.68,455.3,330,Style
+C0043,Tara Frost,Tara,Frost,S005,T02,P2,Spring,Bronze,Active,11,6671.03,6671.03,411.62,97,Colour
+C0044,Max Mehta,Max,Mehta,S024,T06,P2,Summer,Silver,Active,7,2775.31,230350.73,1323.18,265,"Colour, Style, Makeup"
+C0045,Noah Hart,Noah,Hart,S003,T01,P2,Winter,Bronze,Active,5,3258.32,2574.07,613.72,230,"Colour, Style, Makeup"
+C0046,Kira Stone,Kira,Stone,S011,T06,P3,Autumn,Silver,Active,2,2508.75,208226.25,744.63,83,Style
+C0047,Max Cole,Max,Cole,S022,T05,P3,Autumn,Silver,Active,3,4029.11,14786.83,765.09,234,"Colour, Style, Makeup"
+C0048,Omar Kim,Omar,Kim,S014,T01,P2,Summer,Silver,Active,13,5540.71,4377.16,130.99,230,"Colour, Style, Makeup"
+C0049,Noah Park,Noah,Park,S003,T01,P2,Summer,Bronze,Dormant,8,7172.71,5666.44,185.98,107,Style
+C0050,Tara Park,Tara,Park,S003,T01,P4,Summer,Silver,Active,1,7033.58,5556.53,894.08,346,"Colour, Style, Makeup"
+C0051,Ivy Stone,Ivy,Stone,S024,T06,P2,Spring,Bronze,Active,2,385.02,31956.66,865.86,32,Colour
+C0052,Sam Hart,Sam,Hart,S016,T02,P2,Winter,Bronze,Dormant,8,460.55,460.55,1391.39,195,Style
+C0053,Ben Reed,Ben,Reed,S003,T01,P3,Spring,Bronze,Active,9,5395.1,4262.13,203.76,116,Colour
+C0054,Tara Kim,Tara,Kim,S001,T01,P4,Winter,Gold,Active,6,7636.96,6033.2,248.19,98,Colour
+C0055,Sam Pope,Sam,Pope,S002,T01,P1,Summer,Bronze,Active,1,6355.84,5021.11,714.31,346,Colour
+C0056,Nora Fox,Nora,Fox,S008,T04,P2,Summer,Gold,Active,3,5833.3,8866.62,806.23,150,"Colour, Style"
+C0057,Kira Pope,Kira,Pope,S024,T06,P3,Summer,Bronze,Active,11,4586.92,380714.36,834.0,213,"Colour, Style, Makeup"
+C0058,Kira Hart,Kira,Hart,S009,T04,P4,Winter,Bronze,Active,11,682.06,1036.73,1074.15,404,"Colour, Style, Makeup"
+C0059,Mia Bell,Mia,Bell,S023,T06,P4,Summer,Gold,Active,14,3375.74,280186.42,360.55,364,"Colour, Style"
+C0060,Ben Day,Ben,Day,S015,T01,P4,Summer,Bronze,Active,6,7153.74,5651.45,1034.73,232,"Colour, Style, Makeup"
+C0061,Sofia Park,Sofia,Park,S003,T01,P3,Winter,Silver,Active,14,4280.12,3381.29,116.45,413,"Colour, Style"
+C0062,Lily Bell,Lily,Bell,S016,T02,P1,Summer,Platinum,Dormant,2,1803.38,1803.38,1195.01,388,Style
+C0063,Sofia Cruz,Sofia,Cruz,S008,T04,P2,Autumn,Gold,Active,9,5492.85,8349.13,1037.95,159,"Colour, Style, Makeup"
+C0064,Omar Fox,Omar,Fox,S012,T06,P1,Winter,Gold,Active,4,4107.15,340893.45,593.13,213,Colour
+C0065,Mia Stone,Mia,Stone,S019,T03,P3,Winter,Bronze,Active,4,6769.76,6769.76,607.74,127,Style
+C0066,Lily Frost,Lily,Frost,S018,T03,P4,Winter,Silver,Active,6,5181.93,5181.93,270.83,370,Style
+C0067,Ben Park,Ben,Park,S006,T03,P1,Spring,Platinum,Active,13,7170.1,7170.1,10.21,72,"Colour, Style"
+C0068,Emma Lane,Emma,Lane,S003,T01,P4,Autumn,Bronze,Active,10,5580.35,4408.48,1460.4,339,Style
+C0069,Ben Day,Ben,Day,S001,T01,P1,Spring,Silver,Active,5,270.12,213.39,27.43,418,Style
+C0070,Noah Roy,Noah,Roy,S006,T03,P2,Summer,Bronze,Active,14,1031.18,1031.18,567.11,409,Style
+C0071,Nora Fox,Nora,Fox,S003,T01,P2,Summer,Bronze,Dormant,2,3047.73,2407.71,1045.98,334,Colour
+C0072,Nora Kim,Nora,Kim,S003,T01,P4,Spring,Silver,Active,2,3292.01,2600.69,799.77,224,"Colour, Style, Makeup"
+C0073,Noah Roy,Noah,Roy,S019,T03,P1,Summer,Bronze,Dormant,10,7628.16,7628.16,760.8,25,Colour
+C0074,Ben Mehta,Ben,Mehta,S022,T05,P1,Summer,Platinum,Active,4,7235.93,26555.86,939.26,387,Style
+C0075,Kira Webb,Kira,Webb,S003,T01,P4,Autumn,Bronze,Active,13,2488.52,1965.93,1581.56,372,Colour
+C0076,Adam Park,Adam,Park,S017,T02,P1,Winter,Bronze,Active,10,5870.56,5870.56,1230.41,306,Style
+C0077,Ivy Fox,Ivy,Fox,S011,T06,P4,Summer,Bronze,Dormant,7,444.56,36898.48,297.18,301,Style
+C0078,Max Webb,Max,Webb,S003,T01,P1,Spring,Bronze,Active,13,6073.03,4797.69,1014.24,380,Style
+C0079,Ava Stone,Ava,Stone,S011,T06,P3,Winter,Bronze,Active,3,2954.11,245191.13,139.68,222,Style
+C0080,Sam Cole,Sam,Cole,S018,T03,P1,Spring,Bronze,Active,10,4424.93,4424.93,1255.1,199,Colour
+C0081,Ava Kim,Ava,Kim,S010,T05,P2,Summer,Silver,Active,5,3356.68,12319.02,481.81,254,"Colour, Style"
+C0082,Ivy Day,Ivy,Day,S003,T01,P3,Winter,Gold,Active,4,1487.43,1175.07,1153.44,255,"Colour, Style"
+C0083,Max Stone,Max,Stone,S015,T01,P4,Autumn,Gold,Active,14,1030.85,814.37,527.27,173,Style
+C0084,Mia Bell,Mia,Bell,S021,T04,P3,Summer,Silver,Active,7,7604.63,11559.04,1549.96,151,Style
+C0085,Lily Cruz,Lily,Cruz,S019,T03,P3,Winter,Bronze,Dormant,4,6147.37,6147.37,947.56,281,"Colour, Style"
+C0086,Emma Fox,Emma,Fox,S022,T05,P2,Winter,Gold,Dormant,2,6038.54,22161.44,1310.34,409,Style
+C0087,Max Webb,Max,Webb,S022,T05,P3,Summer,Gold,Dormant,2,4004.72,14697.32,718.51,308,Style
+C0088,Ria Day,Ria,Day,S019,T03,P1,Autumn,Gold,Dormant,10,3258.1,3258.1,1021.09,45,Colour
+C0089,Adam Hart,Adam,Hart,S008,T04,P1,Winter,Platinum,Active,13,5204.62,7911.02,688.73,7,Colour
+C0090,Ria Kim,Ria,Kim,S009,T04,P2,Winter,Bronze,Active,11,1902.77,2892.21,941.74,258,"Colour, Style"
+C0091,Omar Cole,Omar,Cole,S012,T06,P3,Winter,Platinum,Active,14,7782.59,645954.97,1505.08,74,"Colour, Style, Makeup"
+C0092,Sofia Roy,Sofia,Roy,S010,T05,P4,Autumn,Silver,Active,12,2820.45,10351.05,723.92,36,"Colour, Style, Makeup"
+C0093,Noah Stone,Noah,Stone,S002,T01,P3,Spring,Silver,Active,12,6361.21,5025.36,390.26,91,"Colour, Style"
+C0094,Tara Webb,Tara,Webb,S011,T06,P4,Summer,Bronze,Active,7,4463.66,370483.78,46.71,316,"Colour, Style"
+C0095,Nora Stone,Nora,Stone,S015,T01,P2,Summer,Bronze,Active,13,4708.9,3720.03,100.1,54,"Colour, Style"
+C0096,Tara Cole,Tara,Cole,S012,T06,P3,Winter,Silver,Active,10,2690.97,223350.51,621.82,202,Colour
+C0097,Tara Pope,Tara,Pope,S012,T06,P2,Autumn,Platinum,Active,11,2888.05,239708.15,214.32,62,"Colour, Style"
+C0098,Adam Reed,Adam,Reed,S010,T05,P4,Winter,Silver,Active,7,1106.47,4060.74,297.21,327,"Colour, Style"
+C0099,Max Reed,Max,Reed,S018,T03,P2,Autumn,Gold,Active,14,1484.84,1484.84,574.46,6,Style
+C0100,Nora Kim,Nora,Kim,S005,T02,P4,Winter,Silver,Active,14,1699.07,1699.07,710.16,87,Colour
+C0101,Leo Bell,Leo,Bell,S019,T03,P1,Autumn,Bronze,Active,13,453.92,453.92,731.71,382,Style
+C0102,Kira Cole,Kira,Cole,S018,T03,P3,Autumn,Silver,Active,13,4091.91,4091.91,1150.37,281,"Colour, Style"
+C0103,Leo Bell,Leo,Bell,S014,T01,P1,Winter,Bronze,Dormant,2,996.32,787.09,702.51,62,"Colour, Style"
+C0104,Kira Wood,Kira,Wood,S007,T03,P4,Summer,Silver,Dormant,14,6365.13,6365.13,331.11,32,"Colour, Style, Makeup"
+C0105,Ben Hart,Ben,Hart,S018,T03,P3,Autumn,Bronze,Active,14,2350.62,2350.62,823.06,349,Colour
+C0106,Sam Park,Sam,Park,S005,T02,P3,Summer,Gold,Active,3,7517.81,7517.81,1138.23,128,Style
+C0107,Ivy Day,Ivy,Day,S016,T02,P4,Winter,Bronze,Dormant,13,1297.66,1297.66,148.95,265,"Colour, Style, Makeup"
+C0108,Adam Fox,Adam,Fox,S023,T06,P4,Autumn,Silver,Dormant,14,7317.43,607346.69,1172.36,376,Style
+C0109,Adam Vance,Adam,Vance,S021,T04,P4,Summer,Platinum,Dormant,8,5254.21,7986.4,429.66,147,"Colour, Style, Makeup"
+C0110,Kira Ali,Kira,Ali,S018,T03,P3,Spring,Bronze,Active,14,4600.74,4600.74,735.33,65,"Colour, Style"
+C0111,Sam Lane,Sam,Lane,S015,T01,P2,Autumn,Bronze,Dormant,5,3680.41,2907.52,149.34,186,"Colour, Style, Makeup"
+C0112,Lucas Park,Lucas,Park,S003,T01,P4,Autumn,Gold,Active,7,3038.58,2400.48,1048.78,362,Colour
+C0113,Ava Reed,Ava,Reed,S001,T01,P2,Winter,Bronze,Active,14,1837.73,1451.81,192.95,218,"Colour, Style"
+C0114,Nora Vance,Nora,Vance,S016,T02,P1,Spring,Bronze,Dormant,3,756.88,756.88,612.35,418,"Colour, Style"
+C0115,Mia Vance,Mia,Vance,S021,T04,P1,Summer,Silver,Active,11,7746.49,11774.66,1197.23,212,Style
+C0116,Noah Reed,Noah,Reed,S007,T03,P1,Winter,Bronze,Active,13,877.1,877.1,223.73,143,Colour
+C0117,Dev Pope,Dev,Pope,S008,T04,P3,Spring,Gold,Active,5,4414.75,6710.42,328.71,312,"Colour, Style"
+C0118,Liam Webb,Liam,Webb,S024,T06,P4,Winter,Bronze,Active,10,3189.47,264726.01,113.62,8,"Colour, Style, Makeup"
+C0119,Kira Day,Kira,Day,S011,T06,P3,Summer,Gold,Dormant,13,1220.43,101295.69,116.79,302,Colour
+C0120,Liam Park,Liam,Park,S001,T01,P4,Autumn,Silver,Active,7,2207.36,1743.81,677.72,207,Colour
+C0121,Dev Reed,Dev,Reed,S021,T04,P3,Spring,Bronze,Active,4,4287.16,6516.48,1558.9,81,"Colour, Style, Makeup"
+C0122,Ava Bell,Ava,Bell,S013,T01,P4,Summer,Bronze,Active,7,4665.19,3685.5,185.58,315,Colour
+C0123,Lucas Cole,Lucas,Cole,S010,T05,P1,Summer,Gold,Active,6,5268.88,19336.79,836.81,402,"Colour, Style, Makeup"
+C0124,Ivy Cole,Ivy,Cole,S006,T03,P1,Autumn,Gold,Active,2,3038.77,3038.77,420.72,297,Colour
+C0125,Adam Park,Adam,Park,S016,T02,P4,Summer,Bronze,Active,2,3670.4,3670.4,1430.83,347,Colour
+C0126,Emma Park,Emma,Park,S008,T04,P1,Summer,Bronze,Active,3,5835.11,8869.37,286.34,20,Style
+C0127,Sam Shah,Sam,Shah,S008,T04,P3,Spring,Silver,Active,11,2659.26,4042.08,1443.11,93,"Colour, Style"
+C0128,Nora Vance,Nora,Vance,S017,T02,P4,Autumn,Gold,Active,2,7659.12,7659.12,884.95,6,"Colour, Style, Makeup"
+C0129,Max Pope,Max,Pope,S007,T03,P2,Winter,Bronze,Dormant,13,2430.29,2430.29,1241.42,377,"Colour, Style"
+C0130,Sam Stone,Sam,Stone,S005,T02,P2,Autumn,Silver,Active,1,268.34,268.34,1521.58,2,Style
+C0131,Noah Lane,Noah,Lane,S024,T06,P2,Winter,Silver,Active,3,5732.29,475780.07,1138.64,49,Colour
+C0132,Ria Day,Ria,Day,S008,T04,P3,Winter,Platinum,Active,2,7021.44,10672.59,808.68,328,Style
+C0133,Liam Day,Liam,Day,S003,T01,P2,Summer,Bronze,Dormant,13,4706.57,3718.19,628.72,378,"Colour, Style, Makeup"
+C0134,Leo Vance,Leo,Vance,S011,T06,P2,Summer,Gold,Active,3,3651.9,303107.7,169.05,232,Style
+C0135,Ben Wood,Ben,Wood,S011,T06,P2,Winter,Bronze,Active,2,3301.37,274013.71,144.67,415,"Colour, Style, Makeup"
+C0136,Liam Lane,Liam,Lane,S023,T06,P3,Summer,Bronze,Active,6,5502.34,456694.22,633.99,27,"Colour, Style, Makeup"
+C0137,Lucas Stone,Lucas,Stone,S009,T04,P4,Winter,Silver,Active,2,6436.28,9783.15,739.27,413,"Colour, Style"
+C0138,Leo Reed,Leo,Reed,S004,T02,P2,Winter,Bronze,Active,11,310.63,310.63,134.46,302,"Colour, Style, Makeup"
+C0139,Ava Lane,Ava,Lane,S003,T01,P4,Summer,Bronze,Dormant,13,385.25,304.35,530.48,23,Style
+C0140,Kira Day,Kira,Day,S002,T01,P4,Winter,Bronze,Active,3,1493.36,1179.75,566.31,97,"Colour, Style, Makeup"
+C0141,Mia Park,Mia,Park,S009,T04,P2,Autumn,Silver,Dormant,8,3600.77,5473.17,97.57,145,Style
+C0142,Ria Webb,Ria,Webb,S005,T02,P1,Winter,Gold,Active,9,3397.8,3397.8,1250.3,178,"Colour, Style, Makeup"
+C0143,Emma Shah,Emma,Shah,S013,T01,P2,Spring,Gold,Active,1,2269.9,1793.22,1293.85,243,"Colour, Style, Makeup"
+C0144,Lucas Cole,Lucas,Cole,S019,T03,P2,Summer,Bronze,Dormant,12,7797.01,7797.01,89.45,114,Style
+C0145,Lucas Hart,Lucas,Hart,S012,T06,P2,Autumn,Gold,Active,10,7308.86,606635.38,45.13,360,"Colour, Style, Makeup"
+C0146,Kira Lane,Kira,Lane,S019,T03,P4,Autumn,Bronze,Active,1,4492.14,4492.14,372.2,114,Colour
+C0147,Lily Pope,Lily,Pope,S017,T02,P2,Summer,Bronze,Active,13,3843.16,3843.16,1350.85,167,Colour
+C0148,Mia Cole,Mia,Cole,S001,T01,P3,Spring,Bronze,Dormant,7,1339.66,1058.33,937.63,174,"Colour, Style, Makeup"
+C0149,Lucas Day,Lucas,Day,S011,T06,P4,Autumn,Bronze,Dormant,12,1254.3,104106.9,1423.36,316,"Colour, Style, Makeup"
+C0150,Lucas Cruz,Lucas,Cruz,S008,T04,P3,Autumn,Bronze,Active,12,5264.73,8002.39,1517.92,202,Colour
+C0151,Dev Webb,Dev,Webb,S006,T03,P1,Winter,Bronze,Active,4,4786.11,4786.11,554.9,165,"Colour, Style"
+C0152,Ava Shah,Ava,Shah,S021,T04,P4,Spring,Bronze,Active,2,6930.73,10534.71,560.77,404,Colour
+C0153,Nora Fox,Nora,Fox,S024,T06,P4,Summer,Gold,Active,7,229.71,19065.93,561.97,194,Colour
+C0154,Kira Webb,Kira,Webb,S016,T02,P2,Winter,Bronze,Dormant,5,6198.57,6198.57,32.12,135,Colour
+C0155,Nora Hart,Nora,Hart,S003,T01,P1,Spring,Bronze,Dormant,8,2810.91,2220.62,1127.21,222,"Colour, Style"
+C0156,Lucas Park,Lucas,Park,S020,T04,P1,Autumn,Bronze,Active,12,6964.33,10585.78,886.58,375,"Colour, Style, Makeup"
+C0157,Leo Cole,Leo,Cole,S022,T05,P1,Winter,Silver,Dormant,3,2353.94,8638.96,87.21,3,Style
+C0158,Dev Ali,Dev,Ali,S003,T01,P2,Spring,Bronze,Active,5,2452.68,1937.62,1563.29,244,Colour
+C0159,Omar Ali,Omar,Ali,S010,T05,P3,Spring,Silver,Active,6,6169.36,22641.55,1416.79,191,"Colour, Style"
+C0160,Tara Fox,Tara,Fox,S015,T01,P3,Summer,Gold,Active,3,558.2,440.98,1203.58,343,Colour

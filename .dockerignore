@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.git/
+.vscode/
+.claude/
+env.local
+.env
+server.log
+*.bak
+static/*.bak
+data.duckdb
+bookmarks.json
+schedules.json
+build_*_ppt.py
+test_selfheal.py
+README.md

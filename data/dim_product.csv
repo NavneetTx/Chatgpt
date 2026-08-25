@@ -1,0 +1,23 @@
+ProductID,ProductName,Category,Season,Price_GBP
+PR01,Colour Fan — Spring,Colour Tools,Spring,42
+PR02,Colour Fan — Summer,Colour Tools,Summer,42
+PR03,Colour Fan — Autumn,Colour Tools,Autumn,42
+PR04,Colour Fan — Winter,Colour Tools,Winter,42
+PR05,Silk Scarf — Spring,Accessories,Spring,68
+PR06,Silk Scarf — Summer,Accessories,Summer,68
+PR07,Silk Scarf — Autumn,Accessories,Autumn,68
+PR08,Silk Scarf — Winter,Accessories,Winter,68
+PR09,Foundation — Warm,Cosmetics,Spring/Autumn,28
+PR10,Foundation — Cool,Cosmetics,Summer/Winter,28
+PR11,Lipstick — Coral,Cosmetics,Spring,18
+PR12,Lipstick — Rose,Cosmetics,Summer,18
+PR13,Lipstick — Terracotta,Cosmetics,Autumn,18
+PR14,Lipstick — Berry,Cosmetics,Winter,18
+PR15,Eyeshadow — Warm Palette,Cosmetics,Spring/Autumn,35
+PR16,Eyeshadow — Cool Palette,Cosmetics,Summer/Winter,35
+PR17,Style Guide Book,Books,All,24
+PR18,Colour Journal,Books,All,18
+PR19,Shopping Guide Card,Books,All,8
+PR20,Gift Voucher £50,Gift,All,50
+PR21,Gift Voucher £100,Gift,All,100
+PR22,Gift Voucher £150,Gift,All,150
