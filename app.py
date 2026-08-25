@@ -846,7 +846,9 @@ def powerbi_config():
 
 @app.get("/")
 def index():
-    return FileResponse(os.path.join(os.path.dirname(__file__), "static", "index.html"))
+    """The portal is the demo, so it owns the root URL. /chat still serves the
+    plainer csv_chatbot UI for poking at queries without the portal chrome."""
+    return portal()
 
 
 @app.get("/portal")
@@ -854,6 +856,11 @@ def portal():
     if not os.path.exists(PORTAL_HTML):
         raise HTTPException(status_code=404, detail=f"Portal HTML not found at {PORTAL_HTML}")
     return FileResponse(PORTAL_HTML)
+
+
+@app.get("/chat")
+def chat_ui():
+    return FileResponse(os.path.join(os.path.dirname(__file__), "static", "index.html"))
 
 
 app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
