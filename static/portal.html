@@ -1129,59 +1129,33 @@ function renderPage(key) {
               <span class="live-chip">AI</span>
             </div>
             <div class="rch-right">
-              <div class="view-tabs">
-                <button class="view-tab ${startView === 'pbi' ? 'active' : ''}" id="tabPbi"
-                        onclick="switchView('pbi')" title="Embedded Power BI report">▦ Power BI</button>
-                <button class="view-tab ${startView === 'ai' ? 'active' : ''}" id="tabAi"
-                        onclick="switchView('ai')" title="Generate a report with AI">✦ AI Report</button>
-              </div>
+              ${pbiSrc ? `
+                <div class="view-tabs">
+                  <button class="view-tab ${startView === 'pbi' ? 'active' : ''}" id="tabPbi"
+                          onclick="switchView('pbi')" title="Embedded Power BI report">▦ Power BI</button>
+                  <button class="view-tab ${startView === 'ai' ? 'active' : ''}" id="tabAi"
+                          onclick="switchView('ai')" title="Generate a report with AI">✦ AI Report</button>
+                </div>
+              ` : ``}
               <button class="icon-btn" title="Fullscreen" onclick="fullscreenReport()">⛶</button>
               <button class="icon-btn" title="Open report in a new tab" onclick="openReportTab()">⬇</button>
               <button class="icon-btn" title="Share" onclick="shareReport()">↗</button>
             </div>
           </div>
 
-          <!-- ── Power BI pane ── -->
-          <div class="view-pane ${startView === 'pbi' ? 'active' : ''}" id="panePbi">
-            ${pbiSrc ? `
-              <div class="pbi-wrap" id="pbiWrap">
-                <iframe id="pbiFrame" title="${p.reportTitle}" src="${pbiSrc}"
-                        allowfullscreen frameborder="0"
-                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
-              </div>
-            ` : `
-              <div class="pbi-setup">
-                <div class="pbi-setup-icon">▦</div>
-                <div class="pbi-setup-title">Connect your Power BI report</div>
-                <div class="pbi-setup-sub">
-                  No embed URL is configured for <strong>${p.navLabel}</strong> yet. A <code>.pbix</code> file
-                  can't be embedded directly &mdash; the report has to be published to the Power BI Service first,
-                  which then gives you an embeddable URL.
-                </div>
-                <ol class="pbi-setup-steps">
-                  <li>Open your report in Power BI Desktop and click <strong>Publish</strong> to a workspace.</li>
-                  <li>In the Power BI Service, open the report &rarr; <strong>File</strong> &rarr;
-                      <strong>Embed report</strong> &rarr; <strong>Publish to web (public)</strong>.</li>
-                  <li>Copy the <code>https://app.powerbi.com/view?r=...</code> URL it generates.</li>
-                  <li>Paste it below to preview instantly, or save it permanently in
-                      <code>powerbi.json</code> under <code>pages.${currentPage}.src</code>.</li>
-                </ol>
-                <form class="pbi-quickform" onsubmit="return previewPbi(event)">
-                  <input type="url" id="pbiUrlInput" placeholder="https://app.powerbi.com/view?r=..." autocomplete="off"/>
-                  <button type="submit">Preview</button>
-                </form>
-                <div class="pbi-setup-note">
-                  <strong>Note:</strong> &ldquo;Publish to web&rdquo; makes the report publicly accessible to anyone
-                  with the link &mdash; fine for a demo with sample data, never for real client data. For a secured
-                  embed, use <em>Embed for your organisation</em> (viewers sign in with Microsoft SSO) or Power BI
-                  Embedded with a service principal and an embed token.
-                </div>
-              </div>
-            `}
+          <!-- ── Power BI pane (only rendered when a report is connected) ── -->
+          ${pbiSrc ? `
+          <div class="view-pane active" id="panePbi">
+            <div class="pbi-wrap" id="pbiWrap">
+              <iframe id="pbiFrame" title="${p.reportTitle}" src="${pbiSrc}"
+                      allowfullscreen frameborder="0"
+                      sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
+            </div>
           </div>
+          ` : ``}
 
           <!-- ── AI report pane ── -->
-          <div class="view-pane ${startView === 'ai' ? 'active' : ''}" id="paneAi">
+          <div class="view-pane ${!pbiSrc || startView === 'ai' ? 'active' : ''}" id="paneAi">
           <div class="ai-panel">
             <div class="ai-panel-head">
               <span class="ai-spark">✦</span>
