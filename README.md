@@ -106,3 +106,55 @@ HOC_Portal/
   tab needs it; the Power BI tab does not.
 * Scheduled email reports expect an SMTP server on `localhost:1025` (e.g. Mailpit,
   inbox at <http://localhost:8025>). Without it the rest of the app is unaffected.
+
+## Deploying to Render
+
+The repo ships a `Dockerfile` and a `render.yaml` blueprint for a free web service.
+
+1. **Push the repo to GitHub** (already done — branch `hoc-portal` on
+   `NavneetTx/Chatgpt`).
+2. On [render.com](https://render.com): **New → Blueprint**, pick the repo, and
+   select the `hoc-portal` branch. Render reads `render.yaml` and creates the
+   service `hoc-stylist-portal`.
+3. Render will prompt for the two `sync: false` variables:
+   * `ANTHROPIC_API_KEY` — paste your key. **Required** for the AI Report tab.
+   * `POWERBI_EMBED_URL` — optional; one embed URL for every page. Leave blank
+     to use the per-page URLs in `powerbi.json` instead.
+4. Deploy. First build takes a few minutes (it installs deps and seeds DuckDB).
+   Your URL will be `https://hoc-stylist-portal.onrender.com/portal`.
+
+### Rate limits
+
+The portal is public once deployed, and every AI question costs Anthropic credit,
+so `/api/ask` is capped three ways. Defaults are set in `render.yaml` and can be
+changed in the Render dashboard without a redeploy:
+
+| Variable | Default | Limit |
+|---|---|---|
+| `AI_RATE_PER_MIN` | `3` | per IP, per minute — stops hammering |
+| `AI_RATE_PER_HOUR` | `20` | per IP, per hour |
+| `AI_RATE_GLOBAL_DAY` | `300` | everyone combined, per day — the bill cap |
+
+Research mode counts as 2 (web search costs more). Over the limit returns HTTP 429
+with a readable message; the Power BI tab keeps working regardless.
+
+The limits are in-process. Render's free plan runs a single instance so that is
+exact, but if you ever scale past one instance they become per-instance and want
+moving to Redis.
+
+### Free-plan behaviour
+
+* Sleeps after ~15 min idle, ~1 min to wake — the first visitor after a quiet
+  spell waits. Fine for a demo, worth knowing before a live client call.
+* Ephemeral filesystem. Bookmarks and schedules saved at runtime are lost on
+  restart; the reporting data always returns intact because DuckDB is seeded
+  into the image at build time.
+* `DISABLE_SCHEDULER=1` is set — there's no SMTP server reachable from Render,
+  so the monthly email reports can't send there.
+
+### Security before you share the URL
+
+The demo logins in `app.py` are **plaintext passwords in source**. That is fine
+for sample data; it is not fine for anything real. Before pointing a client at a
+public URL, either change the passwords or accept that anyone with the link and
+the README can sign in as an HQ admin.
