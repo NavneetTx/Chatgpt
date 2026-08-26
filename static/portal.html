@@ -932,7 +932,7 @@ const PAGES = {
     descTitle: "Executive Summary Dashboard",
     descSub:   "AI Report · POC Demo · March 2026 · All regions enabled",
     descCardClass: "",
-    descBody:  `This Executive Summary report provides leadership and regional managers at House of Colour with a
+    descBody:  `This Executive Summary report provides leadership and regional managers using AI Based Conversational Analytics with a
       consolidated, cross-network view of stylist and business performance. The dashboard covers all four
       operating regions and can be filtered by region, service type, consultant or stylist, and across a
       range of time periods — from daily views through to full year-to-date.
@@ -966,7 +966,7 @@ const PAGES = {
     descTitle: "Stylist Performance Dashboard",
     descSub:   "AI Report · Individual & Network-wide Rankings · All Regions",
     descCardClass: "",
-    descBody:  `This page provides a detailed breakdown of performance across House of Colour's entire stylist network.
+    descBody:  `This page provides a detailed breakdown of performance across the entire stylist network in AI Based Conversational Analytics.
       Managers and HQ users can view metrics related to <strong>individual stylist revenue</strong> against
       defined targets, <strong>booking volumes and appointment frequency</strong>, <strong>client retention
       rates</strong>, and <strong>year-on-year growth trajectories</strong> per stylist.
@@ -998,7 +998,7 @@ const PAGES = {
     descTitle: "Stylist View — Row Level Security (RLS) Demonstration",
     descSub:   "AI Report · RLS enforced at data source · Territory-filtered session",
     descCardClass: "rls-card",
-    descBody:  `This page demonstrates how House of Colour's 450+ stylists would experience the AI-based report within MaxCRM. Row Level Security (RLS) is enforced at the data source
+    descBody:  `This page demonstrates how AI Based Conversational Analytics serves 450+ stylists experiencing the AI-based report within MaxCRM. Row Level Security (RLS) is enforced at the data source
       level — meaning each stylist's session is automatically filtered to display only their own territory
       data, regardless of the report page they navigate to.
       <br/><br/>
@@ -1032,7 +1032,7 @@ const PAGES = {
     descTitle: "Client Journey Dashboard",
     descSub:   "AI Report · Client Lifecycle & Retention Analytics · All Regions",
     descCardClass: "",
-    descBody:  `The Client Journey dashboard gives House of Colour a lens into the full lifecycle of a client
+    descBody:  `The Client Journey dashboard gives AI Based Conversational Analytics users a lens into the full lifecycle of a client
       across the stylist network. This view tracks how clients move from their first appointment through to
       becoming loyal, repeat visitors — and identifies patterns in <strong>appointment frequency</strong>,
       <strong>service progression</strong>, and <strong>spend behaviour over time</strong>.
@@ -1870,7 +1870,7 @@ function buildConfig(q){
     label='Returning clients (%)'; narrative='Share of returning clients by region.';
   } else {
     type='bar'; labels=['London','Manchester','New York','Sydney','Dubai','Mumbai']; data=[182,140,156,128,96,118];
-    label='Revenue ($k)'; narrative='Total revenue by region across the House of Colour network.';
+    label='Revenue ($k)'; narrative='Total revenue by region across the network.';
   }
 
   const circular = type === 'doughnut';
@@ -2031,7 +2031,7 @@ function exportReport(id, fmt){
   if(r.type === 'research'){
     if(fmt==='html'){
       const src = (r.sources||[]).length ? '<h3>Sources</h3><ol>'+r.sources.map(s=>'<li><a href="'+s.url+'">'+(s.title||s.url)+'</a></li>').join('')+'</ol>' : '';
-      const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 24px;color:#1A1A1A;line-height:1.65"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">House of Colour · AI Research</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1>'+mdToHtml(r.answer)+src+'</body></html>';
+      const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 24px;color:#1A1A1A;line-height:1.65"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">AI Based Conversational Analytics · Research</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1>'+mdToHtml(r.answer)+src+'</body></html>';
       repSave(new Blob([doc],{type:'text/html;charset=utf-8'}), name+'.html'); return;
     }
     if(fmt==='pdf'){
@@ -2058,7 +2058,7 @@ function exportReport(id, fmt){
     }
     const tbl='<table style="border-collapse:collapse;width:100%;font-size:14px;margin-top:16px"><thead><tr>'+cols.map(c=>'<th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">'+c+'</th>').join('')+'</tr></thead><tbody>'+r.tableRows.map(row=>'<tr>'+cols.map(c=>'<td style="padding:8px;border-bottom:1px solid #eee">'+(row[c]??'')+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
     if(fmt==='html'){
-      const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#1A1A1A"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">House of Colour · AI Report</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1><p style="color:#444">'+r.narrative+'</p>'+tbl+'</body></html>';
+      const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#1A1A1A"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">AI Based Conversational Analytics · Report</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1><p style="color:#444">'+r.narrative+'</p>'+tbl+'</body></html>';
       repSave(new Blob([doc],{type:'text/html;charset=utf-8'}), name+'.html'); return;
     }
     if(fmt==='pdf'){
@@ -2082,7 +2082,7 @@ function exportReport(id, fmt){
   if(fmt==='html'){
     const img=aiCharts[id].toBase64Image('image/png',1);
     const tbl='<table style="border-collapse:collapse;width:100%;font-size:14px;margin-top:16px"><thead><tr><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Label</th><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">'+(r.label||'Value')+'</th></tr></thead><tbody>'+r.labels.map((l,i)=>'<tr><td style="padding:8px;border-bottom:1px solid #eee">'+l+'</td><td style="padding:8px;border-bottom:1px solid #eee">'+r.data[i]+'</td></tr>').join('')+'</tbody></table>';
-    const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#1A1A1A"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">House of Colour · AI Report</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1><p style="color:#444">'+r.narrative+'</p><img src="'+img+'" style="max-width:100%;border:1px solid #eee;border-radius:8px"/>'+tbl+'<p style="color:#999;font-size:12px;margin-top:24px">Generated by the House of Colour AI portal.</p></body></html>';
+    const doc='<!doctype html><html><head><meta charset="utf-8"><title>'+r.q+'</title></head><body style="font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#1A1A1A"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7B4F">AI Based Conversational Analytics · Report</div><h1 style="font-family:Georgia,serif">'+r.q+'</h1><p style="color:#444">'+r.narrative+'</p><img src="'+img+'" style="max-width:100%;border:1px solid #eee;border-radius:8px"/>'+tbl+'<p style="color:#999;font-size:12px;margin-top:24px">Generated by AI Based Conversational Analytics.</p></body></html>';
     repSave(new Blob([doc],{type:'text/html;charset=utf-8'}), name+'.html'); return;
   }
   if(fmt==='pdf'){
