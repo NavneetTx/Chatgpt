@@ -1,5 +1,5 @@
 """
-House of Colour — AI report backend.
+AI Based Conversational Analytics — report backend.
 
 Storage:  DuckDB. Every CSV in /data is exposed as a queryable table.
 Brain:    Claude turns a question (+ schema) into a single read-only SQL SELECT.
@@ -9,7 +9,7 @@ Security: role-based access. Admins see everything; a stylist is scoped to their
 
 Serves both:
   /          -> the simple csv_chatbot UI (static/index.html)
-  /portal    -> the House of Colour portal (HOC_Portal_Demo_final (1).html)
+  /portal    -> the analytics portal (static/portal.html)
   /api/*     -> login / ask / tables
 """
 import os
@@ -49,12 +49,12 @@ MODEL = os.getenv("ANTHROPIC_MODEL", "claude-opus-4-8")
 MAX_ROWS = 2000
 SQL_MAX_ATTEMPTS = 3   # 1 initial try + up to 2 self-healing retries
 
-# House of Colour portal HTML (served at /portal). Ships inside the repo at
+# Portal HTML (served at /portal). Ships inside the repo at
 # static/portal.html; override with the PORTAL_HTML env var to point elsewhere.
 PORTAL_HTML = os.getenv("PORTAL_HTML") or os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "static", "portal.html")
 
-app = FastAPI(title="HOC AI Report Backend")
+app = FastAPI(title="AI Based Conversational Analytics — Backend")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"],
                    allow_headers=["*"], allow_credentials=False)
 
@@ -106,7 +106,7 @@ BOOKMARKS = _load_bookmarks()
 SCHEDULES_PATH = os.path.join(os.path.dirname(__file__), "schedules.json")
 SMTP_HOST = os.getenv("SMTP_HOST", "localhost")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "1025"))
-MAIL_FROM = os.getenv("MAIL_FROM", "House of Colour Reports <reports@houseofcolour.demo>")
+MAIL_FROM = os.getenv("MAIL_FROM", "AI Based Conversational Analytics <reports@testingxperts.demo>")
 PALETTE = ["#E26D5A", "#2C8C99", "#C9A227", "#8E4585", "#4A90C2", "#5B8C5A"]
 
 scheduler = BackgroundScheduler()
@@ -212,7 +212,7 @@ def schema_text(con):
     return "\n\n".join(parts)
 
 
-SYSTEM_PROMPT = """You are a data analyst for House of Colour working over a DuckDB database.
+SYSTEM_PROMPT = """You are a data analyst for a personal-styling consultancy, working over a DuckDB database.
 
 Given a user's natural-language question and the table schema, respond with ONLY a \
 JSON object (no markdown fences, no prose) of this exact shape:
@@ -272,7 +272,7 @@ def safe_select(sql):
 
 client = anthropic.Anthropic() if os.getenv("ANTHROPIC_API_KEY") else None
 
-ANALYSIS_PROMPT = """You are a sharp BI analyst for House of Colour (a personal-styling \
+ANALYSIS_PROMPT = """You are a sharp BI analyst for a personal-styling consultancy (a personal-styling \
 franchise). Given a question and the result rows, return ONLY a JSON object:
 
 {
@@ -319,7 +319,7 @@ def generate_analysis(question, df):
 # ---------------------------------------------------------------------------
 INTERNAL_DB_TOOL = {
     "name": "query_internal_db",
-    "description": "Run ONE read-only DuckDB SELECT against House of Colour's own data "
+    "description": "Run ONE read-only DuckDB SELECT against the consultancy's own data "
                    "(already filtered to the signed-in user's permitted scope) and get rows back as JSON.",
     "input_schema": {
         "type": "object",
@@ -329,7 +329,7 @@ INTERNAL_DB_TOOL = {
 }
 WEB_SEARCH_TOOL = {"type": "web_search_20250305", "name": "web_search", "max_uses": 5}
 
-RESEARCH_SYSTEM = """You are a senior analyst for House of Colour, a personal-styling franchise. \
+RESEARCH_SYSTEM = """You are a senior analyst for a personal-styling franchise. \
 You have two tools:
 - query_internal_db: the company's OWN data (DuckDB). It is already filtered to the signed-in \
 user's permitted scope — just query what you need.
@@ -340,7 +340,7 @@ Use internal data for the company's own numbers; use web_search for outside cont
 ANSWER FORMAT — keep it SHORT and skimmable (aim ~120-150 words, never a long essay):
 1. One or two sentences: the direct answer / key finding first.
 2. If you compare figures, show a small markdown table — use standard pipes with a separator row, \
-e.g.  | Metric | HOC | Industry |  then  |---|---|---|  then the rows.
+e.g.  | Metric | Us | Industry |  then  |---|---|---|  then the rows.
 3. At most 3-4 short bullets of key context.
 4. A final line starting with "Bottom line:" (one sentence) or 1-2 next actions.
 Lead with the answer, use concrete numbers, ALWAYS cite web sources, never invent figures. \
@@ -464,7 +464,7 @@ def _email_html(report, has_chart):
     stamp = datetime.now(timezone.utc).strftime("%d %b %Y")
     return f"""<div style="font-family:Arial,Helvetica,sans-serif;max-width:720px;margin:0 auto;color:#1A1A1A">
       <div style="background:#1A1A1A;color:#fff;padding:18px 22px;border-radius:10px 10px 0 0">
-        <div style="font-size:11px;letter-spacing:2px;color:#C9A227">HOUSE OF COLOUR · MONTHLY REPORT</div>
+        <div style="font-size:11px;letter-spacing:2px;color:#C9A227">AI BASED CONVERSATIONAL ANALYTICS · MONTHLY REPORT</div>
         <div style="font-size:22px;font-family:Georgia,serif;margin-top:4px">{title}</div>
         <div style="font-size:11px;color:#aaa;margin-top:4px">Generated {stamp}</div>
       </div>
@@ -481,7 +481,7 @@ def send_report_email(recipients, report, subject=None):
     has_chart = bool(labels) and bool(values) and not report.get("research")
 
     msg = EmailMessage()
-    msg["Subject"] = subject or f"Your monthly House of Colour report — {report.get('title', 'Report')}"
+    msg["Subject"] = subject or f"Your monthly report — {report.get('title', 'Report')}"
     msg["From"] = MAIL_FROM
     msg["To"] = ", ".join(recipients)
     msg.set_content(f"{report.get('title', 'Report')}\n\nOpen this email in an HTML-capable client to view the report.")
@@ -809,7 +809,7 @@ def email_report(body: EmailIn, authorization: str = Header(None)):
     if not recips:
         return {"error": "Add at least one recipient."}
     try:
-        send_report_email(recips, body.data, subject=f"House of Colour report — {body.data.get('title', 'Report')}")
+        send_report_email(recips, body.data, subject=f"Report — {body.data.get('title', 'Report')}")
         return {"ok": True, "sent_to": recips}
     except Exception as e:  # noqa: BLE001
         return {"error": str(e), "trace": traceback.format_exc()}
