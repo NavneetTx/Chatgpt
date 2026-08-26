@@ -2036,7 +2036,7 @@ function exportReport(id, fmt){
     }
     if(fmt==='pdf'){
       const { jsPDF } = window.jspdf; const pdf=new jsPDF('p','pt','a4'); const W=pdf.internal.pageSize.getWidth();
-      pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('HOUSE OF COLOUR · AI RESEARCH', 40, 40);
+      pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('AI BASED CONVERSATIONAL ANALYTICS · RESEARCH', 40, 40);
       pdf.setFontSize(15); pdf.setTextColor(26,26,26); const ql=pdf.splitTextToSize(r.q, W-80); pdf.text(ql, 40, 62);
       pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(40,40,40);
       const plain=(r.answer||'').replace(/\*\*/g,'').replace(/^#+\s*/gm,'').replace(/^-{3,}$/gm,'');
@@ -2063,7 +2063,7 @@ function exportReport(id, fmt){
     }
     if(fmt==='pdf'){
       const { jsPDF } = window.jspdf; const pdf=new jsPDF('p','pt','a4'); const W=pdf.internal.pageSize.getWidth();
-      pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('HOUSE OF COLOUR · AI REPORT', 40, 40);
+      pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('AI BASED CONVERSATIONAL ANALYTICS · REPORT', 40, 40);
       pdf.setFontSize(16); pdf.setTextColor(26,26,26); const ql=pdf.splitTextToSize(r.q, W-80); pdf.text(ql, 40, 64);
       pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(90,90,90);
       let y=64+ql.length*18+8; pdf.text(pdf.splitTextToSize(r.narrative, W-80), 40, y); y+=24;
@@ -2087,7 +2087,7 @@ function exportReport(id, fmt){
   }
   if(fmt==='pdf'){
     const { jsPDF } = window.jspdf; const pdf=new jsPDF('p','pt','a4'); const W=pdf.internal.pageSize.getWidth();
-    pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('HOUSE OF COLOUR · AI REPORT', 40, 40);
+    pdf.setFont('helvetica','bold'); pdf.setFontSize(9); pdf.setTextColor(154,123,79); pdf.text('AI BASED CONVERSATIONAL ANALYTICS · REPORT', 40, 40);
     pdf.setFontSize(16); pdf.setTextColor(26,26,26); const ql=pdf.splitTextToSize(r.q, W-80); pdf.text(ql, 40, 64);
     pdf.setFont('helvetica','normal'); pdf.setFontSize(11); pdf.setTextColor(90,90,90);
     const nl=pdf.splitTextToSize(r.narrative, W-80); let y=64+ql.length*18+8; pdf.text(nl, 40, y); y+=nl.length*14+14;
