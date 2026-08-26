@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Render blueprint for the House of Colour stylist portal demo.
+# Render blueprint for the AI Based Conversational Analytics demo.
 # https://render.com/docs/blueprint-spec
 #
 # One free web service built from ./Dockerfile. Two things about the free plan
@@ -19,7 +19,7 @@
 
 services:
   - type: web
-    name: hoc-stylist-portal
+    name: ai-based-conversational-analytics
     runtime: docker
     plan: free
     region: oregon
